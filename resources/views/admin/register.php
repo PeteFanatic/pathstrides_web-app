@@ -1,7 +1,7 @@
 @extends('employees.layout')
 @section('content')
 <div class="card">
-  <div class="card-header">Employees Page</div>
+  <div class="card-header">Redister as admin</div>
   <div class="card-body">
       
       <form action="{{ url('employee') }}" method="post">
