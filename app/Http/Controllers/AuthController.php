@@ -9,7 +9,13 @@ use Illuminate\Support\Facades\Validator;
 
 class AuthController extends Controller
 {
-    //
+
+    public function index()
+    {
+        return view('login');
+    }
+
+    
     public function register(Request $req)
     {
         //valdiate
