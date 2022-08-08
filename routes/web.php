@@ -23,6 +23,8 @@ Route::get('/', function () {
 // Route::get('employee/all',[EmployeeController::class,'showAll'])->name('employee.all');  
 // Route::post('employee/create',[EmployeeController::class,'store'])->name('employees.save');
 // Route::get('employee/create',[EmployeeController::class,'create'])->name('employees.save');
+Route::get("/", [CustomAuthController::class, 'home']); //homepage
+Route::get('login', [CustomAuthController::class, 'index'])->name('login');
 Route::resource("/employee", EmployeeController::class);
 Route::resource("/manager", ManagerController::class);
 Route::resource("/task", TaskController::class);
