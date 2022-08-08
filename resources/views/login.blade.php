@@ -25,18 +25,29 @@
     @section('content')
     <main class="login-form">
         <div class = "container">
-        <form action = "{{route('postlogin')}}" method = "POST">
+            <h1>login</h1><br>
+            
+            @if(\Session::has('message'))
+                <div class = "alert-info">
+                    {{Session\Session::post('message')}}
+                </div>
+
+            <form action = "{{route('postlogin')}}" method = "POST">
                     <label for ="username">Username</label>
                     <input type = "text" id = "username" name = "username" required> 
                     <!-- di ka maka proceed ug input pass if wa ni nimo gi input and username -->
                     @if ($errors->hs('password'))
-                    <span class="text-danger">{{$errors->first('username')}}</span>
-                    
+                        <span class="text-danger">{{$errors->first('username')}}</span>
+                    @endif
+
                     <label for ="password">Password</label>
                     <input type = "text" id = "password" name = "password" required>
                     <!-- di ka maka proceed ug input pass if wa ni nimo gi input and passworde -->
-                    <span class="text-danger">{{$errors->first('username')}}</span>
-                    
+                    @if
+                        <span class="text-danger">{{$errors->first('password')}}</span>
+                    @endif
+
                     <button type = "submit">Login</button>
+            </form>
         </div>
     </main>
