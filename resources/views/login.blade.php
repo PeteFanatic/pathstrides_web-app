@@ -1,4 +1,4 @@
-<DOCTYPE! html>
+<!-- <DOCTYPE! html>
     <html>
         <head>
             <title>
@@ -19,4 +19,20 @@
                 </form>
             </div>
         </body>
-    </html>
+    </html> -->
+
+    @extends('layout')
+    @section('content')
+    <main class="login-form">
+        <div class = "container">
+        <form action = "{{route('postlogin')}}" method = "POST">
+                    <label for ="username">Username</label>
+                    <input type = "text" id = "username" name = "username" required> 
+                    <!-- di ka maka proceed ug input pass if wa ni nimo gi input and username -->
+                    
+                    <label for ="password">Password</label>
+                    <input type = "text" id = "password" name = "password" required>
+                    <!-- di ka maka proceed ug input pass if wa ni nimo gi input and passworde -->
+                    <button type = "submit">Login</button>
+        </div>
+    </main>

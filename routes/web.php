@@ -31,4 +31,4 @@ Route::resource("/employee", EmployeeController::class);
 Route::resource("/manager", ManagerController::class);
 Route::resource("/task", TaskController::class);
 Route::get('login', [AuthController::class, 'index'])->name('login');
-
+Route::post('postlogin', [AuthController::class, 'login'])->name('login');
