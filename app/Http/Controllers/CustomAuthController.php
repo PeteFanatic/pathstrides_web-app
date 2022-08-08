@@ -32,5 +32,7 @@ class CustomAuthController extends Controller
             return redeirect()->intended('dashboard')
                      ->with('message', 'Signed In!');
         }
+
+        return redirect('/login')->with('message', 'Username or password incorrect');
     }
 }
