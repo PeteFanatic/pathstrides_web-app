@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\Manager;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Auth;
+use Hash;
 
 class AuthController extends Controller
 {
@@ -15,6 +17,9 @@ class AuthController extends Controller
         return view('login');
     }
 
+    public function welcome(){
+        return view('welcome');
+    }
     
     public function register(Request $req)
     {
@@ -57,5 +62,28 @@ class AuthController extends Controller
         }
         $response = ['message' => 'Incorrect email or password'];
         return response()->json($response, 400);
+    }
+    // gana logic dinhi sa login
+    public function loginUser(Request $request){
+        
+        $request->validate([
+            'email'=>'required|email',
+            'password'=>'required|min:6|max:12',
+        ]);
+        $manager = Manager::where('man_email','=',$request->email)->first();
+        if($manager){
+            // if(Hash::check($request->password, $manager->man_password)){
+                if($manager = Manager::where('man_password','=',$request->password)->first()){
+                // if(manager->where($request->password)->value('man_password')){
+                $request->session()->put('loginId',$manager->man_id);
+                return redirect('manager');
+                // echo "Hello world!<br>";
+            }
+            else{
+                return back()->with('fail','Password Incorrect.');
+            }
+        }else{
+            return back()->with('fail','Email not Registered.');
+        }
     }
 }

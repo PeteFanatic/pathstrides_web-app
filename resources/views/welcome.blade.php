@@ -68,7 +68,7 @@
                     </a>
                 </div>
                 <div id="wrapper_manager">
-                    <a href="{{ route('login') }}" class="manager_button">
+                    <a href="{{ route('index') }}" class="manager_button">
                         <div class="dots-container">
                             <div class="dot"></div>
                             <div class="dot"></div>

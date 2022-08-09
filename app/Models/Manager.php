@@ -20,3 +20,4 @@ class Manager extends Model
         return $this->belongsTo(Manager::class, 'admin_id', 'man_id');
         }
 }
+

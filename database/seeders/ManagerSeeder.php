@@ -16,7 +16,7 @@ class ManagerSeeder extends Seeder
     public function run()
     {
        $manager=[
-        ['man_id'=>'1','man_fname'=>'Bob','man_lname'=>'Smith','man_email'=>'bobsmith_@gmail.com','man_contanct_num'=>'09199089764','man_password'=>'qwrty','admin_id'=>'1'],
+        ['man_id'=>'1','man_fname'=>'Bob','man_lname'=>'Smith','man_email'=>'bobsmith_@gmail.com','man_contanct_num'=>'09199089764','man_password'=>'qwerty','admin_id'=>'1'],
         ['man_id'=>'1','man_fname'=>'Timmy','man_lname'=>'Daniels','man_email'=>'timmy_daniels@gmail.com','man_contanct_num'=>'09191025214','man_password'=>'asdf','admin_id'=>'2'],
     ];
     DB::table('manager')->insert($manager);

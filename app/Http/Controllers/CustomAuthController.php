@@ -2,45 +2,99 @@
 
 namespace App\Http\Controllers;
 
+// use Illuminate\Http\Request;
+
+// use Session;
+// use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
-<<<<<<< HEAD
-=======
+use Hash;
 use Session;
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
->>>>>>> maegan-login_screen
+
 
 class CustomAuthController extends Controller
 {
+    public function welcome(){
+        return view('welcome');
+    }
     public function home()
     {
-        return view('homepage');
+        $data = array();
+        if(Session::has('loginId')){
+            $data = User::where('id','=',Session::get('loginId'))->first();
+        }
+
+        return view('manager',compact('data'));
     }
 
     public function index()
     {
         return view('login');
+
     }
-<<<<<<< HEAD
-}
-=======
-
-    public function login(Request $request)
-    {
-        $request->validate(
-            [
-                'username' => 'required',
-                'password' => 'required',
-            ]
-            );
-
-        $credentials = $request->only('username', 'password');
-        if(Auth::attempt($credentials))
-        {
-            return redeirect()->intended('dashboard')
-                     ->with('message', 'Signed In!');
+    public function registration(){
+        return view("auth.registration");
+    }
+    public function registerUser(Request $request){
+        $request->validate([
+            'name'=>'required',
+            'email'=>'required|email|unique:users',
+            'password'=>'required|min:6|max:12',
+        ]);
+        $user = new User();
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->password = Hash::make($request->password);
+        $res = $user->save();
+        if($res){
+            return back()->with('success','Registered Successfully');
+        }else{
+            return back()->with('fail','Try Again.');
         }
+    }
 
-        return redirect('/login')->with('message', 'Username or password incorrect');
+    public function loginUser(Request $request){
+        $request->validate([
+            'email'=>'required|email',
+            'password'=>'required|min:6|max:12',
+        ]);
+        $manager = User::where('man_email','=',$request->email)->first();
+        if($manager){
+            if(hash::check($request->password,$manager->man_password)){
+                $request->session()->put('loginId',$manager->man_id);
+                return redirect('home');
+            }
+            else{
+                return back()->with('fail','Password Incorrect.');
+            }
+        }else{
+            return back()->with('fail','Email not Registered.');
+        }
+    }
+
+    // public function login(Request $request)
+    // {
+    //     $request->validate(
+    //         [
+    //             'username' => 'required',
+    //             'password' => 'required',
+    //         ]
+    //         );
+
+    //     $manager = $request->only('username', 'password');
+    //     if(Auth::attempt($manager))
+    //     {
+    //         return redirect()->intended('manager')
+    //                  ->with('message', 'Signed In!');
+    //     }
+
+    //     return redirect('/login')->with('message', 'Username or password incorrect');
+    // }
+    public function logout(){
+        if(Session::has('loginId')){
+            Session::pull('loginId');
+            return redirect('login');
+        }
     }
 }
->>>>>>> maegan-login_screen
