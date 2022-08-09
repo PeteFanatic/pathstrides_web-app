@@ -26,6 +26,7 @@ use App\Http\Controllers\AuthController;
 // Route::post('employee/create',[EmployeeController::class,'store'])->name('employees.save');
 // Route::get('employee/create',[EmployeeController::class,'create'])->name('employees.save');
 Route::get('/', [CustomAuthController::class, 'welcome']); //homepage
+
 // Route::get('login', [CustomAuthController::class, 'index'])->name('login');
 
 

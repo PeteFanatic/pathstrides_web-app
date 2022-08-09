@@ -5,7 +5,7 @@
   <div class="card-body">
 
 
-  <a href="{{ url('/manager/') }}" class="btn btn-success btn-sm" title="Back">
+  <a href="{{ url('/task/') }}" class="btn btn-success btn-sm" title="Back">
                             <i class="fa fa-plus" aria-hidden="true"></i> Back
                         </a>
   

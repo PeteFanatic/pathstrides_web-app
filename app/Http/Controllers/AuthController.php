@@ -88,7 +88,7 @@ class AuthController extends Controller
                 if($manager = Manager::where('man_password','=',$request->password)->first()){
                 // if(manager->where($request->password)->value('man_password')){
                 $request->session()->put('loginId',$manager->man_id);
-                return redirect('manager');
+                return redirect('employee');
                 // echo "Hello world!<br>";
             }
             else{

@@ -19,7 +19,7 @@
                                     <tr>
                                         <th>Task ID</th>
                                         <th>Task Title</th>
-                                        <th>Task Description</th>
+                                        <th>Points</th>
                                         <th>Employee Incharge</th>
                                         <th>Actions</th>
                                     </tr>
@@ -29,7 +29,7 @@
                                     <tr>
                                         <td>{{ $item->task_id }}</td>
                                         <td>{{ $item->task_title }} </td>
-                                        <td>{{ $item->task_desc }}</td>
+                                        <td>{{ $item->points }}</td>
                                         <td>{{ $item->emp_id }}</td>
                             
                                         <td>

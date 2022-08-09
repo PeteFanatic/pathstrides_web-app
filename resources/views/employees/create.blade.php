@@ -16,6 +16,15 @@
         <input type="text" name="emp_email" id="emp_email" class="form-control"></br>
         <label>Contanct Number:</label></br>
         <input type="text" name="emp_contanct_num" id="emp_contanct_num" class="form-control"></br>
+        <label>Employee Username:</label></br>
+        <input type="text" name="emp_username" id="emp_username" class="form-control"></br>
+        <label>Employee Password:</label></br>
+        <input type="text" name="emp_password" id="emp_contanct_num" class="form-control"></br>
+        <label for="man_id">Manager id:</label></br>
+        <select name="man_id" id="man_id" name="man_id"></br>
+        <option value="1">1</option></br>
+        </select></br>
+       
        
         <input type="submit" value="Save" class="btn btn-success"></br>
     </form>
