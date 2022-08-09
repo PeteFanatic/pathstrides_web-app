@@ -32,6 +32,7 @@ Route::get('/', [CustomAuthController::class, 'welcome']); //homepage
 // Route::get('login', [CustomAuthController::class, 'index'])->name('login');
 
 Route::get('login', [AuthController::class, 'index'])->name('login-user');
+Route::get('loginEmployee', [AuthController::class, 'loginEmployee'])->name('loginEmployee');
 // Route::post('postlogin', [AuthController::class, 'login'])->name('login');
 
 // guide para sa custom auth login nako sauna

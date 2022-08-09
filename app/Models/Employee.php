@@ -4,7 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-
+use Laravel\Sanctum\HasApiTokens;
+use Illuminate\Foundation\Auth\Employee as Authenticatable;
 class Employee extends Model
 {
     use HasFactory;
@@ -15,5 +16,8 @@ class Employee extends Model
     protected $primaryKey = 'emp_id';
     protected $guarded = [];  
 
-    
+    protected $hidden = [
+        'password',
+        'remember_token',
+    ];
 }
