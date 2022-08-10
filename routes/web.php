@@ -6,6 +6,7 @@ use App\Http\Controllers\ManagerController;
 use App\Http\Controllers\TaskController;
  use App\Http\Controllers\CustomAuthController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\AnnouncementController;
 
 /*
 |--------------------------------------------------------------------------
@@ -49,3 +50,4 @@ Route::get('/logout',[CustomAuthController::class,'logout']);
 Route::resource("/employee", EmployeeController::class);
 Route::resource("/manager", ManagerController::class);
 Route::resource("/task", TaskController::class);
+Route::resource("/announcement", AnnouncementController::class);

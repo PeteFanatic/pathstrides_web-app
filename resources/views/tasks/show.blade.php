@@ -12,8 +12,11 @@
         <div class="card-body">
         <h5 class="card-title">Task ID : {{ $tasks-> task_id }}</h5>
         <p class="card-text">Task Title : {{ $tasks->task_title }}</p>
+        <p class="card-text">Task Location : {{ $tasks->location }}</p>
         <p class="card-text">Task Description : {{ $tasks->task_desc }}</p>
         <p class="card-text">Employee Incharge : {{ $tasks->emp_id }}</p>
+        <p class="card-text">Employee Incharge : {{ $tasks->man_id }}</p>
+        
   </div>
       
     </hr>
