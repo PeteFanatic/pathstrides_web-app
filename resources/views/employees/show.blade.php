@@ -14,6 +14,7 @@
         <p class="card-text">Email : {{ $employees->emp_email }}</p>
         <p class="card-text">Contanct Number : {{ $employees->emp_contanct_num }}</p>
         <p class="card-text">Manager Incharge : {{ $employees->man_id }}</p>
+        <p class="card-text">Department : {{ $employees->dep_id }}</p>
   </div>
       
     </hr>

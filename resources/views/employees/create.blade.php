@@ -20,6 +20,10 @@
         <input type="text" name="emp_username" id="emp_username" class="form-control"></br>
         <label>Employee Password:</label></br>
         <input type="text" name="emp_password" id="emp_contanct_num" class="form-control"></br>
+        <label for="man_id">Admin id:</label></br>
+        <select name="admin_id" id="man_id" name="man_id"></br>
+        <option value="1">1</option></br>
+        </select></br>
         <label for="man_id">Manager id:</label></br>
         <select name="man_id" id="man_id" name="man_id"></br>
         <option value="1">1</option></br>
