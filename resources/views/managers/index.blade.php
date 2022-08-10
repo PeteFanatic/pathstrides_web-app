@@ -22,6 +22,7 @@
                                         <th>Manager Email</th>
                                         <th>Contanct Number</th>
                                         <th>Admin Incharge</th>
+                                        <th>Department </th>
                                         <th>Actions</th>
                                     </tr>
                                 </thead>
@@ -33,6 +34,7 @@
                                         <td>{{ $item->man_email }}</td>
                                         <td>{{ $item->man_contanct_num}}</td>
                                         <td>{{$item->admin_id}}
+                                        <td>{{$item->dep_id}}
                                         </td>
                                         <td>
                                             <a href="{{ url('/manager/' . $item->man_id) }}" title="View manager"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> View</button></a>

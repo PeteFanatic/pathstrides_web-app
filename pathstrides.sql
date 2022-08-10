@@ -44,15 +44,21 @@ CREATE TABLE IF NOT EXISTS `pathstrides`.`manager` (
   `man_username` VARCHAR(45) NOT NULL,
   `man_password` VARCHAR(45) NOT NULL,
    `admin_id` INT NOT NULL,
+	`dep_id` INT NOT NULL,
   PRIMARY KEY (`man_id`),
   INDEX `fk_manager_admin1_idx` (`admin_id` ASC),
+   INDEX `fk_manager_department1_idx` (`dep_id` ASC),
   CONSTRAINT `fk_manager_admin1`
     FOREIGN KEY (`admin_id`)
     REFERENCES `pathstrides`.`admin` (`admin_id`)
     ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+     CONSTRAINT `fk_manager_department1`
+    FOREIGN KEY (`dep_id`)
+    REFERENCES `pathstrides`.`departments` (`dep_id`)
+    ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
-
  
 
 -- -----------------------------------------------------
@@ -69,11 +75,18 @@ CREATE TABLE `pathstrides`.`employee` (
    `emp_username` VARCHAR(45) NOT NULL,
   `emp_password` VARCHAR(45) NOT NULL,
   `man_id` INT NOT NULL,
+  	`dep_id` INT NOT NULL,
   PRIMARY KEY (`emp_id`),
    INDEX `fk_employee_manager1_idx` (`man_id` ASC),
+    INDEX `fk_employee_department1_idx` (`dep_id` ASC),
   CONSTRAINT `fk_employee_manager1`
     FOREIGN KEY (`man_id`)
     REFERENCES `pathstrides`.`manager` (`man_id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+	CONSTRAINT `fk_employee_department1`
+    FOREIGN KEY (`dep_id`)
+    REFERENCES `pathstrides`.`departments` (`dep_id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
     ENGINE = InnoDB;

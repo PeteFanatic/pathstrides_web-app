@@ -24,6 +24,11 @@
         <select name="admin_id" id="admin_id" name="admin_id"></br>
         <option value="1">1</option></br>
         </select></br>
+        <label for="dep_id">Department Id:</label></br>
+        <select name="dep_id" id="dep_id" name="dep_id"></br>
+        <option value="1">1</option></br>
+        </select></br>
+       
        
         <input type="submit" value="Save" class="btn btn-success"></br>
     </form>

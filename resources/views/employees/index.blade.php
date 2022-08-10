@@ -22,6 +22,7 @@
                                         <th>Employee Email</th>
                                         <th>Contanct Number</th>
                                         <th>Manager Incharge</th>
+                                        <th>Department</th>
                                         <th>Actions</th>
                                     </tr>
                                 </thead>
@@ -33,6 +34,7 @@
                                         <td>{{ $item->emp_email }}</td>
                                         <td>{{ $item->emp_contanct_num }}</td>
                                         <td>{{ $item->man_id }}</td>
+                                        <td>{{$item->dep_id}}
                                         <td>
                                             <a href="{{ url('/employee/' . $item->emp_id) }}" title="View Employee"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> View</button></a>
                                             <a href="{{ url('/employee/' . $item->emp_id . '/edit') }}" title="Edit Employee"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>
