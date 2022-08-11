@@ -24,9 +24,27 @@
         <select name="admin_id" id="admin_id" name="admin_id"></br>
         <option value="1">1</option></br>
         </select></br>
+        <label for="man_coll">Manager Coll:</label></br>
+        <select name="man_coll" id="man_coll" name="man_coll"></br>
+        <option value="1">1</option></br>
+        </select></br>
         <label for="dep_id">Department Id:</label></br>
         <select name="dep_id" id="dep_id" name="dep_id"></br>
-        <option value="1">1</option></br>
+        @php
+                    $count = 1;
+                @endphp
+                @foreach($department as $item)
+                    @if(($count == 1) and (old('dep_id') <> $item['dep_id']))
+                        <option value="{{ $item['dep_id'] }}" selected>{{ $item['dep_id'] }}</option>  
+                    @elseif(old('dep_id') === $item['dep_id'])
+                        <option value="{{ $item['dep_id'] }}" selected>{{ $item['dep_id'] }}</option>     
+                    @else
+                        <option value="{{ $item['dep_id'] }}">{{ $item['dep_id']}}</option>
+                    @endif
+                    @php
+                       $count++;
+                    @endphp
+                @endforeach
         </select></br>
        
        

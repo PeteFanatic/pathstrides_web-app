@@ -21,11 +21,39 @@
         <input type="text" name="location" id="location" class="form-control"></br>
         <label for="emp_id">Emp id:</label></br>
         <select name="emp_id" id="emp_id" name="emp_id"></br>
-        <option value="1">1</option></br>
+        @php
+                    $count = 1;
+                @endphp
+                @foreach($employee as $item)
+                    @if(($count == 1) and (old('emp_id') <> $item['emp_id']))
+                        <option value="{{ $item['emp_id'] }}" selected>{{ $item['emp_id'] }}</option>  
+                    @elseif(old('emp_id') === $item['emp_id'])
+                        <option value="{{ $item['emp_id'] }}" selected>{{ $item['emp_id'] }}</option>     
+                    @else
+                        <option value="{{ $item['emp_id'] }}">{{ $item['emp_id']}}</option>
+                    @endif
+                    @php
+                       $count++;
+                    @endphp
+                @endforeach
         </select></br>
         <label for="man_id">Manager id:</label></br>
         <select name="man_id" id="man_id" name="man_id"></br>
-        <option value="1">1</option></br>
+        @php
+                    $count = 1;
+                @endphp
+                @foreach($manager as $item)
+                    @if(($count == 1) and (old('man_id') <> $item['man_id']))
+                        <option value="{{ $item['man_id'] }}" selected>{{ $item['man_id'] }}</option>  
+                    @elseif(old('man_id') === $item['man_id'])
+                        <option value="{{ $item['man_id'] }}" selected>{{ $item['man_id'] }}</option>     
+                    @else
+                        <option value="{{ $item['man_id'] }}">{{ $item['man_id']}}</option>
+                    @endif
+                    @php
+                       $count++;
+                    @endphp
+                @endforeach
         </select></br>
         
         

@@ -16,8 +16,7 @@ class Employee extends Model
     protected $primaryKey = 'emp_id';
     protected $guarded = [];  
 
-    protected $hidden = [
-        'password',
-        'remember_token',
-    ];
+    public static function getEmployee($employeeID){
+        return self::where('emp_coll',$employeeID)->get()->toArray();
+    }
 }

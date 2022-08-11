@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Employee;
+use App\Models\Manager;
+use App\Models\Department;
 class EmployeeController extends Controller
 {
     /**
@@ -24,7 +26,9 @@ class EmployeeController extends Controller
      */
     public function create()
     {
-        return view('employees.create');
+        $department=Department::getDepartment(1);
+        $manager=Manager::getManager(1);
+        return view('employees.create')->with(compact('department','manager'));
     }
 
     /**
@@ -60,8 +64,10 @@ class EmployeeController extends Controller
      */
     public function edit($id)
     {
-        $employee = Employee::find($id);
-        return view('employees.edit')->with('employees', $employee);
+        $department=Department::getDepartment(1);
+        $manager=Manager::getManager(1);
+        $employees = Employee::find($id);
+        return view('employees.edit')->with(compact('employees','department','manager'));
     }
 
     /**

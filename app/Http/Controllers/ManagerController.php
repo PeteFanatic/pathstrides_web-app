@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Manager;
+use App\Models\Department;
 class ManagerController extends Controller
 {
     /**
@@ -24,7 +25,8 @@ class ManagerController extends Controller
      */
     public function create()
     {
-        return view('managers.create');
+        $department=Department::getDepartment(1);
+        return view ('managers.create')->with('department', $department);
     }
 
     /**
@@ -60,8 +62,9 @@ class ManagerController extends Controller
      */
     public function edit($id)
     {
-        $manager = Manager::find($id);
-        return view('managers.edit')->with('managers', $manager);
+        $managers = Manager::find($id);
+        $department=Department::getDepartment(1);
+        return view('managers.edit')->with(compact('managers', 'department'));
     }
 
     /**

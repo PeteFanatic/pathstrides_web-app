@@ -14,4 +14,8 @@ class Department extends Model
     protected $table = 'departments';
     protected $primaryKey = 'dep_id';
     
+    public static function getDepartment($departmentID){
+        return self::where('dep_coll',$departmentID)->get()->toArray();
+    }
+    
 }
