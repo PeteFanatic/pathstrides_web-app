@@ -31,8 +31,8 @@
                                     <tr>
                                         <td>{{ $item->task_id }}</td>
                                         <td>{{ $item->task_title }} </td>
-                                        <td>{{ $item->location }} </td>
-                                        <td>{{ $item->points }}</td>
+                                        <td>{{ $item->points }} </td>
+                                        <td>{{ $item->location }}</td>
                                         <td>{{ $item->emp_id }}</td>
                                         <td>{{ $item->man_id }}</td>
                             

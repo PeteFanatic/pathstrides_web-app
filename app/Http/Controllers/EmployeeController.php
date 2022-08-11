@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Models\Employee;
 use App\Models\Manager;
 use App\Models\Department;
+
+use Session;
 class EmployeeController extends Controller
 {
     /**
@@ -15,8 +17,12 @@ class EmployeeController extends Controller
      */
     public function index()
     {
+        if(Session::has('loginId')){
+            $data = Employee::where('man_id','=',Session::get('loginId'))->first();
+        
         $employees = Employee::all();
         return view ('employees.index')->with('employees', $employees);
+        }
     }
 
     /**

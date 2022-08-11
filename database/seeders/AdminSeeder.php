@@ -21,5 +21,7 @@ class AdminSeeder extends Seeder
             ['admin_id'=>2,'admin_fname'=>'Jin','admin_lname'=>'Lu'],
         ];
         DB::table('admin')->insert($admin);
+
+        
     }
 }

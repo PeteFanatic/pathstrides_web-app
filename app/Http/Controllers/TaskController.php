@@ -97,4 +97,10 @@ class TaskController extends Controller
         Task::destroy($id);
         return redirect('task')->with('flash_message', 'task deleted!');
     }
+
+    public function getEmployeeTask(){
+        $list = new Task();
+        $list = $list->getEmployeeTask();
+        return response()->json($list);
+    }
 }

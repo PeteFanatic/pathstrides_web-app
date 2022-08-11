@@ -18,31 +18,59 @@ class AuthController extends Controller
         return view('login');
     }
 
-    public function welcome(){
+    public function landing(){
         return view('welcome');
     }
-    
-    public function register(Request $req)
-    {
-        //valdiate
-        $rules = [
-            'name' => 'required|string',
-            'email' => 'required|string|unique:users',
-            'password' => 'required|string|min:6|max:15'
-        ];
-        $validator = Validator::make($req->all(), $rules);
-        if ($validator->fails()) {
-            return response()->json($validator->errors(), 400);
-        }
-        //create new user in users table
-        $admin = Admin::create([
-            'name' => $req->name,
-            'email' => $req->email,
-            'password' => Hash::make($req->password)
+    public function registration(){
+        return view("registration");
+    }
+    // public function register(Request $req)
+    // {
+    //     //valdiate
+    //     $rules = [
+    //         'name' => 'required|string',
+    //         'email' => 'required|string|unique:users',
+    //         'password' => 'required|string|min:6|max:15'
+    //     ];
+    //     $validator = Validator::make($req->all(), $rules);
+    //     if ($validator->fails()) {
+    //         return response()->json($validator->errors(), 400);
+    //     }
+    //     //create new user in users table
+    //     $admin = Admin::create([
+    //         'admin_fname' => $req->fname,
+    //         'admin_lname' => $req->lname,
+    //         'admin_email' => $req->email,
+    //         'admin_username' => $req->username,
+    //         'admin_password' => Hash::make($req->password)
+    //     ]);
+    //     $token = $admin->createToken('Personal Access Token')->plainTextToken;
+    //     $response = ['admin' => $admin, 'token' => $token];
+    //     return response()->json($response, 200);
+    // }
+    public function registerUser(Request $request){
+        $request->validate([
+            'admin_fname'=>'required',
+            'admin_lname'=>'required',
+            'admin_username'=>'required',
+            'admin_email'=>'required|email|unique:users',
+            'admin_password'=>'required|min:6|max:12',
         ]);
-        $token = $admin->createToken('Personal Access Token')->plainTextToken;
-        $response = ['admin' => $user, 'token' => $token];
-        return response()->json($response, 200);
+        $admin = new Admin();
+        $admin->lname = $request->lname;
+        $admin->fname = $request->fname;
+        $admin->email = $request->email;
+        $admin->username = $request->username;
+        $admin->password = Hash::make($request->password);
+        $res = $admin->save();
+        if($res){
+            // return back()->with('success','Registered Successfully');
+            
+            Admin::create($res);
+            return redirect('admin')->with('flash_message', 'Admin Addedd!'); 
+        }else{
+            return back()->with('fail','Try Again.');
+        }
     }
 
     // public function login(Request $req)
@@ -78,10 +106,10 @@ class AuthController extends Controller
     public function loginUser(Request $request){
         
         $request->validate([
-            'email'=>'required|email',
+            'username'=>'required',
             'password'=>'required|min:6|max:12',
         ]);
-        $manager = Manager::where('man_email','=',$request->email)->first();
+        $manager = Manager::where('man_username','=',$request->username)->first();
        
         if($manager){
             // if(Hash::check($request->password, $manager->man_password)){
@@ -126,5 +154,11 @@ class AuthController extends Controller
         $response = ['message' => 'Incorrect email'];
         return response()->json($response, 400);
     }
+    }
+    public function logout(){
+        if(Session::has('loginId')){
+            Session::pull('loginId');
+            return redirect('login');
+        }
     }
 }

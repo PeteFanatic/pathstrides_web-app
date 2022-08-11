@@ -38,10 +38,10 @@
                 @endif
                     @csrf
                     <div class="form-group">
-                        <label for="">Username</label>
-                        <input type="text"class="form-control" placeholder="Enter Username"
-                        name="email" value="{{old('username')}}">
-                        <span class="text-danger">@error('username'){{$message}} @enderror</span>
+                        <label for="email">Email Address</label>
+                        <input type="text"class="form-control" placeholder="Enter Email"
+                        name="email" value="{{old('email')}}">
+                        <span class="text-danger">@error('email'){{$message}} @enderror</span>
                     </div>
                     <br>
                     <div class="form-group">
