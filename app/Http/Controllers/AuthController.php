@@ -106,14 +106,14 @@ class AuthController extends Controller
     public function loginUser(Request $request){
         
         $request->validate([
-            'username'=>'required',
+            'email'=>'required',
             'password'=>'required|min:6|max:12',
         ]);
-        $manager = Manager::where('man_username','=',$request->username)->first();
+        $manager = Manager::where('man_email','=',$request->email)->first();
        
         if($manager){
-            // if(Hash::check($request->password, $manager->man_password)){
-                if($manager = Manager::where('man_password','=',$request->password)->first()){
+            if($request->password==$manager->man_password){
+                // if($manager = Manager::where('man_password','=',$request->password)->first()){
                 // if(manager->where($request->password)->value('man_password')){
                 $request->session()->put('loginId',$manager->man_id);
                 return redirect('employee');
@@ -139,6 +139,7 @@ class AuthController extends Controller
         // if user email found and password is correct
         if($employee){
             if ($employee = Employee::where('emp_password','=',$req->password)->first()) {
+                // if ($employee = Employee::where('emp_password')==$req->password) {
                 // $token = $employee->createToken('Personal Access Token')->plainTextToken;
                 // $response = ['employee' => $employee, 'token' => $token];
                 $response = ['message' => 'Success'];
