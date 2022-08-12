@@ -373,7 +373,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
+    <title>Pathstrides</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
     <link href>
   </head>
@@ -384,7 +384,7 @@
         <div class="row">
             <div class="formContainer">
                 <h1>Welcome to Pathstrides</h1>
-                <img src="{{ URL::to('assets\manager-landing-page.png') }}">
+                <img src="{{ URL('images/manager-landing-page.png') }}">
                 <form action="{{route('login-user')}}"method="post">
                 @if(Session::has('success'))
                 <div class="alert alert-success">{{Session::get('success')}}</div>
@@ -453,9 +453,10 @@
     img{
         display: block;
         align-items: center;
-        padding-bottom: 10px;
+        padding-bottom: 2em;
         margin: auto;
         width: 60%;
+        
     }
 
     p{
