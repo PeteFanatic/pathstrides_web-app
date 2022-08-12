@@ -410,7 +410,6 @@
                     <div class="form-group">
                         <button class="btn btn-block btn-primary" type="submit">Login</button>
                         <br>
-                        <a class="forgotPassword" href="">Forgot Password?</a>
                     </div>
                     <br>
                     <hr>
@@ -495,15 +494,6 @@
         color: white;
         font-weight: 600;
         width: 100%;
-    }
-
-    a.forgotPassword{
-        padding-top: 10px;
-        font-size: 12px;
-        color: #777777;
-        font-weight: 600;
-        text-decoration: none;
-        float: right;
     }
 
     a.registration{
