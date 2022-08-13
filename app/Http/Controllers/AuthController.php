@@ -24,6 +24,10 @@ class AuthController extends Controller
     public function registration(){
         return view("registration");
     }
+
+    public function dashboard_manager(){
+        return view('dashboard_manager');
+    }
     // public function register(Request $req)
     // {
     //     //valdiate
