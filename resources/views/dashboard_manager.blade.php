@@ -60,20 +60,66 @@
             <nav class="navbar" id="nav-side">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="#" id="a-nav-side">Announcement</a>
+                        <a class="nav-link" href="#" id="a-nav-side">Top Employees</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#" id="a-nav-side">Tasks</a>
+                        <a class="nav-link" href="#" id="a-nav-side">#1 Burger Oclarence</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#" id="a-nav-side">Employees</a>
+                        <a class="nav-link" href="#" id="a-nav-side">#2 Ricardo Milos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#" id="a-nav-side">Profile</a>
+                        <a class="nav-link" href="#" id="a-nav-side">#3 Adonis Gibar</a>
                     </li>
                 </ul>
             </nav>
         </div>
+
+        <div class="container-fluid" id="announcements-container">
+            <div id="accordion">
+
+                <div class="card" id="announcements">
+                    <div class="card-header">
+                        <a class="card-link" data-toggle="collapse" href="#collapseOne">
+                            Collapsible Group Item #1
+                        </a>
+                    </div>
+                    <div id="collapseOne" class="collapse show" data-parent="#accordion">
+                        <div class="card-body">
+                            Lorem ipsum..
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <a class="collapsed card-link" data-toggle="collapse" href="#collapseTwo">
+                            Collapsible Group Item #2
+                        </a>
+                    </div>
+                    <div id="collapseTwo" class="collapse" data-parent="#accordion">
+                        <div class="card-body">
+                            Lorem ipsum..
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <a class="collapsed card-link" data-toggle="collapse" href="#collapseThree">
+                            Collapsible Group Item #3
+                        </a>
+                    </div>
+                    <div id="collapseThree" class="collapse" data-parent="#accordion">
+                        <div class="card-body">
+                            Lorem ipsum..
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
     </div>
 
 </body>
@@ -140,6 +186,7 @@
         border-radius: 10px;
         margin-top: 3em;
         display: block;
+        clear: right;
     }
 
     #a-nav-side{
@@ -147,6 +194,23 @@
         font-weight: 600;
         font-size: 16px;
         color: black;
+    }
+
+    #announcements-container{
+        display: inline-block;
+        width: 70vw;
+        height: 50%;
+        padding: 2em;
+        background-color: #FBFBFB;
+        border-radius: 10px;
+
+    }
+
+    .card{
+        display: block;
+        width: 100%;
+        border-radius: 10px;
+
     }
 
 </style>
