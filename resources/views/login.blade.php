@@ -411,9 +411,6 @@
                         <button class="btn btn-block btn-primary" type="submit">Login</button>
                         <br>
                     </div>
-                    <br>
-                    <hr>
-                    <p>New to Pathstrides? <a  class="registration" href="registration">Click here to sign up.</a></p>
                 </form>
             </div>
 
