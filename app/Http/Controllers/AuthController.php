@@ -1,14 +1,16 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Http\Request;
+use Hash;
+use Session;
 use App\Models\User;
+use App\Models\Admin;
 use App\Models\Manager;
 use App\Models\Employee;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Auth;
-use Hash;
+use Illuminate\Database\Schema\Blueprint;
 use Laravel\Sanctum\HasApiTokens;
 class AuthController extends Controller
 {
@@ -22,11 +24,15 @@ class AuthController extends Controller
         return view('welcome');
     }
     public function registration(){
-        return view("registration");
+        return view("admin.registration");
     }
 
     public function dashboard_manager(){
-        return view('dashboard_manager');
+        // return view('dashboard_manager');
+        $manager = array();
+        if(Session::has('loginId')){
+            $manager = Manager::where('id','=',Session::get('loginId'))->first();
+        }
     }
     // public function register(Request $req)
     // {
@@ -57,22 +63,24 @@ class AuthController extends Controller
             'admin_fname'=>'required',
             'admin_lname'=>'required',
             'admin_username'=>'required',
-            'admin_email'=>'required|email|unique:users',
+            'admin_email'=>'required|email|unique:admin',
             'admin_password'=>'required|min:6|max:12',
         ]);
         $admin = new Admin();
-        $admin->lname = $request->lname;
-        $admin->fname = $request->fname;
-        $admin->email = $request->email;
-        $admin->username = $request->username;
-        $admin->password = $request->password;
-        $request = $admin->save();
-        if($request){
+        $admin->admin_id = $admin->id();
+        $admin->admin_fname = $request->admin_fname;
+        $admin->admin_lname = $request->admin_lname;
+        $admin->admin_username = $request->admin_username;
+        $admin->admin_email = $request->admin_email;
+        $admin->admin_password = $request->admin_password;
+        $res = $admin->save();
+        if($res){
             // return back()->with('success','Registered Successfully');
             
-            Admin::create($request);
-            $request->session()->put('loginId',$admin->admin_id);
-            return redirect('manager');
+            // Admin::create($request);
+            // $request->session()->put('loginId',$admin->admin_id);
+            // return redirect('manager');
+            return back()->with('success','Registered Successfully');
         }else{
             return back()->with('fail','Try Again.');
         }
@@ -122,7 +130,7 @@ class AuthController extends Controller
                 // if(hash::check($request->password,$manager->man_password)){
                 // if(manager->where($request->password)->value('man_password')){
                 $request->session()->put('loginId',$manager->man_id);
-                return redirect('employee');
+                return redirect('manager');
                 // echo "Hello world!<br>";
             }
             else{
