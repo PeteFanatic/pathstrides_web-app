@@ -233,8 +233,9 @@
         <div class="container-fluid">
             <nav class="navbar navbar-expand-sm navbar-light" id="nav-top">
 
-                <a class="navbar-brand" href="#"><img src="{{ URL('images/pathstrides-logo-FINAL.png') }}" class="logo" >Pathstrides</a>
-
+                <a class="navbar-brand" href="#"><img src="{{ URL('images/pathstrides-logo-FINAL.png') }}" class="logo">
+                
+                <a class="navbar-brand" href="#" id="PathStrides-beside-logo" style="color: #FF7843">Pathstrides</a>
                 <ul class="navbar-nav" id="top-side-nav">
                     <li class="nav-item">
                         <a class="nav-link" href="#">Link 1</a>
@@ -503,7 +504,8 @@
     }
 
     #top-side-nav{
-        float: right;
+        position: fixed;
+        right: 2em;
     }
 
     .navbar{
