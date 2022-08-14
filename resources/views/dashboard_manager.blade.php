@@ -260,9 +260,10 @@
                     <div class="user-info">
 <<<<<<< Updated upstream
                         <h4 class="name">
-                            {{$manager->man_fname}}
+                            Jane Doe
                         </h4>
                         <p class="username">
+<<<<<<< HEAD
                         {{$manager->man_lname}}
 =======
                     <h4 class="name">
@@ -274,6 +275,9 @@
                         <h4 class="department">
                             Manager | Marketing Department
 >>>>>>> Stashed changes
+=======
+                        jane 123
+>>>>>>> master
                         </h4>
                         <p class="num-of-employees">
                             12 Employees

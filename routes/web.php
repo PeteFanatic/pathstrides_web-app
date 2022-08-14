@@ -30,7 +30,7 @@ use App\Http\Controllers\AnnouncementController;
 // Route::post('employee/create',[EmployeeController::class,'store'])->name('employees.save');
 // Route::get('employee/create',[EmployeeController::class,'create'])->name('employees.save');
 Route::get('/', [AuthController::class, 'landing'])->name('welcome'); //homepage
-Route::get('manager', [AuthController::class, 'dashboard_manager'])->name('dashboard_manager');
+Route::get('dashboard', [AuthController::class, 'dashboard_manager'])->name('dashboard');
 // Route::get('login', [CustomAuthController::class, 'index'])->name('login');
 
 
@@ -52,6 +52,6 @@ Route::get('/logout',[CustomAuthController::class,'logout']);
 Route::get('/adminlogin',[CustomAuthController::class,'logout']);
 
 Route::resource("/employee", EmployeeController::class)->middleware('isLoggedIn');
-Route::resource("/managerlist", ManagerController::class)->middleware('isLoggedIn');
+Route::resource("/manager", ManagerController::class)->middleware('isLoggedIn');
 Route::resource("/task", TaskController::class)->middleware('isLoggedIn');
 Route::resource("/announcement", AnnouncementController::class)->middleware('isLoggedIn');

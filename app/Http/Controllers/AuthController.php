@@ -33,6 +33,7 @@ class AuthController extends Controller
         if(Session::has('loginId')){
             $manager = Manager::where('id','=',Session::get('loginId'))->first();
         }
+        return view("dashboard_manager");
     }
     // public function register(Request $req)
     // {
@@ -130,7 +131,7 @@ class AuthController extends Controller
                 // if(hash::check($request->password,$manager->man_password)){
                 // if(manager->where($request->password)->value('man_password')){
                 $request->session()->put('loginId',$manager->man_id);
-                return redirect('manager');
+                return redirect('managerlist');
                 // echo "Hello world!<br>";
             }
             else{
