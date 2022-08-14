@@ -29,7 +29,7 @@ use App\Http\Controllers\AnnouncementController;
 // Route::post('employee/create',[EmployeeController::class,'store'])->name('employees.save');
 // Route::get('employee/create',[EmployeeController::class,'create'])->name('employees.save');
 Route::get('/', [AuthController::class, 'landing'])->name('welcome'); //homepage
-
+Route::get('/dashboard/manager', [AuthController::class, 'dashboard_manager'])->name('dashboard_manager');
 // Route::get('login', [CustomAuthController::class, 'index'])->name('login');
 
 
