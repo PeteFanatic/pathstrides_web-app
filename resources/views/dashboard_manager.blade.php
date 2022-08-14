@@ -233,9 +233,9 @@
         <div class="container-fluid">
             <nav class="navbar navbar-expand-sm navbar-light" id="nav-top">
 
-                <a class="navbar-brand" href="#"><img src="{{ URL('images/pathstrides-logo-FINAL.png') }}" class="logo"> Pathstrides</a>
+                <a class="navbar-brand" href="#"><img src="{{ URL('images/pathstrides-logo-FINAL.png') }}" class="logo" >Pathstrides</a>
 
-                <ul class="navbar-nav">
+                <ul class="navbar-nav" id="top-side-nav">
                     <li class="nav-item">
                         <a class="nav-link" href="#">Link 1</a>
                     </li>
@@ -248,42 +248,68 @@
                 </ul>
             </nav>
         </div>
-        
-        <div class="container-fluid">
-            <div class="container-fluid" id="header">
-                <div class="cover-photo">
+    
+
+        <div class="container-fluid" id="header-container">
+            <div class="row" id="header-photo">
+                <div class="col-2">
                     <img src="{{ URL('https://i.pinimg.com/564x/86/8f/f2/868ff26099df298eb554a2bf366731f0.jpg') }}"
                     class="profile-pic">
-
+                </div>
+                <div class="col-9" id="header-text">
                     <div class="user-info">
-                        <h4 class="name">
+
+                    <h4 class="name">
                             Jane Doe
                         </h4>
                         <p class="username">
-                        jane 123
+                            j_doe
+                        </p>
+                        <h4 class="department">
+                            Manager | Marketing Department
+
                         </h4>
+                        <p class="num-of-employees">
+                            12 Employees
+                        </p>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="container" id="">
+        <div class="container" id="body-layout">
             <div class="row">
-                <div class="col-sm-4">
+                <div class="col-sm-3">
                     <div class="container-fluid">
                             <nav class="navbar" id="nav-side">
                                 <ul class="navbar-nav">
                                     <li class="nav-item">
-                                        <a class="nav-link" href="#" id="a-nav-side">Announcement</a>
+                                        <a class="nav-link" href="#" id="a-nav-side">
+                                            <img src="{{ URL('images\icons\icons8-commercial-90.png') }}"
+                                                class="icon">
+                                            Announcement
+                                        </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="#" id="a-nav-side">Tasks</a>
+                                        <a class="nav-link" href="#" id="a-nav-side">
+                                            <img src="{{ URL('images\icons\icons8-playlist-90.png') }}"
+                                                class="icon">
+                                            Tasks
+                                        </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="#" id="a-nav-side">Employees</a>
+                                        <a class="nav-link" href="#" id="a-nav-side">
+                                            <img src="{{ URL('images\icons\icons8-member-90 (2).png') }}"
+                                                class="icon">
+                                            Employees
+                                        </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="#" id="a-nav-side">Profile</a>
+                                        <a class="nav-link" href="#" id="a-nav-side">
+                                            <img src="{{ URL('images\icons\icons8-male-user-96.png') }}"
+                                                class="icon">
+                                            User Profile
+                                        </a>
                                     </li>
                                 </ul>
                             </nav>
@@ -312,13 +338,13 @@
                             <h3>ANNOUNCEMENTS</h3>
                             <div id="accordion">
 
-                                <div class="card" id="announcements">
+                                <div class="card">
                                     <div class="card-header">
-                                        <a class="card-link" data-toggle="collapse" href="#task1">
-                                            Collapsible Group Item #1
+                                        <a class="collapsed card-link" data-toggle="collapse" href="#ann1" id="card">
+                                            Collapsible Group Item #2
                                         </a>
                                     </div>
-                                    <div id="task1" class="collapse show" data-parent="#accordion">
+                                    <div id="ann1" class="collapse" data-parent="#accordion">
                                         <div class="card-body">
                                             Lorem ipsum..
                                         </div>
@@ -327,7 +353,54 @@
 
                                 <div class="card">
                                     <div class="card-header">
-                                        <a class="collapsed card-link" data-toggle="collapse" href="#task2">
+                                        <a class="collapsed card-link" data-toggle="collapse" href="#ann2" id="card">
+                                            Collapsible Group Item #2
+                                        </a>
+                                    </div>
+                                    <div id="ann2" class="collapse" data-parent="#accordion">
+                                        <div class="card-body">
+                                            Lorem ipsum..
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="card">
+                                    <div class="card-header">
+                                        <a class="collapsed card-link" data-toggle="collapse" href="#ann3" id="card">
+                                            Collapsible Group Item #3
+                                        </a>
+                                    </div>
+                                    <div id="ann3" class="collapse" data-parent="#accordion">
+                                        <div class="card-body">
+                                            Lorem ipsum..
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        
+
+                        <div class="container-fluid" id="tasks-container">
+                            <h3>TASKS</h3>
+                            <div id="accordion">
+
+                                <div class="card">
+                                    <div class="card-header">
+                                        <a class="collapsed card-link" data-toggle="collapse" href="#task1" id="card">
+                                            Collapsible Group Item #2
+                                        </a>
+                                    </div>
+                                    <div id="task1" class="collapse" data-parent="#accordion">
+                                        <div class="card-body">
+                                            Lorem ipsum..
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="card">
+                                    <div class="card-header">
+                                        <a class="collapsed card-link" data-toggle="collapse" href="#task2" id="card">
                                             Collapsible Group Item #2
                                         </a>
                                     </div>
@@ -340,58 +413,11 @@
 
                                 <div class="card">
                                     <div class="card-header">
-                                        <a class="collapsed card-link" data-toggle="collapse" href="#task3">
+                                        <a class="collapsed card-link" data-toggle="collapse" href="#task3" id="card">
                                             Collapsible Group Item #3
                                         </a>
                                     </div>
                                     <div id="task3" class="collapse" data-parent="#accordion">
-                                        <div class="card-body">
-                                            Lorem ipsum..
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                        
-
-                        <div class="container-fluid" id="tasks-container">
-                        <h3>TASKS</h3>
-                            <div id="accordion">
-
-                                <div class="card" id="announcements">
-                                    <div class="card-header">
-                                        <a class="card-link" data-toggle="collapse" href="#collapseOne">
-                                            Collapsible Group Item #1
-                                        </a>
-                                    </div>
-                                    <div id="collapseOne" class="collapse show" data-parent="#accordion">
-                                        <div class="card-body">
-                                            Lorem ipsum..
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="card">
-                                    <div class="card-header">
-                                        <a class="collapsed card-link" data-toggle="collapse" href="#collapseTwo">
-                                            Collapsible Group Item #2
-                                        </a>
-                                    </div>
-                                    <div id="collapseTwo" class="collapse" data-parent="#accordion">
-                                        <div class="card-body">
-                                            Lorem ipsum..
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="card">
-                                    <div class="card-header">
-                                        <a class="collapsed card-link" data-toggle="collapse" href="#collapseThree">
-                                            Collapsible Group Item #3
-                                        </a>
-                                    </div>
-                                    <div id="collapseThree" class="collapse" data-parent="#accordion">
                                         <div class="card-body">
                                             Lorem ipsum..
                                         </div>
@@ -441,6 +467,16 @@
         position: absolute;
     }
 
+    #body-layout{
+        position: absolute;
+    }
+
+    .icon{
+        height: 20px;
+        width: auto;
+        margin-right: 1em;
+    }
+
     #nav-top{
         height: 50px;
         width: 100%;
@@ -452,40 +488,51 @@
     .navbar-brand{
         font-weight: 600;
         float: left;
+        color: #FF7843;
     }
 
     .logo{
         width: auto;  
         height: 60px;
+        color: #FF7843;
     }
 
-    .navbar-nav{
-        position: right;
-        right: 10px;
-
+    #top-side-nav{
+        float: right;
     }
 
     .navbar{
         background-color: white;
     }
 
-    #header{
+    #header-container{
         background-image: linear-gradient(to right, #FF9A00, #FFBC57);
         height: 190px;
         width: 100%;
         margin-top: 0;
     }
 
+    #header-text{
+        margin-top: 1.2em;
+        margin-left: 1em;
+        color: white;
+    }
+
     .profile-pic{
-        clear: left;
         height: 150px;
         width: auto;
         border-radius: 50%;
-        clear: left;
+        display: inline;
+        margin-top: 1.2em; 
+        margin-left: 1em;
     }
 
     .user-info{
         display: inline;
+    }
+
+    .name, .department{
+        font-weight: bold;
     }
 
     #nav-side{
@@ -495,18 +542,28 @@
         margin-top: 3em;
         display: block;
         clear: right;
-        float: left;
+        position: ;
     }
 
     #a-nav-side{
         text-decoration: none;
+        font-weight: 600;
         font-size: 16px;
         color: black;
     }
 
+    #a-nav-side:hover, #a-nav-side:focus{
+        color: #FF7843;
+    }
+
+    #body-layout{
+        margin: auto;
+    }
+
+
     #announcements-container, #tasks-container{
         display: inline-block;
-        width: 60vw;
+        width: 77vw;
         padding: 2em;
         background-color: #FBFBFB;
         border-radius: 10px;
@@ -524,12 +581,32 @@
     .card{
         display: block;
         width: 100%;
-        border-radius: 10px;
         border: none;
     }
 
+    .collapsed{
+        font-size: 14px;
+        text-decoration: none;
+        font-weight: 600;
+        color: black;
+    }
+
+    #card{
+        font-size: 14px;
+        text-decoration: none;
+        font-weight: 600;
+        color: black;
+    }
+
+    #card:visited{
+        color: #5F6368;
+    }
+
     .card-link:visited{
-        background-color: red;
+        font-size: 14px;
+        text-decoration: none;
+        font-weight: 600;
+        color: black;
     }
 
 </style>

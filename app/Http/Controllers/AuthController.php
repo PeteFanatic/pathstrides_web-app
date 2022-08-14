@@ -30,9 +30,9 @@ class AuthController extends Controller
     public function dashboard_manager(){
         // return view('dashboard_manager');
         $manager = array();
-        if(Session::has('loginId')){
-            $manager = Manager::where('id','=',Session::get('loginId'))->first();
-        }
+        // if(Session::has('loginId')){
+        //     $manager = Manager::where('id','=',Session::get('loginId'))->first();
+        // }
         return view("dashboard_manager");
     }
     // public function register(Request $req)
