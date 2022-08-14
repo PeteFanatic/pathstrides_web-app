@@ -257,10 +257,10 @@
 
                     <div class="user-info">
                         <h4 class="name">
-                            {{$manager->man_fname}}
+                            Jane Doe
                         </h4>
                         <p class="username">
-                        {{$manager->man_lname}}
+                        jane 123
                         </h4>
                     </div>
                 </div>
