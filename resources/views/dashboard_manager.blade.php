@@ -238,13 +238,14 @@
                 <a class="navbar-brand" href="#" id="PathStrides-beside-logo" style="color: #FF7843">Pathstrides</a>
                 <ul class="navbar-nav" id="top-side-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Link 1</a>
+                        <a class="nav-link" href="#">
+                            <img src="{{ URL('images\icons\icons8-home-page-90 (1).png') }}" class="top-side-nav-icon" alt="home">
+                        </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Link 2</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Link 3</a>
+                        <a class="nav-link" href="#">
+                            <img src="{{ URL('images\icons\icons8-logout-90.png') }}" class="top-side-nav-icon" alt="logout">
+                        </a>
                     </li>
                 </ul>
             </nav>
@@ -321,7 +322,7 @@
                                     <li class="nav-item">
                                         
                                         <a class="nav-link disabled" href="#" id="top-employees-title">
-                                            <img src="{{ URL('images\icons\icons8-male-user-96.png') }}"
+                                            <img src="{{ URL('images\icons\icons8-prize-90 (1).png') }}"
                                                 class="icon">
                                             Top Employees
                                         </a>
@@ -504,8 +505,15 @@
     }
 
     #top-side-nav{
-        position: fixed;
+        position: absolute;
         right: 2em;
+    }
+
+    .top-side-nav-icon{
+        height: 30px;
+        width: auto;
+        margin-top: auto;
+        margin-bottom: auto;
     }
 
     .navbar{
