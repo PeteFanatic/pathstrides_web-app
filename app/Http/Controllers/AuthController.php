@@ -131,7 +131,7 @@ class AuthController extends Controller
                 // if(hash::check($request->password,$manager->man_password)){
                 // if(manager->where($request->password)->value('man_password')){
                 $request->session()->put('loginId',$manager->man_id);
-                return redirect('managerlist');
+                return redirect('dashboard_manager');
                 // echo "Hello world!<br>";
             }
             else{
