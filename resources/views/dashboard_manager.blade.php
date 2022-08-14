@@ -12,8 +12,10 @@
 <body>
     <div class="container-fluid">
         <nav class="navbar navbar-expand-sm navbar-light" id="nav-top">
+
             <a class="navbar-brand" href="#"><img src="{{ URL('images/pathstrides-logo-FINAL.png') }}" class="logo"> Pathstrides</a>
   
+
             <ul class="navbar-nav">
                 <li class="nav-item">
                     <a class="nav-link" href="#">Link 1</a>
@@ -26,6 +28,7 @@
                 </li>
             </ul>
         </nav>
+
         <div class="container-fluid">
             <div class="container-fluid" id="header">
                 <div class="cover-photo">
@@ -34,6 +37,7 @@
                 </div>
             </div>
         </div>
+
         <div class="container-fluid">
             <nav class="navbar" id="nav-side">
                 <ul class="navbar-nav">
@@ -51,6 +55,7 @@
                     </li>
                 </ul>
             </nav>
+
             
             <nav class="navbar" id="nav-side">
                 <ul class="navbar-nav">
@@ -69,8 +74,10 @@
                 </ul>
             </nav>
         </div>
+
         <div class="container-fluid" id="announcements-container">
             <div id="accordion">
+
                 <div class="card" id="announcements">
                     <div class="card-header">
                         <a class="card-link" data-toggle="collapse" href="#collapseOne">
@@ -83,6 +90,7 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="card">
                     <div class="card-header">
                         <a class="collapsed card-link" data-toggle="collapse" href="#collapseTwo">
@@ -95,6 +103,7 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="card">
                     <div class="card-header">
                         <a class="collapsed card-link" data-toggle="collapse" href="#collapseThree">
@@ -107,11 +116,15 @@
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
+
     </div>
+
 </body>
 </html>
+
 <style>
      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;800&display=swap');
     * {
@@ -120,43 +133,53 @@
         box-sizing: border-box;
         font-family: 'Inter', sans-serif;
     }
+
     body{
         height: 100vh;
         width: 100vw;
     }
+
     #nav-top{
         height: 50px;
         width: 100%;
         margin: 0;
         position: sticky;
     }
+
     .navbar-brand{
         font-weight: 600;
         float: left;
     }
+
     .logo{
         width: auto;  
         height: 60px;
     }
+
     .navbar-nav{
         position: right;
         right: 10px;
+
     }
+
     .navbar{
         background-color: white;
     }
+
     #header{
         background-image: linear-gradient(to right, #FF9A00, #FFBC57);
         height: 190px;
         width: 100%;
         margin-top: 0;
     }
+
     .profile-pic{
         clear: left;
         height: 150px;
         width: auto;
         border-radius: 50%;
     }
+
     #nav-side{
         background-color: #FBFBFB;
         width: 15em;
@@ -165,12 +188,14 @@
         display: block;
         clear: right;
     }
+
     #a-nav-side{
         text-decoration: none;
         font-weight: 600;
         font-size: 16px;
         color: black;
     }
+
     #announcements-container{
         display: inline-block;
         width: 60vw;
@@ -179,12 +204,16 @@
         background-color: #FBFBFB;
         border-radius: 10px;
         position: relative;
+
     }
+
     .card{
         display: block;
         width: 100%;
         border-radius: 10px;
+
     }
+
 </style> -->
 
 <!DOCTYPE html>
@@ -412,11 +441,13 @@
         box-sizing: border-box;
         font-family: 'Inter', sans-serif;
     }
+
     html {
         -webkit-box-sizing: border-box;
         -moz-box-sizing: border-box;
         box-sizing: border-box;
     }
+
     *,
     *:before,
     *:after {
@@ -424,16 +455,17 @@
         -moz-box-sizing: inherit;
         box-sizing: inherit;
     }
+
     body{
         background-color: #FFFFFF;
     }
+
     #body{
         height: 100%;
         width: 100%;
         padding: 0;
         position: absolute;
     }
-<<<<<<< Updated upstream
 
     #body-layout{
         position: absolute;
@@ -445,8 +477,6 @@
         margin-right: 1em;
     }
 
-=======
->>>>>>> Stashed changes
     #nav-top{
         height: 50px;
         width: 100%;
@@ -454,41 +484,33 @@
         padding:0;
         position: sticky;
     }
+
     .navbar-brand{
         font-weight: 600;
         float: left;
         color: #FF7843;
     }
+
     .logo{
         width: auto;  
         height: 60px;
         color: #FF7843;
     }
-<<<<<<< Updated upstream
 
     #top-side-nav{
         float: right;
-=======
-    .navbar-nav{
-        position: right;
-        right: 10px;
->>>>>>> Stashed changes
     }
+
     .navbar{
         background-color: white;
     }
-<<<<<<< Updated upstream
 
     #header-container{
-=======
-    #header{
->>>>>>> Stashed changes
         background-image: linear-gradient(to right, #FF9A00, #FFBC57);
         height: 190px;
         width: 100%;
         margin-top: 0;
     }
-<<<<<<< Updated upstream
 
     #header-text{
         margin-top: 1.2em;
@@ -496,8 +518,6 @@
         color: white;
     }
 
-=======
->>>>>>> Stashed changes
     .profile-pic{
         height: 150px;
         width: auto;
@@ -506,17 +526,15 @@
         margin-top: 1.2em; 
         margin-left: 1em;
     }
+
     .user-info{
         display: inline;
     }
-<<<<<<< Updated upstream
 
     .name, .department{
         font-weight: bold;
     }
 
-=======
->>>>>>> Stashed changes
     #nav-side{
         background-color: #FBFBFB;
         width: 15em;
@@ -526,13 +544,13 @@
         clear: right;
         position: ;
     }
+
     #a-nav-side{
         text-decoration: none;
         font-weight: 600;
         font-size: 16px;
         color: black;
     }
-<<<<<<< Updated upstream
 
     #a-nav-side:hover, #a-nav-side:focus{
         color: #FF7843;
@@ -543,8 +561,6 @@
     }
 
 
-=======
->>>>>>> Stashed changes
     #announcements-container, #tasks-container{
         display: inline-block;
         width: 77vw;
@@ -553,18 +569,20 @@
         border-radius: 10px;
         position: relative;
         margin-top: 3em;
+
     }
+
     h3{
         font-size: 15px;
         font-weight: bold;
         color: #5F6368;
     }
+
     .card{
         display: block;
         width: 100%;
         border: none;
     }
-<<<<<<< Updated upstream
 
     .collapsed{
         font-size: 14px;
@@ -584,12 +602,11 @@
         color: #5F6368;
     }
 
-=======
->>>>>>> Stashed changes
     .card-link:visited{
         font-size: 14px;
         text-decoration: none;
         font-weight: 600;
         color: black;
     }
+
 </style>
