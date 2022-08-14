@@ -318,16 +318,21 @@
                             <nav class="navbar" id="nav-side">
                                 <ul class="navbar-nav">
                                     <li class="nav-item">
-                                        <a class="nav-link" href="#" id="a-nav-side">Top Employees</a>
+                                        
+                                        <a class="nav-link disabled" href="#" id="top-employees-title">
+                                            <img src="{{ URL('images\icons\icons8-male-user-96.png') }}"
+                                                class="icon">
+                                            Top Employees
+                                        </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="#" id="a-nav-side">#1 Burger Oclarence</a>
+                                        <p></p><a class="nav-link disabled" href="#" id="top-employees">#1 Burger Oclarence</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="#" id="a-nav-side">#2 Ricardo Milos</a>
+                                        <a class="nav-link disabled" href="#" id="top-employees">#2 Ricardo Milos</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="#" id="a-nav-side">#3 Adonis Gibar</a>
+                                        <a class="nav-link disabled" href="#" id="top-employees">#3 Adonis Gibar</a>
                                     </li>
                                 </ul>
                             </nav>
@@ -549,6 +554,15 @@
         text-decoration: none;
         font-weight: 600;
         font-size: 16px;
+        color: black;
+    }
+
+    #top-employees-title{
+        color: black;
+        font-weight: bold;
+    }
+
+    #top-employees{
         color: black;
     }
 
