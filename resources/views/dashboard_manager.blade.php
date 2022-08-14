@@ -343,48 +343,100 @@
                     <div class="col-xl-8">
                         <div class="container-fluid" id="announcements-container">
                             <h3>ANNOUNCEMENTS</h3>
-                            <div id="accordion">
-
-                                <div class="card">
-                                    <div class="card-header">
-                                        <a class="collapsed card-link" data-toggle="collapse" href="#ann1" id="card">
-                                            Collapsible Group Item #2
-                                        </a>
-                                    </div>
-                                    <div id="ann1" class="collapse" data-parent="#accordion">
-                                        <div class="card-body">
-                                            Lorem ipsum..
+                            <div class="card" id="announcement-1">
+                                <div class="card-body">
+                                    <div class="announcement-header">
+                                        <div class="container-fluid">
+                                            <div class="row">
+                                                <div class="col-9">
+                                                    <h2 class="card-title-announcements">Christmas Party</h2>
+                                                </div>
+                                                <div class="col-3">
+                                                    <p class="ann-date-posted">August 15, 2022</p>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
 
-                                <div class="card">
-                                    <div class="card-header">
-                                        <a class="collapsed card-link" data-toggle="collapse" href="#ann2" id="card">
-                                            Collapsible Group Item #2
-                                        </a>
-                                    </div>
-                                    <div id="ann2" class="collapse" data-parent="#accordion">
-                                        <div class="card-body">
-                                            Lorem ipsum..
+                                    <div class="container-fluid">
+                                        <div class="row">
+                                            <div class="col-1">
+                                                <img src="{{ URL('https://i.pinimg.com/564x/e4/91/18/e4911813a7948f9bc4967a2a55dbb4ab.jpg') }}"
+                                                class="announcer-photo">
+                                            </div>
+                                            <div class="col-9">
+                                                <p class="announcer-name">Ariana Grande | Manager (Marketing Department)</p>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
 
-                                <div class="card">
-                                    <div class="card-header">
-                                        <a class="collapsed card-link" data-toggle="collapse" href="#ann3" id="card">
-                                            Collapsible Group Item #3
-                                        </a>
-                                    </div>
-                                    <div id="ann3" class="collapse" data-parent="#accordion">
-                                        <div class="card-body">
-                                            Lorem ipsum..
-                                        </div>
+                                    <div class="announcement-body">
+                                            <div class="row">
+                                                <div class="col-1">
+                                                </div>
+                                                <div class="col-11">
+                                                    <p class="announcement-text">
+                                                        Sakit kaayo, ang gibuhat mo, gi basted mo ang pagla-um ko
+                                                        Grabe ka hapdos, murag gi latos, ako nalang kining gi antos
+                                                    </p>
+                                                    <button type="button" class="btn" id="see-more" data-bs-toggle="modal" data-bs-target="#myModal">
+                                                        see more
+                                                    </button>
+                                                    <!-- <a class="see-more" data-bs-toggle="modal" data-bs-target="#myModal">see more</a> -->
+                                                </div>
+                                            </div>
                                     </div>
                                 </div>
-
                             </div>
+
+
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="announcement-header">
+                                        <div class="container-fluid">
+                                            <div class="row">
+                                                <div class="col-9">
+                                                    <h2 class="card-title-announcements">Christmas Party</h2>
+                                                </div>
+                                                <div class="col-3">
+                                                    <p class="ann-date-posted">August 15, 2022</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="container-fluid">
+                                        <div class="row">
+                                            <div class="col-1">
+                                                <img src="{{ URL('https://i.pinimg.com/564x/e4/91/18/e4911813a7948f9bc4967a2a55dbb4ab.jpg') }}"
+                                                class="announcer-photo">
+                                            </div>
+                                            <div class="col-9">
+                                                <p class="announcer-name">Ariana Grande | Manager (Marketing Department)</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="announcement-body">
+                                            <div class="row">
+                                                <div class="col-1">
+                                                </div>
+                                                <div class="col-11">
+                                                    <p class="announcement-text">
+                                                        Sakit kaayo, ang gibuhat mo, gi basted mo ang pagla-um ko
+                                                        Grabe ka hapdos, murag gi latos, ako nalang kining gi antos
+                                                    </p>
+                                                    <button type="button" class="btn" id="see-more" data-bs-toggle="modal" data-bs-target="#myModal">
+                                                        see more
+                                                    </button>
+                                                    <!-- <a class="see-more" data-bs-toggle="modal" data-bs-target="#myModal">see more</a> -->
+                                                </div>
+                                            </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
                         </div>
                         
 
@@ -608,6 +660,10 @@
         border: none;
     }
 
+    #announcement-1{
+        margin-bottom: 2em;
+    }
+
     .collapsed{
         font-size: 14px;
         text-decoration: none;
@@ -615,22 +671,39 @@
         color: black;
     }
 
-    #card{
-        font-size: 14px;
-        text-decoration: none;
-        font-weight: 600;
-        color: black;
+    .card-title-announcements{
+        font-weight: bold;
     }
 
-    #card:visited{
+    .ann-date-posted{
+        float: right;
+    }
+
+    .announcer-photo{
+        border-radius: 50%;
+        height: 60px;
+        width: auto;
+    }
+
+    .announcer-name{
+        font-weight: bold;
+        float: left;
+        margin-top: 1em;
+    }
+
+    #see-more{
         color: #5F6368;
+        font-weight: bold;
+        float: right;
+        margin-right: 1em;
+        height:auto;
+        width: auto;
+        background-color: white;
     }
 
-    .card-link:visited{
-        font-size: 14px;
+    .see-more:hover{
+        color: #FF7843;
         text-decoration: none;
-        font-weight: 600;
-        color: black;
     }
-
+</style
 </style>
