@@ -15,10 +15,15 @@ use Laravel\Sanctum\HasApiTokens;
 class AuthController extends Controller
 {
 
-    public function index()
+    public function login_manager()
     {
-        return view('login');
+        return view('login_manager');
     }
+    public function login_admin()
+    {
+        return view('login_admin');
+    }
+
 
     public function landing(){
         return view('welcome');
@@ -68,7 +73,6 @@ class AuthController extends Controller
             'admin_password'=>'required|min:6|max:12',
         ]);
         $admin = new Admin();
-        $admin->admin_id = $admin->id();
         $admin->admin_fname = $request->admin_fname;
         $admin->admin_lname = $request->admin_lname;
         $admin->admin_username = $request->admin_username;
@@ -79,7 +83,7 @@ class AuthController extends Controller
             // return back()->with('success','Registered Successfully');
             
             // Admin::create($request);
-            // $request->session()->put('loginId',$admin->admin_id);
+            $request->session()->put('loginId',$admin->admin_id);
             // return redirect('manager');
             return back()->with('success','Registered Successfully');
         }else{
@@ -117,7 +121,7 @@ class AuthController extends Controller
     //     }
     // }
     // gana logic dinhi sa login
-    public function loginUser(Request $request){
+    public function loginManager(Request $request){
         
         $request->validate([
             'email'=>'required',
@@ -131,7 +135,31 @@ class AuthController extends Controller
                 // if(hash::check($request->password,$manager->man_password)){
                 // if(manager->where($request->password)->value('man_password')){
                 $request->session()->put('loginId',$manager->man_id);
-                return redirect('managerlist');
+                return redirect('employees');
+                // echo "Hello world!<br>";
+            }
+            else{
+                return back()->with('fail','Password Incorrect.');
+            }
+        }else{
+            return back()->with('fail','Email not Registered.');
+        }
+    }
+    public function loginAdmin(Request $request){
+        
+        $request->validate([
+            'email'=>'required',
+            'password'=>'required|min:6|max:12',
+        ]);
+        $admin = Admin::where('admin_email','=',$request->email)->first();
+        // $manager = Manager::where('man_password','=',Hash::make($request->password))->first();
+        if($admin){
+            if($request->password==$admin->admin_password){
+            //     if($manager = Manager::where('man_password','=',$request->password)->first()){
+                // if(hash::check($request->password,$manager->man_password)){
+                // if(manager->where($request->password)->value('man_password')){
+                $request->session()->put('loginId',$admin->admin_id);
+                return redirect('manager');
                 // echo "Hello world!<br>";
             }
             else{
@@ -176,7 +204,7 @@ class AuthController extends Controller
     public function logout(){
         if(Session::has('loginId')){
             Session::pull('loginId');
-            return redirect('login');
         }
+        return redirect('/');
     }
 }

@@ -49,7 +49,7 @@
                                 @endforeach
                                 </tbody>
                             </table>
-                            <a href="logout">Logout</a>
+                            <a href="/">Logout</a>
                         </div>
                     </div>
                 </div>
