@@ -14,4 +14,8 @@ class Announcement extends Model
     protected $table = 'announcement';
     protected $primaryKey = 'ann_id';
     protected $guarded = [];  
+
+    public function getAnnouncementData(){
+        return $this->get();
+    }
 }

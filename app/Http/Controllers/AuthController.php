@@ -61,13 +61,14 @@ class AuthController extends Controller
         $admin->fname = $request->fname;
         $admin->email = $request->email;
         $admin->username = $request->username;
-        $admin->password = Hash::make($request->password);
-        $res = $admin->save();
-        if($res){
+        $admin->password = $request->password;
+        $request = $admin->save();
+        if($request){
             // return back()->with('success','Registered Successfully');
             
-            Admin::create($res);
-            return redirect('admin')->with('flash_message', 'Admin Addedd!'); 
+            Admin::create($request);
+            $request->session()->put('loginId',$admin->admin_id);
+            return redirect('manager');
         }else{
             return back()->with('fail','Try Again.');
         }
@@ -110,10 +111,11 @@ class AuthController extends Controller
             'password'=>'required|min:6|max:12',
         ]);
         $manager = Manager::where('man_email','=',$request->email)->first();
-       
+        // $manager = Manager::where('man_password','=',Hash::make($request->password))->first();
         if($manager){
             if($request->password==$manager->man_password){
-                // if($manager = Manager::where('man_password','=',$request->password)->first()){
+            //     if($manager = Manager::where('man_password','=',$request->password)->first()){
+                // if(hash::check($request->password,$manager->man_password)){
                 // if(manager->where($request->password)->value('man_password')){
                 $request->session()->put('loginId',$manager->man_id);
                 return redirect('employee');
@@ -138,7 +140,9 @@ class AuthController extends Controller
         $employee = Employee::where('emp_email', $req->email)->first();
         // if user email found and password is correct
         if($employee){
-            if ($employee = Employee::where('emp_password','=',$req->password)->first()) {
+            if ($req->password==$employee->emp_password) {
+            //     $token = $employee->createToken('Personal Access Token')->plainTextToken;
+            // $response = ['employee' => $employee, 'token' => $token];
                 // if ($employee = Employee::where('emp_password')==$req->password) {
                 // $token = $employee->createToken('Personal Access Token')->plainTextToken;
                 // $response = ['employee' => $employee, 'token' => $token];

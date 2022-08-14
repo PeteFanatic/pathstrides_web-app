@@ -43,7 +43,7 @@ Route::get('loginEmployee', [AuthController::class, 'loginEmployee'])->name('log
 
 // Route::get('login', [CustomAuthController::class, 'login'])->middleware('alreadyLoggedIn');
 Route::get('/registration', [AuthController::class, 'registration'])->middleware('alreadyLoggedIn');
-Route::post('/register-user',[AuthController::class,'registerUser'])->name('register-user');
+Route::post('register-user',[AuthController::class,'registerUser'])->name('register-user');
 
 Route::post('login-user',[AuthController::class,'loginUser'])->name('login-user');
 Route::get('/home',[CustomAuthController::class,'home'])->middleware('isLoggedIn');
