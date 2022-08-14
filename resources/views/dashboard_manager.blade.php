@@ -352,7 +352,7 @@
                                                     <h2 class="card-title-announcements">Christmas Party</h2>
                                                 </div>
                                                 <div class="col-3">
-                                                    <p class="ann-date-posted">August 15, 2022</p>
+                                                    <p class="ann-date-posted">August 15, 2022 | 5:00 am</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -390,7 +390,7 @@
                             </div>
 
 
-                            <div class="card">
+                            <div class="card" id="announcement-2">
                                 <div class="card-body">
                                     <div class="announcement-header">
                                         <div class="container-fluid">
@@ -399,7 +399,7 @@
                                                     <h2 class="card-title-announcements">Christmas Party</h2>
                                                 </div>
                                                 <div class="col-3">
-                                                    <p class="ann-date-posted">August 15, 2022</p>
+                                                    <p class="ann-date-posted">August 15, 2022 | 5:00 am</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -436,6 +436,51 @@
                                 </div>
                             </div>
 
+                            <div class="card" id="announcement-3">
+                                <div class="card-body">
+                                    <div class="announcement-header">
+                                        <div class="container-fluid">
+                                            <div class="row">
+                                                <div class="col-9">
+                                                    <h2 class="card-title-announcements">Christmas Party</h2>
+                                                </div>
+                                                <div class="col-3">
+                                                    <p class="ann-date-posted">August 15, 2022 | 5:00 am</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="container-fluid">
+                                        <div class="row">
+                                            <div class="col-1">
+                                                <img src="{{ URL('https://i.pinimg.com/564x/e4/91/18/e4911813a7948f9bc4967a2a55dbb4ab.jpg') }}"
+                                                class="announcer-photo">
+                                            </div>
+                                            <div class="col-9">
+                                                <p class="announcer-name">Ariana Grande | Manager (Marketing Department)</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="announcement-body">
+                                            <div class="row">
+                                                <div class="col-1">
+                                                </div>
+                                                <div class="col-11">
+                                                    <p class="announcement-text">
+                                                        Sakit kaayo, ang gibuhat mo, gi basted mo ang pagla-um ko
+                                                        Grabe ka hapdos, murag gi latos, ako nalang kining gi antos
+                                                    </p>
+                                                    <button type="button" class="btn" id="see-more" data-bs-toggle="modal" data-bs-target="#myModal">
+                                                        see more
+                                                    </button>
+                                                    <!-- <a class="see-more" data-bs-toggle="modal" data-bs-target="#myModal">see more</a> -->
+                                                </div>
+                                            </div>
+                                    </div>
+                                </div>
+                            </div>
 
                         </div>
                         
@@ -660,7 +705,7 @@
         border: none;
     }
 
-    #announcement-1{
+    #announcement-1, #announcement-2{
         margin-bottom: 2em;
     }
 
