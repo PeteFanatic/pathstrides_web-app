@@ -482,6 +482,18 @@
                                 </div>
                             </div>
 
+
+                            <div class="container mt-3">                  
+                                <ul class="pagination">
+                                    <li class="page-item"><a class="page-link" href="#"><</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">></a></li>
+                                </ul>
+                            </div>
+
+
                         </div>
                         
 
@@ -705,7 +717,7 @@
         border: none;
     }
 
-    #announcement-1, #announcement-2{
+    #announcement-1, #announcement-2, #announcement-3{
         margin-bottom: 2em;
     }
 
@@ -750,5 +762,19 @@
         color: #FF7843;
         text-decoration: none;
     }
-</style
+    
+    .pagination{
+        float: right;
+    }
+
+    .page-link{
+        color: #5F6368;
+        background-color: #FBFBFB;
+        border: none;
+    }
+
+    .page-link:hover{
+        color: #FF7843;
+        font-weight: bold;
+    }
 </style>
