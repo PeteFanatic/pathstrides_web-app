@@ -21,7 +21,7 @@ class AuthController extends Controller
     }
     public function login_admin()
     {
-        return view('login_admin');
+        return view('admin.login_admin');
     }
 
 
@@ -84,8 +84,8 @@ class AuthController extends Controller
             
             // Admin::create($request);
             $request->session()->put('loginId',$admin->admin_id);
-            // return redirect('manager');
-            return back()->with('success','Registered Successfully');
+            return redirect('manager');
+            // return back()->with('success','Registered Successfully');
         }else{
             return back()->with('fail','Try Again.');
         }

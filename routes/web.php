@@ -35,8 +35,8 @@ Route::get('dashboard', [AuthController::class, 'dashboard_manager'])->name('das
 
 
 // Route::get('login', [CustomAuthController::class, 'index'])->name('login');
-Route::get('loginAdmin', [AuthController::class, 'login_admin'])->middleware('alreadyLoggedIn');
-Route::get('loginManager', [AuthController::class, 'login_manager'])->middleware('alreadyLoggedIn');
+Route::get('/loginAdmin', [AuthController::class, 'login_admin'])->middleware('alreadyLoggedIn');
+Route::get('/loginManager', [AuthController::class, 'login_manager'])->middleware('alreadyLoggedIn');
 Route::get('loginEmployee', [AuthController::class, 'loginEmployee'])->name('loginEmployee');
 // Route::post('postlogin', [AuthController::class, 'login'])->name('login');
 

@@ -64,7 +64,7 @@
                         <button class="btn btn-block btn-primary" type="submit">Register</button>
                     </div>
                     <br>
-                    Account Exists? Login <a href="login">Here</a>
+                    Account Exists? Login <a href="loginAdmin">Here</a>
                 </form>
             </div>
 
