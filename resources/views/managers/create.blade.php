@@ -3,7 +3,9 @@
 <div class="card">
   <div class="card-header">Managers Page</div>
   <div class="card-body">
-      
+  <a href="{{ url('/manager/') }}" class="btn btn-success btn-sm" title="Back">
+                            <i class="fa fa-plus" aria-hidden="true"></i> Back
+                        </a>
       <form action="{{ url('manager') }}" method="post">
         {!! csrf_field() !!}
         <label>Manager ID:</label></br>
@@ -19,7 +21,7 @@
         <label>Username:</label></br>
         <input type="text" name="man_username" id="man_username" class="form-control"></br>
         <label>Password:</label></br>
-        <input type="text" name="man_password" id="man_contanct_num" class="form-control"></br>
+        <input type="password" name="man_password" id="man_contanct_num" class="form-control"></br>
         <label for="admin_id">Admin id:</label></br>
         <select name="admin_id" id="admin_id" name="admin_id"></br>
         <option value="1">1</option></br>

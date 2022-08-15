@@ -17,7 +17,7 @@ class AuthController extends Controller
 
     public function login_manager()
     {
-        return view('login');
+        return view('managers.login');
     }
     public function login_admin()
     {
@@ -161,6 +161,7 @@ class AuthController extends Controller
             'password'=>'required|min:6|max:12',
         ]);
         $admin = Admin::where('admin_email','=',$request->email)->first();
+         $manager = Manager::where('man_email','=',$request->email)->first();
         // $manager = Manager::where('man_password','=',Hash::make($request->password))->first();
         if($admin){
             if($request->password==$admin->admin_password){
@@ -174,9 +175,24 @@ class AuthController extends Controller
             else{
                 return back()->with('fail','Password Incorrect.');
             }
+        }else if($manager){
+            if($request->password==$manager->man_password){
+            //     if($manager = Manager::where('man_password','=',$request->password)->first()){
+                // if(hash::check($request->password,$manager->man_password)){
+                // if(manager->where($request->password)->value('man_password')){
+                $request->session()->put('loginId',$manager->man_id);
+                return redirect('dashboard');
+                // echo "Hello world!<br>";
+            }
+            else{
+                return back()->with('fail','Password Incorrect.');
+            }
         }else{
             return back()->with('fail','Email not Registered.');
         }
+        // else{
+        //     return back()->with('fail','Email not Registered.');
+        // }
     }
     public function loginEmployee(Request $req){
         

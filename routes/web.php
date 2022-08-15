@@ -21,9 +21,9 @@ use App\Http\Controllers\AnnouncementController;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+Route::get('/loginManager', function () {
+    return view('managers.login');
+});
 
 
 // Route::get('employee/all',[EmployeeController::class,'showAll'])->name('employee.all');  
@@ -37,14 +37,15 @@ Route::get('dashboard', [AuthController::class, 'dashboard'])->name('dashboard')
 
 // Route::get('login', [CustomAuthController::class, 'index'])->name('login');
 Route::get('/loginAdmin', [AuthController::class, 'login_admin'])->middleware('alreadyLoggedIn');
-Route::get('/loginManager', [AuthController::class, 'login_manager']);
+// Route::get('/loginManager', [AuthController::class, 'login_manager'])->middleware('alreadyLoggedIn');
+
 Route::get('loginEmployee', [AuthController::class, 'loginEmployee'])->name('loginEmployee');
 // Route::post('postlogin', [AuthController::class, 'login'])->name('login');
 
 // guide para sa custom auth login nako sauna
 
 // Route::get('login', [CustomAuthController::class, 'login'])->middleware('alreadyLoggedIn');
-Route::get('registration', [AuthController::class, 'registration'])->middleware('alreadyLoggedIn');
+Route::get('registration', [AuthController::class, 'registration']);
 Route::post('/register-admin',[AuthController::class,'registerUser'])->name('register-admin');
 
 Route::post('login-manager',[AuthController::class,'loginManager'])->name('login-manager');
