@@ -256,7 +256,7 @@
                     <img src="{{ URL('https://i.pinimg.com/564x/86/8f/f2/868ff26099df298eb554a2bf366731f0.jpg') }}"
                     class="profile-pic">
                 </div>
-                <div class="col-9" id="header-text">
+                <div class="col-9" id="header-text" >
                     <div class="user-info">
 
                     <h4 class="name">
@@ -284,31 +284,31 @@
                             <nav class="navbar" id="nav-side">
                                 <ul class="navbar-nav">
                                     <li class="nav-item">
-                                        <a class="nav-link" href="#" id="a-nav-side">
+                                        <a class="nav-link" href="announcement" id="a-nav-side">
                                             <img src="{{ URL('images\icons\icons8-commercial-90.png') }}"
                                                 class="icon">
                                             Announcement
                                         </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="#" id="a-nav-side">
+                                        <a class="nav-link" href="task" id="a-nav-side">
                                             <img src="{{ URL('images\icons\icons8-playlist-90.png') }}"
                                                 class="icon">
                                             Tasks
                                         </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="#" id="a-nav-side">
+                                        <a class="nav-link" href="employee" id="a-nav-side">
                                             <img src="{{ URL('images\icons\icons8-member-90 (2).png') }}"
                                                 class="icon">
                                             Employees
                                         </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="#" id="a-nav-side">
+                                        <a class="nav-link" href="manager" id="a-nav-side">
                                             <img src="{{ URL('images\icons\icons8-male-user-96.png') }}"
                                                 class="icon">
-                                            User Profile
+                                            Managers
                                         </a>
                                     </li>
                                 </ul>

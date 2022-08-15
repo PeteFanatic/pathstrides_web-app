@@ -367,7 +367,8 @@
     }
     
 </style> -->
-
+<!-- @extends('layout')
+@section('content') -->
 <!doctype html>
 <html lang="en">
   <head>
@@ -385,7 +386,7 @@
             <div class="formContainer">
                 <h1>Welcome to Pathstrides</h1>
                 <img src="{{ URL('images/manager-landing-page.png') }}">
-                <form action="{{route('login-user')}}"method="post">
+                <form action="{{route('login-manager')}}"method="post">
                 @if(Session::has('success'))
                 <div class="alert alert-success">{{Session::get('success')}}</div>
                 @endif

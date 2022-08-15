@@ -30,13 +30,14 @@ use App\Http\Controllers\AnnouncementController;
 // Route::post('employee/create',[EmployeeController::class,'store'])->name('employees.save');
 // Route::get('employee/create',[EmployeeController::class,'create'])->name('employees.save');
 Route::get('/', [AuthController::class, 'landing'])->name('welcome'); //homepage
-Route::get('dashboard', [AuthController::class, 'dashboard_manager'])->name('dashboard');
+// Route::get('dashboardAdmin', [AuthController::class, 'dashboard_admin'])->name('dashboardAdmin');
+Route::get('dashboard', [AuthController::class, 'dashboard'])->name('dashboard');
 // Route::get('login', [CustomAuthController::class, 'index'])->name('login');
 
 
 // Route::get('login', [CustomAuthController::class, 'index'])->name('login');
 Route::get('/loginAdmin', [AuthController::class, 'login_admin'])->middleware('alreadyLoggedIn');
-Route::get('/loginManager', [AuthController::class, 'login_manager'])->middleware('alreadyLoggedIn');
+Route::get('/loginManager', [AuthController::class, 'login_manager']);
 Route::get('loginEmployee', [AuthController::class, 'loginEmployee'])->name('loginEmployee');
 // Route::post('postlogin', [AuthController::class, 'login'])->name('login');
 
@@ -48,11 +49,11 @@ Route::post('/register-admin',[AuthController::class,'registerUser'])->name('reg
 
 Route::post('login-manager',[AuthController::class,'loginManager'])->name('login-manager');
 Route::post('login-admin',[AuthController::class,'loginAdmin'])->name('login-admin');
-Route::get('/home',[CustomAuthController::class,'home'])->middleware('isLoggedIn');
-Route::get('/logout',[AuthController::class,'logout'])->name('logout');
-Route::get('/adminlogin',[CustomAuthController::class,'logout']);
+// Route::get('/home',[CustomAuthController::class,'home'])->middleware('isLoggedIn');
+Route::get('/logout',[AuthController::class,'login_admin'])->name('logout');
+// Route::get('/adminlogin',[CustomAuthController::class,'logout']);
 
-Route::resource("/employee", EmployeeController::class)->middleware('isLoggedIn');
-Route::resource("/manager", ManagerController::class)->middleware('isLoggedIn');
-Route::resource("/task", TaskController::class)->middleware('isLoggedIn');
-Route::resource("/announcement", AnnouncementController::class)->middleware('isLoggedIn');
+Route::resource("employee", EmployeeController::class);
+Route::resource("manager", ManagerController::class);
+Route::resource("task", TaskController::class);
+Route::resource("announcement", AnnouncementController::class);

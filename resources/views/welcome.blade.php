@@ -38,7 +38,7 @@
                 <span class="close">&times;</span>
                 <h1 id="modalTitle">SELECT ONE:</h1>
                 <div id="wrapper_admin">
-                    <a href="{{url('/loginAdmin')}}" class="admin_button">
+                    <a href="loginAdmin" class="admin_button">
                         <div class="dots-container">
                             <div class="dot"></div>
                             <div class="dot"></div>
@@ -65,7 +65,7 @@
                     </a>
                 </div>
                 <div id="wrapper_manager">
-                    <a href="{{ url('loginManager') }}" class="manager_button">
+                    <a href="loginManager" class="manager_button">
                         <div class="dots-container">
                             <div class="dot"></div>
                             <div class="dot"></div>
