@@ -361,11 +361,11 @@
                                     <div class="container-fluid">
                                         <div class="row">
                                             <div class="col-1">
-                                                <img src="{{ URL('https://i.pinimg.com/564x/e4/91/18/e4911813a7948f9bc4967a2a55dbb4ab.jpg') }}"
+                                                <img src="{{ URL('https://viterbischool.usc.edu/wp-content/uploads/2020/05/Lily-Profile-Square.jpeg') }}"
                                                 class="announcer-photo">
                                             </div>
                                             <div class="col-9">
-                                                <p class="announcer-name">Ariana Grande | Manager (Marketing Department)</p>
+                                                <p class="announcer-name">Rachel Chiu | Manager (Marketing Department)</p>
                                             </div>
                                         </div>
                                     </div>
@@ -376,8 +376,7 @@
                                                 </div>
                                                 <div class="col-11">
                                                     <p class="announcement-text">
-                                                        Sakit kaayo, ang gibuhat mo, gi basted mo ang pagla-um ko
-                                                        Grabe ka hapdos, murag gi latos, ako nalang kining gi antos
+                                                        We will be having a meeting later at 10 am to discuss the newest products in the market.
                                                     </p>
                                                     <button type="button" class="btn" id="see-more" data-bs-toggle="modal" data-bs-target="#myModal">
                                                         see more
@@ -396,7 +395,7 @@
                                         <div class="container-fluid">
                                             <div class="row">
                                                 <div class="col-9">
-                                                    <h2 class="card-title-announcements">Christmas Party</h2>
+                                                    <h2 class="card-title-announcements">URGENT MEETING</h2>
                                                 </div>
                                                 <div class="col-3">
                                                     <p class="ann-date-posted">August 15, 2022 | 5:00 am</p>
@@ -408,11 +407,11 @@
                                     <div class="container-fluid">
                                         <div class="row">
                                             <div class="col-1">
-                                                <img src="{{ URL('https://i.pinimg.com/564x/e4/91/18/e4911813a7948f9bc4967a2a55dbb4ab.jpg') }}"
+                                                <img src="{{ URL('https://profilemagazine.com/wp-content/uploads/2020/04/Ajmere-Dale-Square-thumbnail.jpg') }}"
                                                 class="announcer-photo">
                                             </div>
                                             <div class="col-9">
-                                                <p class="announcer-name">Ariana Grande | Manager (Marketing Department)</p>
+                                                <p class="announcer-name">Jonathan Ramos | Manager (Finance Department)</p>
                                             </div>
                                         </div>
                                     </div>
@@ -423,8 +422,7 @@
                                                 </div>
                                                 <div class="col-11">
                                                     <p class="announcement-text">
-                                                        Sakit kaayo, ang gibuhat mo, gi basted mo ang pagla-um ko
-                                                        Grabe ka hapdos, murag gi latos, ako nalang kining gi antos
+                                                        We will be having a meeting later to talk about our sales.
                                                     </p>
                                                     <button type="button" class="btn" id="see-more" data-bs-toggle="modal" data-bs-target="#myModal">
                                                         see more
@@ -454,11 +452,11 @@
                                     <div class="container-fluid">
                                         <div class="row">
                                             <div class="col-1">
-                                                <img src="{{ URL('https://i.pinimg.com/564x/e4/91/18/e4911813a7948f9bc4967a2a55dbb4ab.jpg') }}"
+                                                <img src="{{ URL('https://i.pinimg.com/736x/54/74/8d/54748de2a9fa0951d2e81b1ffbbd189c.jpg') }}"
                                                 class="announcer-photo">
                                             </div>
                                             <div class="col-9">
-                                                <p class="announcer-name">Ariana Grande | Manager (Marketing Department)</p>
+                                                <p class="announcer-name">Elizabeth Ignacio | Manager (Marketing Department)</p>
                                             </div>
                                         </div>
                                     </div>
@@ -469,8 +467,8 @@
                                                 </div>
                                                 <div class="col-11">
                                                     <p class="announcement-text">
-                                                        Sakit kaayo, ang gibuhat mo, gi basted mo ang pagla-um ko
-                                                        Grabe ka hapdos, murag gi latos, ako nalang kining gi antos
+                                                        Good day everyone!<br>
+                                                        Meeting tomorrow at 1PM. We will talk about our Christmas Party
                                                     </p>
                                                     <button type="button" class="btn" id="see-more" data-bs-toggle="modal" data-bs-target="#myModal">
                                                         see more
@@ -504,7 +502,7 @@
                                 <div class="card">
                                     <div class="card-header">
                                         <a class="collapsed card-link" data-toggle="collapse" href="#task1" id="card">
-                                            Collapsible Group Item #2
+                                            TASK 1
                                         </a>
                                     </div>
                                     <div id="task1" class="collapse" data-parent="#accordion">
@@ -517,7 +515,7 @@
                                 <div class="card">
                                     <div class="card-header">
                                         <a class="collapsed card-link" data-toggle="collapse" href="#task2" id="card">
-                                            Collapsible Group Item #2
+                                            TASK 2
                                         </a>
                                     </div>
                                     <div id="task2" class="collapse" data-parent="#accordion">
@@ -530,7 +528,7 @@
                                 <div class="card">
                                     <div class="card-header">
                                         <a class="collapsed card-link" data-toggle="collapse" href="#task3" id="card">
-                                            Collapsible Group Item #3
+                                            TASK 3
                                         </a>
                                     </div>
                                     <div id="task3" class="collapse" data-parent="#accordion">
@@ -540,6 +538,16 @@
                                     </div>
                                 </div>
 
+                            </div>
+
+                            <div class="container mt-3">                  
+                                <ul class="pagination">
+                                    <li class="page-item"><a class="page-link" href="#"><</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">></a></li>
+                                </ul>
                             </div>
                         </div>
             </div>
