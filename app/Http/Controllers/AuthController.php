@@ -68,7 +68,7 @@ class AuthController extends Controller
             'admin_password'=>'required|min:6|max:12',
         ]);
         $admin = new Admin();
-        $admin->admin_id = $admin->id();
+        // $admin->admin_id = $admin->id();
         $admin->admin_fname = $request->admin_fname;
         $admin->admin_lname = $request->admin_lname;
         $admin->admin_username = $request->admin_username;
@@ -79,8 +79,8 @@ class AuthController extends Controller
             // return back()->with('success','Registered Successfully');
             
             // Admin::create($request);
-            // $request->session()->put('loginId',$admin->admin_id);
-            // return redirect('manager');
+            $request->session()->put('loginId',$admin->admin_id);
+            return redirect('manager');
             return back()->with('success','Registered Successfully');
         }else{
             return back()->with('fail','Try Again.');
