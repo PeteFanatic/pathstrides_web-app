@@ -184,12 +184,120 @@
                                         <td>{{$item->dep_id}}</td>
                                         <td>Active</td>
                                         <td>
-                                            <a href="{{ url('/employee/' . $item->emp_id) }}" title="View Employee"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> View</button></a>
-                                            <a href="{{ url('/employee/' . $item->emp_id . '/edit') }}" title="Edit Employee"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>
+                                            <a href="{{ url('/employee/' . $item->emp_id) }}" title="View Employee"><button class="btn btn-info btn-sm" id="action-btn"><i class="fa fa-eye" aria-hidden="true"></i> View</button></a>
+                                            <a href="{{ url('/employee/' . $item->emp_id . '/edit') }}" title="Edit Employee"><button class="btn btn-primary btn-sm" id="action-btn"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>
                                             <form method="POST" action="{{ url('/employee' . '/' . $item->emp_id) }}" accept-charset="UTF-8" style="display:inline">
                                                 {{ method_field('DELETE') }}
                                                 {{ csrf_field() }}
-                                                <button type="submit" class="btn btn-danger btn-sm" title="Delete Employee" onclick="return confirm(&quot;Confirm delete?&quot;)"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</button>
+                                                <button type="submit" class="btn btn-danger btn-sm" id="action-btn" title="Delete Employee" onclick="return confirm(&quot;Confirm delete?&quot;)"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</button>
+                                            </form>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>{{ $item->emp_id }}</td>
+                                        <td>{{ $item->emp_fname }} , {{ $item->emp_lname }}</td>
+                                        <td>{{ $item->emp_email }}</td>
+                                        <td>{{ $item->emp_contanct_num }}</td>
+                                        <td>{{ $item->man_id }}</td>
+                                        <td>{{$item->dep_id}}</td>
+                                        <td>Active</td>
+                                        <td>
+                                            <a href="{{ url('/employee/' . $item->emp_id) }}" title="View Employee"><button class="btn btn-info btn-sm" id="action-btn"><i class="fa fa-eye" aria-hidden="true"></i> View</button></a>
+                                            <a href="{{ url('/employee/' . $item->emp_id . '/edit') }}" title="Edit Employee"><button class="btn btn-primary btn-sm" id="action-btn"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>
+                                            <form method="POST" action="{{ url('/employee' . '/' . $item->emp_id) }}" accept-charset="UTF-8" style="display:inline">
+                                                {{ method_field('DELETE') }}
+                                                {{ csrf_field() }}
+                                                <button type="submit" class="btn btn-danger btn-sm" id="action-btn" title="Delete Employee" onclick="return confirm(&quot;Confirm delete?&quot;)"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</button>
+                                            </form>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>{{ $item->emp_id }}</td>
+                                        <td>{{ $item->emp_fname }} , {{ $item->emp_lname }}</td>
+                                        <td>{{ $item->emp_email }}</td>
+                                        <td>{{ $item->emp_contanct_num }}</td>
+                                        <td>{{ $item->man_id }}</td>
+                                        <td>{{$item->dep_id}}</td>
+                                        <td>Active</td>
+                                        <td>
+                                            <a href="{{ url('/employee/' . $item->emp_id) }}" title="View Employee"><button class="btn btn-info btn-sm" id="action-btn"><i class="fa fa-eye" aria-hidden="true"></i> View</button></a>
+                                            <a href="{{ url('/employee/' . $item->emp_id . '/edit') }}" title="Edit Employee"><button class="btn btn-primary btn-sm" id="action-btn"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>
+                                            <form method="POST" action="{{ url('/employee' . '/' . $item->emp_id) }}" accept-charset="UTF-8" style="display:inline">
+                                                {{ method_field('DELETE') }}
+                                                {{ csrf_field() }}
+                                                <button type="submit" class="btn btn-danger btn-sm" id="action-btn" title="Delete Employee" onclick="return confirm(&quot;Confirm delete?&quot;)"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</button>
+                                            </form>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>{{ $item->emp_id }}</td>
+                                        <td>{{ $item->emp_fname }} , {{ $item->emp_lname }}</td>
+                                        <td>{{ $item->emp_email }}</td>
+                                        <td>{{ $item->emp_contanct_num }}</td>
+                                        <td>{{ $item->man_id }}</td>
+                                        <td>{{$item->dep_id}}</td>
+                                        <td>Active</td>
+                                        <td>
+                                            <a href="{{ url('/employee/' . $item->emp_id) }}" title="View Employee"><button class="btn btn-info btn-sm" id="action-btn"><i class="fa fa-eye" aria-hidden="true"></i> View</button></a>
+                                            <a href="{{ url('/employee/' . $item->emp_id . '/edit') }}" title="Edit Employee"><button class="btn btn-primary btn-sm" id="action-btn"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>
+                                            <form method="POST" action="{{ url('/employee' . '/' . $item->emp_id) }}" accept-charset="UTF-8" style="display:inline">
+                                                {{ method_field('DELETE') }}
+                                                {{ csrf_field() }}
+                                                <button type="submit" class="btn btn-danger btn-sm" id="action-btn" title="Delete Employee" onclick="return confirm(&quot;Confirm delete?&quot;)"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</button>
+                                            </form>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>{{ $item->emp_id }}</td>
+                                        <td>{{ $item->emp_fname }} , {{ $item->emp_lname }}</td>
+                                        <td>{{ $item->emp_email }}</td>
+                                        <td>{{ $item->emp_contanct_num }}</td>
+                                        <td>{{ $item->man_id }}</td>
+                                        <td>{{$item->dep_id}}</td>
+                                        <td>Active</td>
+                                        <td>
+                                            <a href="{{ url('/employee/' . $item->emp_id) }}" title="View Employee"><button class="btn btn-info btn-sm" id="action-btn"><i class="fa fa-eye" aria-hidden="true"></i> View</button></a>
+                                            <a href="{{ url('/employee/' . $item->emp_id . '/edit') }}" title="Edit Employee"><button class="btn btn-primary btn-sm" id="action-btn"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>
+                                            <form method="POST" action="{{ url('/employee' . '/' . $item->emp_id) }}" accept-charset="UTF-8" style="display:inline">
+                                                {{ method_field('DELETE') }}
+                                                {{ csrf_field() }}
+                                                <button type="submit" class="btn btn-danger btn-sm" id="action-btn" title="Delete Employee" onclick="return confirm(&quot;Confirm delete?&quot;)"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</button>
+                                            </form>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>{{ $item->emp_id }}</td>
+                                        <td>{{ $item->emp_fname }} , {{ $item->emp_lname }}</td>
+                                        <td>{{ $item->emp_email }}</td>
+                                        <td>{{ $item->emp_contanct_num }}</td>
+                                        <td>{{ $item->man_id }}</td>
+                                        <td>{{$item->dep_id}}</td>
+                                        <td>Active</td>
+                                        <td>
+                                            <a href="{{ url('/employee/' . $item->emp_id) }}" title="View Employee"><button class="btn btn-info btn-sm" id="action-btn"><i class="fa fa-eye" aria-hidden="true"></i> View</button></a>
+                                            <a href="{{ url('/employee/' . $item->emp_id . '/edit') }}" title="Edit Employee"><button class="btn btn-primary btn-sm" id="action-btn"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>
+                                            <form method="POST" action="{{ url('/employee' . '/' . $item->emp_id) }}" accept-charset="UTF-8" style="display:inline">
+                                                {{ method_field('DELETE') }}
+                                                {{ csrf_field() }}
+                                                <button type="submit" class="btn btn-danger btn-sm" id="action-btn" title="Delete Employee" onclick="return confirm(&quot;Confirm delete?&quot;)"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</button>
+                                            </form>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>{{ $item->emp_id }}</td>
+                                        <td>{{ $item->emp_fname }} , {{ $item->emp_lname }}</td>
+                                        <td>{{ $item->emp_email }}</td>
+                                        <td>{{ $item->emp_contanct_num }}</td>
+                                        <td>{{ $item->man_id }}</td>
+                                        <td>{{$item->dep_id}}</td>
+                                        <td>Active</td>
+                                        <td>
+                                            <a href="{{ url('/employee/' . $item->emp_id) }}" title="View Employee"><button class="btn btn-info btn-sm" id="action-btn"><i class="fa fa-eye" aria-hidden="true"></i> View</button></a>
+                                            <a href="{{ url('/employee/' . $item->emp_id . '/edit') }}" title="Edit Employee"><button class="btn btn-primary btn-sm" id="action-btn"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>
+                                            <form method="POST" action="{{ url('/employee' . '/' . $item->emp_id) }}" accept-charset="UTF-8" style="display:inline">
+                                                {{ method_field('DELETE') }}
+                                                {{ csrf_field() }}
+                                                <button type="submit" class="btn btn-danger btn-sm" id="action-btn" title="Delete Employee" onclick="return confirm(&quot;Confirm delete?&quot;)"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</button>
                                             </form>
                                         </td>
                                     </tr>
@@ -390,8 +498,21 @@
         border: 0;
     }
 
-    tr, th{
+    th{
         font-size: 12px;
+        padding-bottom: 5px;
+    }
+
+    tr{
+        font-size: 12px;
+    }
+
+    #action-btn{
+        height: 2.3em;
+        font-size: 12px;
+        background-color: #FF7843;
+        border: 0;
+        color: white;
     }
 
     .pagination{
