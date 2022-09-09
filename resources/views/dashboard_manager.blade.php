@@ -300,7 +300,7 @@
                                         </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="#" id="a-nav-side">
+                                        <a class="nav-link" href="{{url('/employee')}}" id="a-nav-side">
                                             <img src="{{ URL('images\icons\icons8-member-90 (2).png') }}"
                                                 class="icon">
                                             Employees
