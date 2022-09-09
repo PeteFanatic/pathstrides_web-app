@@ -154,10 +154,10 @@
                     <div class="col-xl-8">
                         <div class="container-fluid" id="employee-container">
                             <h3>Employees</h3>
-                            <form class="d-flex">
+                            <form class="d-flex" id="search-form">
                                 <input class="form-control me-2" type="text" placeholder="Search" id="search-employee">
                                 <button class="btn btn-primary" type="button" id="search-employee-btn">
-                                    <span class="glyphicon glyphicon-search" id="bootstrap-icons"></span>
+                                    <span class="fas fa-search" id="bootstrap-icons"></span>
                                 </button>
                             </form>
 
@@ -496,6 +496,10 @@
         font-size: 15px;
         font-weight: bold;
         color: #5F6368;
+    }
+
+    #search-form{
+        padding-bottom: 10px;
     }
 
     #search-employee{
