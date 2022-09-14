@@ -39,18 +39,18 @@
                     @endphp
                 @endforeach
         </select></br>
-        <label for="dep_id">Department Id:</label></br>
-        <select name="dep_id" id="dep_id" name="dep_id"></br>
+        <label for="dep_title">Department Id:</label></br>
+        <select name="dep_title" id="dep_title" name="dep_title"></br>
         @php
                     $count = 1;
                 @endphp
                 @foreach($department as $item)
-                    @if(($count == 1) and (old('dep_id') <> $item['dep_id']))
-                        <option value="{{ $item['dep_id'] }}" selected>{{ $item['dep_id'] }}</option>  
-                    @elseif(old('dep_id') === $item['dep_id'])
-                        <option value="{{ $item['dep_id'] }}" selected>{{ $item['dep_id'] }}</option>     
+                    @if(($count == 1) and (old('dep_title') <> $item['dep_title']))
+                        <option value="{{ $item['dep_title'] }}" selected>{{ $item['dep_title'] }}</option>  
+                    @elseif(old('dep_title') === $item['dep_title'])
+                        <option value="{{ $item['dep_title'] }}" selected>{{ $item['dep_title'] }}</option>     
                     @else
-                        <option value="{{ $item['dep_id'] }}">{{ $item['dep_id']}}</option>
+                        <option value="{{ $item['dep_title'] }}">{{ $item['dep_title']}}</option>
                     @endif
                     @php
                        $count++;

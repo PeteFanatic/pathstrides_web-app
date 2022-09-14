@@ -383,9 +383,9 @@
     <div class="container">
         <div class="row">
             <div class="formContainer">
-                <h1>Welcome to PathStrides</h1>
+                <h1>Welcome to Pathstrides</h1>
                 <img src="{{ URL('images/manager-landing-page.png') }}">
-                <form action="{{route('login-user')}}"method="post">
+                <form action="{{route('dashboard_manager')}}"method="post">
                 @if(Session::has('success'))
                 <div class="alert alert-success">{{Session::get('success')}}</div>
                 @endif
@@ -410,9 +410,6 @@
                     <div class="form-group">
                         <button class="btn btn-block btn-primary" type="submit">Login</button>
                         <br>
-                        <p class="sign-up">
-                            New to PathStrides? <a href="registration" class="registration">Sign Up</a>
-                        </p>
                     </div>
                 </form>
             </div>
@@ -496,18 +493,11 @@
         width: 100%;
     }
 
-    .sign-up{
-        margin: auto;
-        margin-top: 1em;
-    }
-
-    .registration{
+    a.registration{
         color: #FF9A00;
         font-weight: 600;
         text-decoration: none;
     }
-
-
     
     hr{
         width: 60%;

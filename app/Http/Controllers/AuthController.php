@@ -1,16 +1,14 @@
 <?php
 
 namespace App\Http\Controllers;
-use Illuminate\Http\Request;
-use Hash;
-use Session;
+
 use App\Models\User;
-use App\Models\Admin;
 use App\Models\Manager;
 use App\Models\Employee;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Database\Schema\Blueprint;
+use Hash;
 use Laravel\Sanctum\HasApiTokens;
 class AuthController extends Controller
 {
@@ -24,16 +22,11 @@ class AuthController extends Controller
         return view('welcome');
     }
     public function registration(){
-        return view("admin.registration");
+        return view("registration");
     }
 
     public function dashboard_manager(){
-        // return view('dashboard_manager');
-        $manager = array();
-        // if(Session::has('loginId')){
-        //     $manager = Manager::where('id','=',Session::get('loginId'))->first();
-        // }
-        return view("dashboard_manager");
+        return view('dashboard_manager');
     }
     // public function register(Request $req)
     // {
@@ -64,24 +57,21 @@ class AuthController extends Controller
             'admin_fname'=>'required',
             'admin_lname'=>'required',
             'admin_username'=>'required',
-            'admin_email'=>'required|email|unique:admin',
+            'admin_email'=>'required|email|unique:users',
             'admin_password'=>'required|min:6|max:12',
         ]);
         $admin = new Admin();
-        $admin->admin_id = $admin->id();
-        $admin->admin_fname = $request->admin_fname;
-        $admin->admin_lname = $request->admin_lname;
-        $admin->admin_username = $request->admin_username;
-        $admin->admin_email = $request->admin_email;
-        $admin->admin_password = $request->admin_password;
+        $admin->lname = $request->lname;
+        $admin->fname = $request->fname;
+        $admin->email = $request->email;
+        $admin->username = $request->username;
+        $admin->password = Hash::make($request->password);
         $res = $admin->save();
         if($res){
             // return back()->with('success','Registered Successfully');
             
-            // Admin::create($request);
-            // $request->session()->put('loginId',$admin->admin_id);
-            // return redirect('manager');
-            return back()->with('success','Registered Successfully');
+            Admin::create($res);
+            return redirect('admin')->with('flash_message', 'Admin Addedd!'); 
         }else{
             return back()->with('fail','Try Again.');
         }
@@ -124,14 +114,13 @@ class AuthController extends Controller
             'password'=>'required|min:6|max:12',
         ]);
         $manager = Manager::where('man_email','=',$request->email)->first();
-        // $manager = Manager::where('man_password','=',Hash::make($request->password))->first();
+       
         if($manager){
             if($request->password==$manager->man_password){
-            //     if($manager = Manager::where('man_password','=',$request->password)->first()){
-                // if(hash::check($request->password,$manager->man_password)){
+                // if($manager = Manager::where('man_password','=',$request->password)->first()){
                 // if(manager->where($request->password)->value('man_password')){
                 $request->session()->put('loginId',$manager->man_id);
-                return redirect('dashboard_manager');
+                return redirect('employee');
                 // echo "Hello world!<br>";
             }
             else{
@@ -153,9 +142,7 @@ class AuthController extends Controller
         $employee = Employee::where('emp_email', $req->email)->first();
         // if user email found and password is correct
         if($employee){
-            if ($req->password==$employee->emp_password) {
-            //     $token = $employee->createToken('Personal Access Token')->plainTextToken;
-            // $response = ['employee' => $employee, 'token' => $token];
+            if ($employee = Employee::where('emp_password','=',$req->password)->first()) {
                 // if ($employee = Employee::where('emp_password')==$req->password) {
                 // $token = $employee->createToken('Personal Access Token')->plainTextToken;
                 // $response = ['employee' => $employee, 'token' => $token];
