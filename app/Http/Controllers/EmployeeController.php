@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Employee;
 use App\Models\Manager;
 use App\Models\Department;
+use Illuminate\Support\Facades\Validator;
 
 use Session;
 class EmployeeController extends Controller
@@ -46,7 +47,10 @@ class EmployeeController extends Controller
     public function store(Request $request)
     {
         $input = $request->all();
-        Employee::create($input);
+        $employee = Employee::create($input);
+        $token = $employee->createToken('Personal Access Token')->plainTextToken;
+        $response = ['employee'=> $employee,'token'=> $token];
+        
         return redirect('employee')->with('flash_message', 'Employee Addedd!'); 
     }
 

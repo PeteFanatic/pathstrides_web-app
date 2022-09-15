@@ -244,7 +244,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="loginAdmin">
+                        <a class="nav-link" href="loginWeb">
                             <img src="{{ URL('images\icons\icons8-logout-90.png') }}" class="top-side-nav-icon" alt="logout">
                         </a>
                     </li>

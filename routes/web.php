@@ -21,9 +21,9 @@ use App\Http\Controllers\AnnouncementController;
 |
 */
 
-Route::get('/loginManager', function () {
-    return view('managers.login');
-});
+// Route::get('/loginManager', function () {
+//     return view('managers.logins');
+// });
 
 
 // Route::get('employee/all',[EmployeeController::class,'showAll'])->name('employee.all');  
@@ -36,7 +36,7 @@ Route::get('dashboard', [AuthController::class, 'dashboard'])->name('dashboard')
 
 
 // Route::get('login', [CustomAuthController::class, 'index'])->name('login');
-Route::get('/loginAdmin', [AuthController::class, 'login_admin'])->middleware('alreadyLoggedIn');
+Route::get('/login', [AuthController::class, 'login_admin'])->middleware('alreadyLoggedIn');
 // Route::get('/loginManager', [AuthController::class, 'login_manager'])->middleware('alreadyLoggedIn');
 
 Route::get('loginEmployee', [AuthController::class, 'loginEmployee'])->name('loginEmployee');
@@ -48,10 +48,10 @@ Route::get('loginEmployee', [AuthController::class, 'loginEmployee'])->name('log
 Route::get('registration', [AuthController::class, 'registration']);
 Route::post('/register-admin',[AuthController::class,'registerUser'])->name('register-admin');
 
-Route::post('login-manager',[AuthController::class,'loginManager'])->name('login-manager');
-Route::post('login-admin',[AuthController::class,'loginAdmin'])->name('login-admin');
+Route::post('login-manager',[AuthController::class,'loginWeb'])->name('login-manager');
+Route::post('login-admin',[AuthController::class,'loginWeb'])->name('login-admin');
 // Route::get('/home',[CustomAuthController::class,'home'])->middleware('isLoggedIn');
-Route::get('/logout',[AuthController::class,'login_admin'])->name('logout');
+Route::get('/logout',[AuthController::class,'logout'])->name('logout');
 // Route::get('/adminlogin',[CustomAuthController::class,'logout']);
 
 Route::resource("employee", EmployeeController::class);
