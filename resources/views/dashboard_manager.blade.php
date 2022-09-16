@@ -280,7 +280,15 @@
                                         <a class="nav-link" href="#" id="a-nav-side">Tasks</a>
                                     </li>
                                     <li class="nav-item">
+<<<<<<< HEAD
                                         <a class="nav-link" href="" id="a-nav-side">Employees</a>
+=======
+                                        <a class="nav-link" href="{{url('/employee')}}" id="a-nav-side">
+                                            <img src="{{ URL('images\icons\icons8-member-90 (2).png') }}"
+                                                class="icon">
+                                            Employees
+                                        </a>
+>>>>>>> employee-for-manager
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link" href="#" id="a-nav-side">Profile</a>
