@@ -34,18 +34,8 @@ class AuthController extends Controller
         return view("registration");
     }
 
-<<<<<<< HEAD
     public function dashboard_manager(){
         return view('dashboard_manager');
-=======
-    public function dashboard(){
-        // return view('dashboard_manager');
-        $manager = array();
-        // if(Session::has('loginId')){
-        //     $manager = Manager::where('id','=',Session::get('loginId'))->first();
-        // }
-        return view("dashboard");
->>>>>>> ed3e7fb802436e78c7a31663252de8411aad049f
     }
     // public function dashboard_admin(){
     //     // return view('dashboard_manager');
@@ -90,32 +80,17 @@ class AuthController extends Controller
             'admin_password'=>'required|min:6|max:12',
         ]);
         $admin = new Admin();
-<<<<<<< HEAD
         $admin->lname = $request->lname;
         $admin->fname = $request->fname;
         $admin->email = $request->email;
         $admin->username = $request->username;
         $admin->password = Hash::make($request->password);
-=======
-        $admin->admin_fname = $request->admin_fname;
-        $admin->admin_lname = $request->admin_lname;
-        $admin->admin_username = $request->admin_username;
-        $admin->admin_email = $request->admin_email;
-        $admin->admin_password = $request->admin_password;
->>>>>>> ed3e7fb802436e78c7a31663252de8411aad049f
         $res = $admin->save();
         if($res){
             // return back()->with('success','Registered Successfully');
             
-<<<<<<< HEAD
             Admin::create($res);
             return redirect('admin')->with('flash_message', 'Admin Addedd!'); 
-=======
-            // Admin::create($request);
-            $request->session()->put('loginId',$admin->admin_id);
-            return redirect('dashboard');
-            // return back()->with('success','Registered Successfully');
->>>>>>> ed3e7fb802436e78c7a31663252de8411aad049f
         }else{
             return back()->with('fail','Try Again.');
         }
@@ -164,11 +139,7 @@ class AuthController extends Controller
                 // if($manager = Manager::where('man_password','=',$request->password)->first()){
                 // if(manager->where($request->password)->value('man_password')){
                 $request->session()->put('loginId',$manager->man_id);
-<<<<<<< HEAD
                 return redirect('employee');
-=======
-                return redirect('dashboard');
->>>>>>> ed3e7fb802436e78c7a31663252de8411aad049f
                 // echo "Hello world!<br>";
             }
             else{

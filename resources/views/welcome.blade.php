@@ -65,11 +65,7 @@
                     </a>
                 </div>
                 <div id="wrapper_manager">
-<<<<<<< HEAD
                     <a href="{{ url('manager') }}" class="manager_button">
-=======
-                    <a href="loginAdmin" class="manager_button">
->>>>>>> ed3e7fb802436e78c7a31663252de8411aad049f
                         <div class="dots-container">
                             <div class="dot"></div>
                             <div class="dot"></div>
