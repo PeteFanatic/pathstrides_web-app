@@ -4,8 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Announcement;
-use App\Models\Manager;
-use App\Models\Employee;
 class AnnouncementController extends Controller
 {
      /**
@@ -92,11 +90,4 @@ class AnnouncementController extends Controller
         announcement::destroy($id);
         return redirect('announcement')->with('flash_message', 'announcement deleted!');
     }
-
-    public function getAnnouncementData(){
-        $list = new Announcement();
-        $list = $list->getAnnouncementData();
-        return response()->json($list);
-    }
-    
 }

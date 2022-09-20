@@ -19,7 +19,6 @@ Route::post('/auth/register',[AuthController::class,'register']);
 Route::post('/auth/loginEmployee',[AuthController::class,'loginEmployee']);
 
 Route::get('/employeeTask','App\Http\Controllers\TaskController@getEmployeeTask');
-Route::get('/employeeAnnounce','App\Http\Controllers\AnnouncementController@getAnnouncementData');
 
 Route::middleware('auth:sanctum')->get('/manager', function (Request $request) {
     return $request->manager();

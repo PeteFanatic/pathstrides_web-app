@@ -12,8 +12,10 @@
         <h5 class="card-title">Manager First Name : {{ $managers-> man_fname }}</h5>
         <h5 class="card-title">Manager Last Name : {{ $managers-> man_lname }}</h5>
         <p class="card-text">Email : {{ $managers->man_email }}</p>
-        <p class="card-text">Contanct Number : {{ $managers->man_contanct_num }}</p>
+        <p class="card-text">Contact Number : {{ $managers->man_contanct_num }}</p>
         <p class="card-text">Admin Incharge : {{ $managers->admin_id }}</p>
+        <a href="dashboard">Home</a>
+                            <a href="loginAdmin">Logout</a>
   </div>
       
     </hr>

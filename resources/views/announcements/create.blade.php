@@ -4,7 +4,9 @@
   <div class="card-header">Announcements Page</div>
   <div class="card-body">
 
-
+  <a href="{{ url('/announcement/') }}" class="btn btn-success btn-sm" title="Back">
+                            <i class="fa fa-plus" aria-hidden="true"></i> Back
+                        </a>
     
       
       <form action="{{ url('announcement') }}" method="post">
@@ -26,7 +28,8 @@
        
         <input type="submit" value="Save" class="btn btn-success"></br>
     </form>
-  
+    <a href="dashboard">Home</a>
+                            <a href="loginAdmin">Logout</a>
   </div>
 </div>
 @stop

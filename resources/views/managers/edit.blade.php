@@ -24,12 +24,12 @@
                     $count = 1;
                 @endphp
                 @foreach($department as $item)
-                    @if(($count == 1) and (old('dep_id') <> $item['dep_id']))
-                        <option value="{{ $item['dep_id'] }}" selected>{{ $item['dep_id'] }}</option>  
+                    @if(($count == 1) and (old('dep_title') <> $item['dep_title']))
+                        <option value="{{ $item['dep_title'] }}" selected>{{ $item['dep_title'] }}</option>  
                     @elseif(old('dep_id') === $item['dep_id'])
-                        <option value="{{ $item['dep_id'] }}" selected>{{ $item['dep_id'] }}</option>     
+                        <option value="{{ $item['dep_title'] }}" selected>{{ $item['dep_title'] }}</option>     
                     @else
-                        <option value="{{ $item['dep_id'] }}">{{ $item['dep_id']}}</option>
+                        <option value="{{ $item['dep_title'] }}">{{ $item['dep_title']}}</option>
                     @endif
                     @php
                        $count++;

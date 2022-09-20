@@ -20,7 +20,7 @@
                                         <th>Employee ID</th>
                                         <th>Employee Name</th>
                                         <th>Employee Email</th>
-                                        <th>Contanct Number</th>
+                                        <th>Contact Number</th>
                                         <th>Manager Incharge</th>
                                         <th>Department</th>
                                         <th>Actions</th>
@@ -49,12 +49,14 @@
                                 </tbody>
                             </table>
                         </div>
+                        <a href="dashboard">Home</a>
+                            <a href="loginAdmin">Logout</a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-@endsection -->
+@endsection --> -->
 
 <!doctype html>
 <html lang="en">
@@ -76,12 +78,12 @@
                 <a class="navbar-brand" href="#" id="PathStrides-beside-logo" style="color: #FF7843">Pathstrides</a>
                 <ul class="navbar-nav" id="top-side-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">
+                        <a class="nav-link" href="{{url('dashboard')}}">
                             <img src="{{ URL('images\icons\icons8-home-page-90 (1).png') }}" class="top-side-nav-icon" alt="home">
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">
+                        <a class="nav-link" href="{{url('/logout')}}">
                             <img src="{{ URL('images\icons\icons8-logout-90.png') }}" class="top-side-nav-icon" alt="logout">
                         </a>
                     </li>

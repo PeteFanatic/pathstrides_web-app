@@ -22,4 +22,6 @@
     </hr>
   
   </div>
+  <a href="dashboard">Home</a>
+                            <a href="loginAdmin">Logout</a>
 </div>

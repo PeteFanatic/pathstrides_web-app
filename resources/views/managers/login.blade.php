@@ -367,7 +367,6 @@
     }
     
 </style> -->
-
 <!doctype html>
 <html lang="en">
   <head>
@@ -385,7 +384,11 @@
             <div class="formContainer">
                 <h1>Welcome to PathStrides</h1>
                 <img src="{{ URL('images/manager-landing-page.png') }}">
-                <form action="{{route('login-user')}}"method="post">
+<<<<<<< HEAD:resources/views/login.blade.php
+                <form action="{{route('dashboard_manager')}}"method="post">
+=======
+                <form action="{{route('login-manager')}}"method="post">
+>>>>>>> ed3e7fb802436e78c7a31663252de8411aad049f:resources/views/managers/login.blade.php
                 @if(Session::has('success'))
                 <div class="alert alert-success">{{Session::get('success')}}</div>
                 @endif

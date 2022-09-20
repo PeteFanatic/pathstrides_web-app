@@ -12,12 +12,8 @@
 <body>
     <section>
         <header>
-            <a href="logo"><img src="pathstrides-logo-with-text.png" alt="" id="logo"></a>
-            <ul>
-                <li><a href="topNav">Home</a></li>
-                <li><a href="topNav">Services</a></li>
-                <li><a href="topNav">About</a></li>
-            </ul>
+            <a href="logo"><img src="{{ URL('images/pathstrides-logo-with-text.png') }}" id="logo"></a>
+            
         </header>
 
         <div class="content">
@@ -31,7 +27,7 @@
         </div>
 
         <div class="landingIcon">
-            <a href="logo" class="managerIcon"><img src="manager_landing_page.PNG" alt="" id="logo"></a>
+            <a href="logo" class="managerIcon"><img src="{{ URL('images/manager-landing-page.png') }}" id="logo"></a>
         </div>
 
         <!-- The Modal -->
@@ -42,7 +38,7 @@
                 <span class="close">&times;</span>
                 <h1 id="modalTitle">SELECT ONE:</h1>
                 <div id="wrapper_admin">
-                    <a href="{{url('/adminlogin')}}" class="admin_button">
+                    <a href="loginAdmin" class="admin_button">
                         <div class="dots-container">
                             <div class="dot"></div>
                             <div class="dot"></div>
@@ -51,7 +47,7 @@
 
                         </div>
                         <span>
-                            <img src="admin.png" alt="" id="adminIcon">
+                            <img src="{{URL('images/admin.png')}}" id="adminIcon">
                             <p id="adminText">ADMIN</p>
                             <style>
                                 #adminIcon{
@@ -69,7 +65,7 @@
                     </a>
                 </div>
                 <div id="wrapper_manager">
-                    <a href="{{ url('login') }}" class="manager_button">
+                    <a href="{{ url('manager') }}" class="manager_button">
                         <div class="dots-container">
                             <div class="dot"></div>
                             <div class="dot"></div>
@@ -77,7 +73,7 @@
                             <div class="dot"></div>
                         </div>
                         <span>
-                        <img src="/photos/manager.png" alt="" id="managerIcon">
+                        <img src="{{ URL('images/manager.png') }}" id="managerIcon">
                             <p id="managerText">MANAGER</p>
                             <style>
                                 #managerIcon{
