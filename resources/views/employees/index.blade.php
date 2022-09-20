@@ -1,4 +1,4 @@
-@extends('employees.layout')
+<!-- @extends('employees.layout')
 @section('content')
     <div class="container">
         <div class="row">
@@ -56,10 +56,7 @@
             </div>
         </div>
     </div>
-<<<<<<< HEAD
-@endsection
-=======
-@endsection -->
+@endsection --> -->
 
 <!doctype html>
 <html lang="en">
@@ -551,4 +548,3 @@
         font-weight: bold;
     }
 </style>
->>>>>>> employee-for-manager
