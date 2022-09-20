@@ -60,7 +60,8 @@
         <input type="submit" value="Update" class="btn btn-success"></br>
         
     </form>
-  
+    <a href="dashboard">Home</a>
+                            <a href="loginAdmin">Logout</a>
   </div>
 </div>
 @stop

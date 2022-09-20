@@ -8,7 +8,7 @@ use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Foundation\Auth\Employee as Authenticatable;
 class Employee extends Model
 {
-    use HasFactory;
+    use HasFactory, HasApiTokens;
 
     public $incrementing = false;
     public $timestamps = false;

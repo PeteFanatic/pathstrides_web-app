@@ -11,13 +11,14 @@
   
         <div class="card-body">
         <h5 class="card-title">Announcement ID : {{ $announcements-> ann_id }}</h5>
-        <p class="card-text">Aannouncment Title : {{ $announcements->ann_title }}</p>
-        <p class="card-text">Aannouncment Location : {{ $announcements->location }}</p>
-        <p class="card-text">Aannouncment Description : {{ $announcements->ann_desc }}</p>
+        <p class="card-text">Announcment Title : {{ $announcements->ann_title }}</p>
+        <p class="card-text">Announcment Location : {{ $announcements->location }}</p>
+        <p class="card-text">Announcment Description : {{ $announcements->ann_desc }}</p>
         <p class="card-text">Manager Incharge : {{ $announcements->man_id }}</p>
         
   </div>
-      
+  <a href="dashboard">Home</a>
+                            <a href="loginAdmin">Logout</a>
     </hr>
   
   </div>

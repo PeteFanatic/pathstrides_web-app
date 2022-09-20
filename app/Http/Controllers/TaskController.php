@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Task;
 use App\Models\Manager;
 use App\Models\Employee;
+use App\Controllers\AuthController;
 
 class TaskController extends Controller
 {
@@ -99,8 +100,10 @@ class TaskController extends Controller
     }
 
     public function getEmployeeTask(){
-        $list = new Task();
-        $list = $list->getEmployeeTask();
-        return response()->json($list);
+        if($auth_id == $emp_id){
+            $list = new Task();
+            $list = $list->getEmployeeTask();
+            return response()->json($list);
+            }
     }
 }

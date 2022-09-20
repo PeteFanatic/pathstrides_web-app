@@ -216,6 +216,7 @@
 
 </style> -->
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -233,17 +234,25 @@
         <div class="container-fluid">
             <nav class="navbar navbar-expand-sm navbar-light" id="nav-top">
 
+<<<<<<< HEAD:resources/views/dashboard_manager.blade.php
                 <a class="navbar-brand" href="#"><img src="{{ URL('images/pathstrides-logo-FINAL.png') }}" class="logo"> Pathstrides</a>
 
                 <ul class="navbar-nav">
+=======
+                <a class="navbar-brand" href="#"><img src="{{ URL('images/pathstrides-logo-FINAL.png') }}" class="logo">
+                
+                <a class="navbar-brand" href="#" id="PathStrides-beside-logo" style="color: #FF7843">Pathstrides</a>
+                <ul class="navbar-nav" id="top-side-nav">
+>>>>>>> ed3e7fb802436e78c7a31663252de8411aad049f:resources/views/dashboard.blade.php
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Link 1</a>
+                        <a class="nav-link" href="#">
+                            <img src="{{ URL('images\icons\icons8-home-page-90 (1).png') }}" class="top-side-nav-icon" alt="home">
+                        </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Link 2</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Link 3</a>
+                        <a class="nav-link" href="loginWeb">
+                            <img src="{{ URL('images\icons\icons8-logout-90.png') }}" class="top-side-nav-icon" alt="logout">
+                        </a>
                     </li>
                 </ul>
             </nav>
@@ -274,6 +283,7 @@
                             <nav class="navbar" id="nav-side">
                                 <ul class="navbar-nav">
                                     <li class="nav-item">
+<<<<<<< HEAD:resources/views/dashboard_manager.blade.php
                                         <a class="nav-link" href="#" id="a-nav-side">Announcement</a>
                                     </li>
                                     <li class="nav-item">
@@ -284,6 +294,23 @@
                                         <a class="nav-link" href="" id="a-nav-side">Employees</a>
 =======
                                         <a class="nav-link" href="{{url('/employee')}}" id="a-nav-side">
+=======
+                                        <a class="nav-link" href="announcement" id="a-nav-side">
+                                            <img src="{{ URL('images\icons\icons8-commercial-90.png') }}"
+                                                class="icon">
+                                            Announcement
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="task" id="a-nav-side">
+                                            <img src="{{ URL('images\icons\icons8-playlist-90.png') }}"
+                                                class="icon">
+                                            Tasks
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="employee" id="a-nav-side">
+>>>>>>> ed3e7fb802436e78c7a31663252de8411aad049f:resources/views/dashboard.blade.php
                                             <img src="{{ URL('images\icons\icons8-member-90 (2).png') }}"
                                                 class="icon">
                                             Employees
@@ -291,7 +318,15 @@
 >>>>>>> employee-for-manager
                                     </li>
                                     <li class="nav-item">
+<<<<<<< HEAD:resources/views/dashboard_manager.blade.php
                                         <a class="nav-link" href="#" id="a-nav-side">Profile</a>
+=======
+                                        <a class="nav-link" href="manager" id="a-nav-side">
+                                            <img src="{{ URL('images\icons\icons8-male-user-96.png') }}"
+                                                class="icon">
+                                            Manager
+                                        </a>
+>>>>>>> ed3e7fb802436e78c7a31663252de8411aad049f:resources/views/dashboard.blade.php
                                     </li>
                                 </ul>
                             </nav>
@@ -300,16 +335,21 @@
                             <nav class="navbar" id="nav-side">
                                 <ul class="navbar-nav">
                                     <li class="nav-item">
-                                        <a class="nav-link" href="#" id="a-nav-side">Top Employees</a>
+                                        
+                                        <a class="nav-link disabled" href="#" id="top-employees-title">
+                                            <img src="{{ URL('images\icons\icons8-prize-90 (1).png') }}"
+                                                class="icon">
+                                            Top Employees
+                                        </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="#" id="a-nav-side">#1 Burger Oclarence</a>
+                                        <p></p><a class="nav-link disabled" href="#" id="top-employees">#1 Burger Oclarence</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="#" id="a-nav-side">#2 Ricardo Milos</a>
+                                        <a class="nav-link disabled" href="#" id="top-employees">#2 Ricardo Milos</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="#" id="a-nav-side">#3 Adonis Gibar</a>
+                                        <a class="nav-link disabled" href="#" id="top-employees">#3 Adonis Gibar</a>
                                     </li>
                                 </ul>
                             </nav>
@@ -318,6 +358,7 @@
                     <div class="col-xl-8">
                         <div class="container-fluid" id="announcements-container">
                             <h3>ANNOUNCEMENTS</h3>
+<<<<<<< HEAD:resources/views/dashboard_manager.blade.php
                             <div id="accordion">
 
                                 <div class="card" id="announcements">
@@ -329,14 +370,188 @@
                                     <div id="task1" class="collapse show" data-parent="#accordion">
                                         <div class="card-body">
                                             Lorem ipsum..
+=======
+                            <div class="card" id="announcement-1">
+                                <div class="card-body">
+                                    <div class="announcement-header">
+                                        <div class="container-fluid">
+                                            <div class="row">
+                                                <div class="col-9">
+                                                    <h2 class="card-title-announcements">Christmas Party</h2>
+                                                </div>
+                                                <div class="col-3">
+                                                    <p class="ann-date-posted">August 15, 2022 | 5:00 am</p>
+                                                </div>
+                                            </div>
+>>>>>>> ed3e7fb802436e78c7a31663252de8411aad049f:resources/views/dashboard.blade.php
+                                        </div>
+                                    </div>
+
+<<<<<<< HEAD:resources/views/dashboard_manager.blade.php
+                                <div class="card">
+                                    <div class="card-header">
+                                        <a class="collapsed card-link" data-toggle="collapse" href="#task2">
+                                            Collapsible Group Item #2
+=======
+                                    <div class="container-fluid">
+                                        <div class="row">
+                                            <div class="col-1">
+                                                <img src="{{ URL('https://viterbischool.usc.edu/wp-content/uploads/2020/05/Lily-Profile-Square.jpeg') }}"
+                                                class="announcer-photo">
+                                            </div>
+                                            <div class="col-9">
+                                                <p class="announcer-name">Rachel Chiu | Manager (Marketing Department)</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="announcement-body">
+                                            <div class="row">
+                                                <div class="col-1">
+                                                </div>
+                                                <div class="col-11">
+                                                    <p class="announcement-text">
+                                                        We will be having a meeting later at 10 am to discuss the newest products in the market.
+                                                    </p>
+                                                    <button type="button" class="btn" id="see-more" data-bs-toggle="modal" data-bs-target="#myModal">
+                                                        see more
+                                                    </button>
+                                                    <!-- <a class="see-more" data-bs-toggle="modal" data-bs-target="#myModal">see more</a> -->
+                                                </div>
+                                            </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="card" id="announcement-2">
+                                <div class="card-body">
+                                    <div class="announcement-header">
+                                        <div class="container-fluid">
+                                            <div class="row">
+                                                <div class="col-9">
+                                                    <h2 class="card-title-announcements">URGENT MEETING</h2>
+                                                </div>
+                                                <div class="col-3">
+                                                    <p class="ann-date-posted">August 15, 2022 | 5:00 am</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="container-fluid">
+                                        <div class="row">
+                                            <div class="col-1">
+                                                <img src="{{ URL('https://profilemagazine.com/wp-content/uploads/2020/04/Ajmere-Dale-Square-thumbnail.jpg') }}"
+                                                class="announcer-photo">
+                                            </div>
+                                            <div class="col-9">
+                                                <p class="announcer-name">Jonathan Ramos | Manager (Finance Department)</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="announcement-body">
+                                            <div class="row">
+                                                <div class="col-1">
+                                                </div>
+                                                <div class="col-11">
+                                                    <p class="announcement-text">
+                                                        We will be having a meeting later to talk about our sales.
+                                                    </p>
+                                                    <button type="button" class="btn" id="see-more" data-bs-toggle="modal" data-bs-target="#myModal">
+                                                        see more
+                                                    </button>
+                                                    <!-- <a class="see-more" data-bs-toggle="modal" data-bs-target="#myModal">see more</a> -->
+                                                </div>
+                                            </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card" id="announcement-3">
+                                <div class="card-body">
+                                    <div class="announcement-header">
+                                        <div class="container-fluid">
+                                            <div class="row">
+                                                <div class="col-9">
+                                                    <h2 class="card-title-announcements">Christmas Party</h2>
+                                                </div>
+                                                <div class="col-3">
+                                                    <p class="ann-date-posted">August 15, 2022 | 5:00 am</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="container-fluid">
+                                        <div class="row">
+                                            <div class="col-1">
+                                                <img src="{{ URL('https://i.pinimg.com/736x/54/74/8d/54748de2a9fa0951d2e81b1ffbbd189c.jpg') }}"
+                                                class="announcer-photo">
+                                            </div>
+                                            <div class="col-9">
+                                                <p class="announcer-name">Elizabeth Ignacio | Manager (Marketing Department)</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="announcement-body">
+                                            <div class="row">
+                                                <div class="col-1">
+                                                </div>
+                                                <div class="col-11">
+                                                    <p class="announcement-text">
+                                                        Good day everyone!<br>
+                                                        Meeting tomorrow at 1PM. We will talk about our Christmas Party
+                                                    </p>
+                                                    <button type="button" class="btn" id="see-more" data-bs-toggle="modal" data-bs-target="#myModal">
+                                                        see more
+                                                    </button>
+                                                    <!-- <a class="see-more" data-bs-toggle="modal" data-bs-target="#myModal">see more</a> -->
+                                                </div>
+                                            </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="container mt-3">                  
+                                <ul class="pagination">
+                                    <li class="page-item"><a class="page-link" href="#"><</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">></a></li>
+                                </ul>
+                            </div>
+
+
+                        </div>
+                        
+
+                        <div class="container-fluid" id="tasks-container">
+                            <h3>TASKS</h3>
+                            <div id="accordion">
+
+                                <div class="card">
+                                    <div class="card-header">
+                                        <a class="collapsed card-link" data-toggle="collapse" href="#task1" id="card">
+                                            TASK 1
+                                        </a>
+                                    </div>
+                                    <div id="task1" class="collapse" data-parent="#accordion">
+                                        <div class="card-body">
+                                            Lorem ipsum..
                                         </div>
                                     </div>
                                 </div>
 
                                 <div class="card">
                                     <div class="card-header">
-                                        <a class="collapsed card-link" data-toggle="collapse" href="#task2">
-                                            Collapsible Group Item #2
+                                        <a class="collapsed card-link" data-toggle="collapse" href="#task2" id="card">
+                                            TASK 2
+>>>>>>> ed3e7fb802436e78c7a31663252de8411aad049f:resources/views/dashboard.blade.php
                                         </a>
                                     </div>
                                     <div id="task2" class="collapse" data-parent="#accordion">
@@ -348,8 +563,13 @@
 
                                 <div class="card">
                                     <div class="card-header">
+<<<<<<< HEAD:resources/views/dashboard_manager.blade.php
                                         <a class="collapsed card-link" data-toggle="collapse" href="#task3">
                                             Collapsible Group Item #3
+=======
+                                        <a class="collapsed card-link" data-toggle="collapse" href="#task3" id="card">
+                                            TASK 3
+>>>>>>> ed3e7fb802436e78c7a31663252de8411aad049f:resources/views/dashboard.blade.php
                                         </a>
                                     </div>
                                     <div id="task3" class="collapse" data-parent="#accordion">
@@ -359,6 +579,16 @@
                                     </div>
                                 </div>
 
+                            </div>
+
+                            <div class="container mt-3">                  
+                                <ul class="pagination">
+                                    <li class="page-item"><a class="page-link" href="#"><</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">></a></li>
+                                </ul>
                             </div>
                         </div>
                         
@@ -467,10 +697,23 @@
         height: 60px;
     }
 
+<<<<<<< HEAD:resources/views/dashboard_manager.blade.php
     .navbar-nav{
         position: right;
         right: 10px;
 
+=======
+    #top-side-nav{
+        position: absolute;
+        right: 2em;
+    }
+
+    .top-side-nav-icon{
+        height: 30px;
+        width: auto;
+        margin-top: auto;
+        margin-bottom: auto;
+>>>>>>> ed3e7fb802436e78c7a31663252de8411aad049f:resources/views/dashboard.blade.php
     }
 
     .navbar{
@@ -512,6 +755,27 @@
         color: black;
     }
 
+<<<<<<< HEAD:resources/views/dashboard_manager.blade.php
+=======
+    #top-employees-title{
+        color: black;
+        font-weight: bold;
+    }
+
+    #top-employees{
+        color: black;
+    }
+
+    #a-nav-side:hover, #a-nav-side:focus{
+        color: #FF7843;
+    }
+
+    #body-layout{
+        margin: auto;
+    }
+
+
+>>>>>>> ed3e7fb802436e78c7a31663252de8411aad049f:resources/views/dashboard.blade.php
     #announcements-container, #tasks-container{
         display: inline-block;
         width: 60vw;
@@ -536,8 +800,69 @@
         border: none;
     }
 
+<<<<<<< HEAD:resources/views/dashboard_manager.blade.php
     .card-link:visited{
         background-color: red;
+=======
+    #announcement-1, #announcement-2, #announcement-3{
+        margin-bottom: 2em;
     }
 
+    .collapsed{
+        font-size: 14px;
+        text-decoration: none;
+        font-weight: 600;
+        color: black;
+    }
+
+    .card-title-announcements{
+        font-weight: bold;
+    }
+
+    .ann-date-posted{
+        float: right;
+    }
+
+    .announcer-photo{
+        border-radius: 50%;
+        height: 60px;
+        width: auto;
+    }
+
+    .announcer-name{
+        font-weight: bold;
+        float: left;
+        margin-top: 1em;
+    }
+
+    #see-more{
+        color: #5F6368;
+        font-weight: bold;
+        float: right;
+        margin-right: 1em;
+        height:auto;
+        width: auto;
+        background-color: white;
+    }
+
+    .see-more:hover{
+        color: #FF7843;
+        text-decoration: none;
+    }
+    
+    .pagination{
+        float: right;
+>>>>>>> ed3e7fb802436e78c7a31663252de8411aad049f:resources/views/dashboard.blade.php
+    }
+
+    .page-link{
+        color: #5F6368;
+        background-color: #FBFBFB;
+        border: none;
+    }
+
+    .page-link:hover{
+        color: #FF7843;
+        font-weight: bold;
+    }
 </style>

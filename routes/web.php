@@ -21,8 +21,8 @@ use App\Http\Controllers\AnnouncementController;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
+// Route::get('/loginManager', function () {
+//     return view('managers.logins');
 // });
 
 
@@ -30,27 +30,40 @@ use App\Http\Controllers\AnnouncementController;
 // Route::post('employee/create',[EmployeeController::class,'store'])->name('employees.save');
 // Route::get('employee/create',[EmployeeController::class,'create'])->name('employees.save');
 Route::get('/', [AuthController::class, 'landing'])->name('welcome'); //homepage
+<<<<<<< HEAD
 //Route::get('/dashboard/manager', [AuthController::class, 'dashboard_manager'])->name('dashboard_manager');
+=======
+// Route::get('dashboardAdmin', [AuthController::class, 'dashboard_admin'])->name('dashboardAdmin');
+Route::get('dashboard', [AuthController::class, 'dashboard'])->name('dashboard');
+>>>>>>> ed3e7fb802436e78c7a31663252de8411aad049f
 // Route::get('login', [CustomAuthController::class, 'index'])->name('login');
 
 
 // Route::get('login', [CustomAuthController::class, 'index'])->name('login');
+Route::get('/login', [AuthController::class, 'login_admin'])->middleware('alreadyLoggedIn');
+// Route::get('/loginManager', [AuthController::class, 'login_manager'])->middleware('alreadyLoggedIn');
 
-Route::get('login', [AuthController::class, 'index'])->middleware('alreadyLoggedIn');
 Route::get('loginEmployee', [AuthController::class, 'loginEmployee'])->name('loginEmployee');
 // Route::post('postlogin', [AuthController::class, 'login'])->name('login');
 
 // guide para sa custom auth login nako sauna
 
 // Route::get('login', [CustomAuthController::class, 'login'])->middleware('alreadyLoggedIn');
+<<<<<<< HEAD
 Route::get('/registration', [AuthController::class, 'registration'])->middleware('alreadyLoggedIn');
 Route::post('/register-user',[AuthController::class,'registerUser'])->name('register-user');
+=======
+Route::get('registration', [AuthController::class, 'registration']);
+Route::post('/register-admin',[AuthController::class,'registerUser'])->name('register-admin');
+>>>>>>> ed3e7fb802436e78c7a31663252de8411aad049f
 
-Route::post('login-user',[AuthController::class,'loginUser'])->name('login-user');
-Route::get('/home',[CustomAuthController::class,'home'])->middleware('isLoggedIn');
-Route::get('/logout',[CustomAuthController::class,'logout']);
-Route::get('/adminlogin',[CustomAuthController::class,'logout']);
+Route::post('login-manager',[AuthController::class,'loginWeb'])->name('login-manager');
+Route::post('login-admin',[AuthController::class,'loginWeb'])->name('login-admin');
+// Route::get('/home',[CustomAuthController::class,'home'])->middleware('isLoggedIn');
+Route::get('/logout',[AuthController::class,'logout'])->name('logout');
+// Route::get('/adminlogin',[CustomAuthController::class,'logout']);
 
+<<<<<<< HEAD
 Route::resource("/employee", EmployeeController::class)->middleware('isLoggedIn');
 Route::resource("/manager", ManagerController::class);
 Route::resource("/task", TaskController::class)->middleware('isLoggedIn');
@@ -65,3 +78,9 @@ Route::resource("/admin", AdminController::class);
 //  Route::post('manager/{id}/edit',[ManagerController::class,'update'])->name('manager.update');
 //  Route::delete('manager/{id}/destroy',[ManagerController::class,'destroy'])->name('manager.destroy');
 
+=======
+Route::resource("employee", EmployeeController::class);
+Route::resource("manager", ManagerController::class);
+Route::resource("task", TaskController::class);
+Route::resource("announcement", AnnouncementController::class);
+>>>>>>> ed3e7fb802436e78c7a31663252de8411aad049f

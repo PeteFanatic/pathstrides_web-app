@@ -20,7 +20,7 @@
                                         <th>Employee ID</th>
                                         <th>Employee Name</th>
                                         <th>Employee Email</th>
-                                        <th>Contanct Number</th>
+                                        <th>Contact Number</th>
                                         <th>Manager Incharge</th>
                                         <th>Department</th>
                                         <th>Actions</th>
@@ -49,6 +49,8 @@
                                 </tbody>
                             </table>
                         </div>
+                        <a href="dashboard">Home</a>
+                            <a href="loginAdmin">Logout</a>
                     </div>
                 </div>
             </div>

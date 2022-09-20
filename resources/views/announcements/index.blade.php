@@ -45,6 +45,8 @@
                                 @endforeach
                                 </tbody>
                             </table>
+                            <a href="dashboard">Home</a>
+                            <a href="loginAdmin">Logout</a>
                         </div>
                     </div>
                 </div>
