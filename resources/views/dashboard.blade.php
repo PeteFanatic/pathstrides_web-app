@@ -309,8 +309,12 @@
                                         </a>
                                     </li>
                                     <li class="nav-item">
+<<<<<<< HEAD:resources/views/dashboard.blade.php
                                         <a class="nav-link" href="employee" id="a-nav-side">
 >>>>>>> ed3e7fb802436e78c7a31663252de8411aad049f:resources/views/dashboard.blade.php
+=======
+                                        <a class="nav-link" href="{{url('/employee')}} id="a-nav-side">
+>>>>>>> 66906d0f14bcbc1d32f9ef3e888d7ab33de59d1c:resources/views/dashboard_manager.blade.php
                                             <img src="{{ URL('images\icons\icons8-member-90 (2).png') }}"
                                                 class="icon">
                                             Employees
