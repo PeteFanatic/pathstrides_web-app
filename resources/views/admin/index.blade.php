@@ -31,8 +31,8 @@
                                 @foreach($employee as $item)
                                     <tr>
                                         <td>{{ $item->user_id }}</td>
-                                        <td>{{ $item->userfname }} , {{ $item->man_lname }}</td>
-                                        <td>{{ $item->userlname }}</td>
+                                        <td>{{ $item->userfname }} , {{ $item->userlname }}</td>
+                                        <td>{{ $item->useremail }}</td>
                                         <td>{{ $item->contanctnumber }}</td>
                                         <td>{{ $item->department }}
                                         <td>{{ $item->role }}</td>
