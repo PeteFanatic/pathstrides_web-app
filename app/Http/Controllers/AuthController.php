@@ -22,9 +22,9 @@ class AuthController extends Controller
     {
         return view('managers.login');
     }
-    public function login_admin()
+    public function login()
     {
-        return view('admin.login_admin');
+        return view('login');
     }
 
     public function landing(){

@@ -40,7 +40,7 @@
             <div class="formContainer">
                 <h1>Welcome to PathStrides</h1>
                 <img src="{{ URL('images/manager-landing-page.png') }}">
-                <form action="{{route('login-admin')}}"method="post">
+                <form action="{{route('login-user')}}"method="post">
                 @if(Session::has('success'))
                 <div class="alert alert-success">{{Session::get('success')}}</div>
                 @endif

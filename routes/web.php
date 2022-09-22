@@ -36,7 +36,7 @@ Route::get('dashboard', [AuthController::class, 'dashboard_manager'])->name('das
 
 // Route::get('login', [CustomAuthController::class, 'index'])->name('login');
 
-Route::get('login', [AuthController::class, 'index'])->middleware('alreadyLoggedIn');
+Route::get('login', [AuthController::class, 'login'])->middleware('alreadyLoggedIn');
 Route::get('loginEmployee', [AuthController::class, 'loginEmployee'])->name('loginEmployee');
 // Route::post('postlogin', [AuthController::class, 'login'])->name('login');
 
@@ -46,7 +46,7 @@ Route::get('loginEmployee', [AuthController::class, 'loginEmployee'])->name('log
 Route::get('registration', [AuthController::class, 'registration'])->middleware('alreadyLoggedIn');
 Route::post('/register-admin',[AuthController::class,'registerUser'])->name('register-admin');
 
-Route::post('login-user',[AuthController::class,'loginUser'])->name('login-user');
+Route::post('login-user',[AuthController::class,'loginWeb'])->name('login-user');
 Route::get('/home',[CustomAuthController::class,'home'])->middleware('isLoggedIn');
 Route::get('/logout',[CustomAuthController::class,'logout']);
 Route::get('/adminlogin',[CustomAuthController::class,'logout']);

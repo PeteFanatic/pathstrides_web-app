@@ -22,7 +22,8 @@
                 </h2><br class="description">
                 <p>With Pathstrides, you can manage your employees outside office.
                 </p>
-                <button id="getStarted">Get Started</button>
+                <a id="getStarted" href="{{ url('login') }}">Get Started</a>
+                
             </div>
         </div>
 
@@ -30,15 +31,14 @@
             <a href="logo" class="managerIcon"><img src="{{ URL('images/manager-landing-page.png') }}" id="logo"></a>
         </div>
 
-        <!-- The Modal -->
+<!-- 
         <div id="myModal" class="modal">
 
-            <!-- Modal content -->
             <div class="modal-content">
                 <span class="close">&times;</span>
                 <h1 id="modalTitle">SELECT ONE:</h1>
                 <div id="wrapper_admin">
-                    <a href="loginAdmin" class="admin_button">
+                    <a href="{{ url('login') }}" class="admin_button">
                         <div class="dots-container">
                             <div class="dot"></div>
                             <div class="dot"></div>
@@ -65,7 +65,7 @@
                     </a>
                 </div>
                 <div id="wrapper_manager">
-                    <a href="{{ url('manager') }}" class="manager_button">
+                    <a href="{{ url('login') }}" class="manager_button">
                         <div class="dots-container">
                             <div class="dot"></div>
                             <div class="dot"></div>
@@ -119,7 +119,7 @@
                     modal.style.display = "none";
                 }
             }
-        </script>
+        </script> -->
     </section>
 </body>
 
@@ -239,6 +239,9 @@
         border: 3px solid rgb(255, 120, 67);
         font-family: 'Inter', sans-serif;
         font-size: 20px;
+        text-decoration: none;
+        text-align: center;
+        vertical-align: middle;
         letter-spacing: 2px;
         font-weight: 700;
         background: rgb(255, 120, 67);
@@ -255,6 +258,7 @@
     #getStarted:after {
         position: absolute;
         content: "";
+        vertical-align: middle;
         width: 0;
         height: 100%;
         top: 0;
@@ -266,15 +270,18 @@
     
     #getStarted:hover {
         color: rgb(255, 120, 67);
+        vertical-align: middle;
     }
     
     #getStarted:hover:after {
         left: 0;
         width: 100%;
+        vertical-align: middle;
     }
     
     #getStarted:active {
         top: 2px;
+        vertical-align: middle;
     }
     
     .modal {
