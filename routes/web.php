@@ -30,7 +30,7 @@ use App\Http\Controllers\AnnouncementController;
 // Route::post('employee/create',[EmployeeController::class,'store'])->name('employees.save');
 // Route::get('employee/create',[EmployeeController::class,'create'])->name('employees.save');
 Route::get('/', [AuthController::class, 'landing'])->name('welcome'); //homepage
-Route::get('dashboard', [AuthController::class, 'dashboard_manager'])->name('dashboard');
+Route::get('dashboard', [AuthController::class, 'dashboard'])->name('dashboard');
 // Route::get('login', [CustomAuthController::class, 'index'])->name('login');
 
 
@@ -44,7 +44,7 @@ Route::get('loginEmployee', [AuthController::class, 'loginEmployee'])->name('log
 
 // Route::get('login', [CustomAuthController::class, 'login'])->middleware('alreadyLoggedIn');
 Route::get('registration', [AuthController::class, 'registration'])->middleware('alreadyLoggedIn');
-Route::post('/register-admin',[AuthController::class,'registerUser'])->name('register-admin');
+Route::post('register-admin',[AuthController::class,'registerUser'])->name('register-admin');
 
 Route::post('login-user',[AuthController::class,'loginWeb'])->name('login-user');
 Route::get('/home',[CustomAuthController::class,'home'])->middleware('isLoggedIn');

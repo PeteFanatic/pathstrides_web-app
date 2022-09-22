@@ -7,7 +7,7 @@ use App\Models\User;
 use App\Models\Employee;
 use App\Models\Manager;
 use App\Models\Department;
-
+use App\Models\Admin;
 class AdminController extends Controller
 {
     /**

@@ -216,7 +216,6 @@
 
 </style> -->
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -234,103 +233,85 @@
         <div class="container-fluid">
             <nav class="navbar navbar-expand-sm navbar-light" id="nav-top">
 
-<<<<<<< HEAD:resources/views/dashboard_manager.blade.php
-                <a class="navbar-brand" href="#"><img src="{{ URL('images/pathstrides-logo-FINAL.png') }}" class="logo"> Pathstrides</a>
-
-                <ul class="navbar-nav">
-=======
                 <a class="navbar-brand" href="#"><img src="{{ URL('images/pathstrides-logo-FINAL.png') }}" class="logo">
                 
                 <a class="navbar-brand" href="#" id="PathStrides-beside-logo" style="color: #FF7843">Pathstrides</a>
                 <ul class="navbar-nav" id="top-side-nav">
->>>>>>> ed3e7fb802436e78c7a31663252de8411aad049f:resources/views/dashboard.blade.php
                     <li class="nav-item">
                         <a class="nav-link" href="#">
                             <img src="{{ URL('images\icons\icons8-home-page-90 (1).png') }}" class="top-side-nav-icon" alt="home">
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="loginWeb">
+                        <a class="nav-link" href="#">
                             <img src="{{ URL('images\icons\icons8-logout-90.png') }}" class="top-side-nav-icon" alt="logout">
                         </a>
                     </li>
                 </ul>
             </nav>
         </div>
-        
-        <div class="container-fluid">
-            <div class="container-fluid" id="header">
-                <div class="cover-photo">
+    
+
+        <div class="container-fluid" id="header-container">
+            <div class="row" id="header-photo">
+                <div class="col-2">
                     <img src="{{ URL('https://i.pinimg.com/564x/86/8f/f2/868ff26099df298eb554a2bf366731f0.jpg') }}"
                     class="profile-pic">
-
+                </div>
+                <div class="col-9" id="header-text">
                     <div class="user-info">
-                        <h4 class="name">
+
+                    <h4 class="name">
                             Jane Doe
                         </h4>
                         <p class="username">
                             j_doe
+                        </p>
+                        <h4 class="department">
+                            Manager | Marketing Department
+
                         </h4>
+                        <p class="num-of-employees">
+                            12 Employees
+                        </p>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="container" id="">
+        <div class="container" id="body-layout">
             <div class="row">
-                <div class="col-sm-4">
+                <div class="col-sm-3">
                     <div class="container-fluid">
                             <nav class="navbar" id="nav-side">
                                 <ul class="navbar-nav">
                                     <li class="nav-item">
-<<<<<<< HEAD:resources/views/dashboard_manager.blade.php
-                                        <a class="nav-link" href="#" id="a-nav-side">Announcement</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="#" id="a-nav-side">Tasks</a>
-                                    </li>
-                                    <li class="nav-item">
-<<<<<<< HEAD
-                                        <a class="nav-link" href="" id="a-nav-side">Employees</a>
-=======
-                                        <a class="nav-link" href="{{url('/employee')}}" id="a-nav-side">
-=======
-                                        <a class="nav-link" href="announcement" id="a-nav-side">
+                                        <a class="nav-link" href="#" id="a-nav-side">
                                             <img src="{{ URL('images\icons\icons8-commercial-90.png') }}"
                                                 class="icon">
                                             Announcement
                                         </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="task" id="a-nav-side">
+                                        <a class="nav-link" href="#" id="a-nav-side">
                                             <img src="{{ URL('images\icons\icons8-playlist-90.png') }}"
                                                 class="icon">
                                             Tasks
                                         </a>
                                     </li>
                                     <li class="nav-item">
-<<<<<<< HEAD:resources/views/dashboard.blade.php
-                                        <a class="nav-link" href="employee" id="a-nav-side">
->>>>>>> ed3e7fb802436e78c7a31663252de8411aad049f:resources/views/dashboard.blade.php
-=======
-                                        <a class="nav-link" href="{{url('/employee')}} id="a-nav-side">
->>>>>>> 66906d0f14bcbc1d32f9ef3e888d7ab33de59d1c:resources/views/dashboard_manager.blade.php
+                                        <a class="nav-link" href="{{url('/employee')}}" id="a-nav-side">
                                             <img src="{{ URL('images\icons\icons8-member-90 (2).png') }}"
                                                 class="icon">
                                             Employees
                                         </a>
->>>>>>> employee-for-manager
                                     </li>
                                     <li class="nav-item">
-<<<<<<< HEAD:resources/views/dashboard_manager.blade.php
-                                        <a class="nav-link" href="#" id="a-nav-side">Profile</a>
-=======
-                                        <a class="nav-link" href="manager" id="a-nav-side">
+                                        <a class="nav-link" href="#" id="a-nav-side">
                                             <img src="{{ URL('images\icons\icons8-male-user-96.png') }}"
                                                 class="icon">
-                                            Manager
+                                            User Profile
                                         </a>
->>>>>>> ed3e7fb802436e78c7a31663252de8411aad049f:resources/views/dashboard.blade.php
                                     </li>
                                 </ul>
                             </nav>
@@ -362,19 +343,6 @@
                     <div class="col-xl-8">
                         <div class="container-fluid" id="announcements-container">
                             <h3>ANNOUNCEMENTS</h3>
-<<<<<<< HEAD:resources/views/dashboard_manager.blade.php
-                            <div id="accordion">
-
-                                <div class="card" id="announcements">
-                                    <div class="card-header">
-                                        <a class="card-link" data-toggle="collapse" href="#task1">
-                                            Collapsible Group Item #1
-                                        </a>
-                                    </div>
-                                    <div id="task1" class="collapse show" data-parent="#accordion">
-                                        <div class="card-body">
-                                            Lorem ipsum..
-=======
                             <div class="card" id="announcement-1">
                                 <div class="card-body">
                                     <div class="announcement-header">
@@ -387,16 +355,9 @@
                                                     <p class="ann-date-posted">August 15, 2022 | 5:00 am</p>
                                                 </div>
                                             </div>
->>>>>>> ed3e7fb802436e78c7a31663252de8411aad049f:resources/views/dashboard.blade.php
                                         </div>
                                     </div>
 
-<<<<<<< HEAD:resources/views/dashboard_manager.blade.php
-                                <div class="card">
-                                    <div class="card-header">
-                                        <a class="collapsed card-link" data-toggle="collapse" href="#task2">
-                                            Collapsible Group Item #2
-=======
                                     <div class="container-fluid">
                                         <div class="row">
                                             <div class="col-1">
@@ -555,7 +516,6 @@
                                     <div class="card-header">
                                         <a class="collapsed card-link" data-toggle="collapse" href="#task2" id="card">
                                             TASK 2
->>>>>>> ed3e7fb802436e78c7a31663252de8411aad049f:resources/views/dashboard.blade.php
                                         </a>
                                     </div>
                                     <div id="task2" class="collapse" data-parent="#accordion">
@@ -567,13 +527,8 @@
 
                                 <div class="card">
                                     <div class="card-header">
-<<<<<<< HEAD:resources/views/dashboard_manager.blade.php
-                                        <a class="collapsed card-link" data-toggle="collapse" href="#task3">
-                                            Collapsible Group Item #3
-=======
                                         <a class="collapsed card-link" data-toggle="collapse" href="#task3" id="card">
                                             TASK 3
->>>>>>> ed3e7fb802436e78c7a31663252de8411aad049f:resources/views/dashboard.blade.php
                                         </a>
                                     </div>
                                     <div id="task3" class="collapse" data-parent="#accordion">
@@ -593,53 +548,6 @@
                                     <li class="page-item"><a class="page-link" href="#">3</a></li>
                                     <li class="page-item"><a class="page-link" href="#">></a></li>
                                 </ul>
-                            </div>
-                        </div>
-                        
-
-                        <div class="container-fluid" id="tasks-container">
-                        <h3>TASKS</h3>
-                            <div id="accordion">
-
-                                <div class="card" id="announcements">
-                                    <div class="card-header">
-                                        <a class="card-link" data-toggle="collapse" href="#collapseOne">
-                                            Collapsible Group Item #1
-                                        </a>
-                                    </div>
-                                    <div id="collapseOne" class="collapse show" data-parent="#accordion">
-                                        <div class="card-body">
-                                            Lorem ipsum..
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="card">
-                                    <div class="card-header">
-                                        <a class="collapsed card-link" data-toggle="collapse" href="#collapseTwo">
-                                            Collapsible Group Item #2
-                                        </a>
-                                    </div>
-                                    <div id="collapseTwo" class="collapse" data-parent="#accordion">
-                                        <div class="card-body">
-                                            Lorem ipsum..
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="card">
-                                    <div class="card-header">
-                                        <a class="collapsed card-link" data-toggle="collapse" href="#collapseThree">
-                                            Collapsible Group Item #3
-                                        </a>
-                                    </div>
-                                    <div id="collapseThree" class="collapse" data-parent="#accordion">
-                                        <div class="card-body">
-                                            Lorem ipsum..
-                                        </div>
-                                    </div>
-                                </div>
-
                             </div>
                         </div>
             </div>
@@ -683,6 +591,16 @@
         position: absolute;
     }
 
+    #body-layout{
+        position: absolute;
+    }
+
+    .icon{
+        height: 20px;
+        width: auto;
+        margin-right: 1em;
+    }
+
     #nav-top{
         height: 50px;
         width: 100%;
@@ -694,19 +612,15 @@
     .navbar-brand{
         font-weight: 600;
         float: left;
+        color: #FF7843;
     }
 
     .logo{
         width: auto;  
         height: 60px;
+        color: #FF7843;
     }
 
-<<<<<<< HEAD:resources/views/dashboard_manager.blade.php
-    .navbar-nav{
-        position: right;
-        right: 10px;
-
-=======
     #top-side-nav{
         position: absolute;
         right: 2em;
@@ -717,30 +631,40 @@
         width: auto;
         margin-top: auto;
         margin-bottom: auto;
->>>>>>> ed3e7fb802436e78c7a31663252de8411aad049f:resources/views/dashboard.blade.php
     }
 
     .navbar{
         background-color: white;
     }
 
-    #header{
+    #header-container{
         background-image: linear-gradient(to right, #FF9A00, #FFBC57);
         height: 190px;
         width: 100%;
         margin-top: 0;
     }
 
+    #header-text{
+        margin-top: 1.2em;
+        margin-left: 1em;
+        color: white;
+    }
+
     .profile-pic{
-        clear: left;
         height: 150px;
         width: auto;
         border-radius: 50%;
-        clear: left;
+        display: inline;
+        margin-top: 1.2em; 
+        margin-left: 1em;
     }
 
     .user-info{
         display: inline;
+    }
+
+    .name, .department{
+        font-weight: bold;
     }
 
     #nav-side{
@@ -750,17 +674,16 @@
         margin-top: 3em;
         display: block;
         clear: right;
-        float: left;
+        position: ;
     }
 
     #a-nav-side{
         text-decoration: none;
+        font-weight: 600;
         font-size: 16px;
         color: black;
     }
 
-<<<<<<< HEAD:resources/views/dashboard_manager.blade.php
-=======
     #top-employees-title{
         color: black;
         font-weight: bold;
@@ -779,10 +702,9 @@
     }
 
 
->>>>>>> ed3e7fb802436e78c7a31663252de8411aad049f:resources/views/dashboard.blade.php
     #announcements-container, #tasks-container{
         display: inline-block;
-        width: 60vw;
+        width: 77vw;
         padding: 2em;
         background-color: #FBFBFB;
         border-radius: 10px;
@@ -800,14 +722,9 @@
     .card{
         display: block;
         width: 100%;
-        border-radius: 10px;
         border: none;
     }
 
-<<<<<<< HEAD:resources/views/dashboard_manager.blade.php
-    .card-link:visited{
-        background-color: red;
-=======
     #announcement-1, #announcement-2, #announcement-3{
         margin-bottom: 2em;
     }
@@ -856,7 +773,6 @@
     
     .pagination{
         float: right;
->>>>>>> ed3e7fb802436e78c7a31663252de8411aad049f:resources/views/dashboard.blade.php
     }
 
     .page-link{

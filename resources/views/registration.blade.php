@@ -27,44 +27,44 @@
                     <div class="form-group">
                         <label for="name">First Name</label>
                         <input type="text"class="form-control" placeholder="Enter Full Name"
-                        name="name" value="{{old('fname')}}">
-                        <span class="text-danger">@error('fname'){{$message}} @enderror</span>
+                        name="admin_fname" value="{{old('admin_fname')}}">
+                        <span class="text-danger">@error('admin_fname'){{$message}} @enderror</span>
                     </div>
                     <br>
                     <div class="form-group">
                         <label for="name">Last Name</label>
                         <input type="text"class="form-control" placeholder="Enter Full Name"
-                        name="name" value="{{old('lname')}}">
-                        <span class="text-danger">@error('lname'){{$message}} @enderror</span>
+                        name="admin_lname" value="{{old('admin_lname')}}">
+                        <span class="text-danger">@error('admin_lname'){{$message}} @enderror</span>
                     </div>
                     <br>
                     <div class="form-group">
                         <label for="email">Email Address</label>
                         <input type="text"class="form-control" placeholder="Enter Email"
-                        name="email" value="{{old('email')}}">
-                        <span class="text-danger">@error('email'){{$message}} @enderror</span>
+                        name="admin_email" value="{{old('admin_email')}}">
+                        <span class="text-danger">@error('admin_email'){{$message}} @enderror</span>
                     </div>
                     <br>
                     <div class="form-group">
                         <label for="name">Username</label>
                         <input type="text"class="form-control" placeholder="Enter Full Name"
-                        name="name" value="{{old('username')}}">
-                        <span class="text-danger">@error('username'){{$message}} @enderror</span>
+                        name="admin_username" value="{{old('admin_username')}}">
+                        <span class="text-danger">@error('admin_username'){{$message}} @enderror</span>
                     </div>
                     
                     <br>
                     <div class="form-group">
                         <label for="password">Password</label>
                         <input type="password"class="form-control" placeholder="Enter Password"
-                        name="password" value="{{old('password')}}">
-                        <span class="text-danger">@error('password'){{$message}} @enderror</span>
+                        name="admin_password" value="{{old('admin_password')}}">
+                        <span class="text-danger">@error('admin_password'){{$message}} @enderror</span>
                     </div>
                     <br>
                     <div class="form-group">
                         <button class="btn btn-block btn-primary" type="submit">Register</button>
                     </div>
                     <br>
-                    Account Exists? Login <a href="login">Here</a>
+                    Account Exists? Login <a href="loginAdmin">Here</a>
                 </form>
             </div>
 

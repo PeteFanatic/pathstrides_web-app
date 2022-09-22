@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use App\Models\Manager;
 use App\Models\Employee;
+use App\Models\Admin;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Auth;
@@ -34,8 +35,8 @@ class AuthController extends Controller
         return view("registration");
     }
 
-    public function dashboard_manager(){
-        return view('dashboard_manager');
+    public function dashboard(){
+        return view('dashboard');
     }
     // public function dashboard_admin(){
     //     // return view('dashboard_manager');
@@ -76,21 +77,23 @@ class AuthController extends Controller
             'admin_fname'=>'required',
             'admin_lname'=>'required',
             'admin_username'=>'required',
-            'admin_email'=>'required|email|unique:users',
+            'admin_email'=>'required|email|unique:admin',
             'admin_password'=>'required|min:6|max:12',
         ]);
         $admin = new Admin();
-        $admin->lname = $request->lname;
-        $admin->fname = $request->fname;
-        $admin->email = $request->email;
-        $admin->username = $request->username;
-        $admin->password = Hash::make($request->password);
+        $admin->admin_fname = $request->admin_fname;
+        $admin->admin_lname = $request->admin_lname;
+        $admin->admin_email = $request->admin_email;
+        $admin->admin_username = $request->admin_username;
+        $admin->admin_password = Hash::make($request->admin_password);
         $res = $admin->save();
         if($res){
             // return back()->with('success','Registered Successfully');
             
-            Admin::create($res);
-            return redirect('admin')->with('flash_message', 'Admin Addedd!'); 
+            // Admin::create($res);
+            // return redirect('admin')->with('flash_message', 'Admin Addedd!'); 
+            $request->session()->put('loginId',$admin->admin_id);
+            return redirect('dashboard');
         }else{
             return back()->with('fail','Try Again.');
         }
@@ -156,10 +159,10 @@ class AuthController extends Controller
             'password'=>'required|min:6|max:12',
         ]);
         $admin = Admin::where('admin_email','=',$request->email)->first();
-         $manager = Manager::where('man_email','=',$request->email)->first();
+         $users = Users::where('user_email','=',$request->email)->first();
         // $manager = Manager::where('man_password','=',Hash::make($request->password))->first();
         if($admin){
-            if($request->password==$admin->admin_password){
+            if(hash::check($request->password,$admin->admin_password)){
             //     if($manager = Manager::where('man_password','=',$request->password)->first()){
                 // if(hash::check($request->password,$manager->man_password)){
                 // if(manager->where($request->password)->value('man_password')){
@@ -170,12 +173,12 @@ class AuthController extends Controller
             else{
                 return back()->with('fail','Password Incorrect.');
             }
-        }else if($manager){
-            if($request->password==$manager->man_password){
+        }else if($users){
+            if($request->password==$user->user_password){
             //     if($manager = Manager::where('man_password','=',$request->password)->first()){
                 // if(hash::check($request->password,$manager->man_password)){
                 // if(manager->where($request->password)->value('man_password')){
-                $request->session()->put('loginId',$manager->man_id);
+                $request->session()->put('loginId',$user->user_id);
                 return redirect('dashboard');
                 // echo "Hello world!<br>";
             }

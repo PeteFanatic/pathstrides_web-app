@@ -14,13 +14,15 @@ return new class extends Migration
     public function up()
     {
         Schema::create('admin', function (Blueprint $table) {
-            $table->integer('admin_id')->primary();
+            $table->integer('admin_id')->autoIncrement();
             $table->string('admin_fname',45);
             $table->string('admin_lname',45);
-           
+            $table->string('admin_email')->unique();
+            $table->string('admin_username',45);
+            $table->string('admin_password')->unique();
         });
     }
-
+    protected $primaryKey = 'admin_id';
     /**
      * Reverse the migrations.
      *
