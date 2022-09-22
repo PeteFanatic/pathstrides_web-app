@@ -22,7 +22,7 @@
                 </h2><br class="description">
                 <p>With Pathstrides, you can manage your employees outside office.
                 </p>
-                <button id="getStarted">Get Started</button>
+                <button onclick="login.href = 'localhost:8000/login';" id="getStarted">Get Started</button>
             </div>
         </div>
 
@@ -31,6 +31,7 @@
         </div>
 
         <!-- The Modal -->
+<<<<<<< Updated upstream
         <div id="myModal" class="modal">
 
             <!-- Modal content -->
@@ -120,6 +121,9 @@
                 }
             }
         </script>
+=======
+       
+>>>>>>> Stashed changes
     </section>
 </body>
 
@@ -132,7 +136,7 @@
         box-sizing: border-box;
         font-family: 'Inter', sans-serif;
     }
-    
+
     section {
         position: relative;
         width: 100%;
@@ -143,7 +147,7 @@
         align-items: center;
         background: #fff;
     }
-    
+
     header {
         position: absolute;
         top: 0;
@@ -153,7 +157,7 @@
         justify-content: space-between;
         align-items: center;
     }
-    
+
     header #logo {
         position: relative;
         height: 150px;
@@ -161,14 +165,14 @@
         margin-top: -40px;
         margin-left: -27px;
     }
-    
+
     header ul li {
         list-style: none;
         font-size: 18px;
         margin-left: 20em;
         margin-top: -5em;
     }
-    
+
     header ul li a {
         list-style: none;
         display: block;
@@ -178,7 +182,7 @@
         float: left;
         text-decoration: none;
     }
-    
+
     .content {
         position: relative;
         width: 100%;
@@ -186,12 +190,12 @@
         justify-content: space-between;
         align-items: center;
     }
-    
+
     .content .textBox {
         position: relative;
         width: 100%;
     }
-    
+
     .content .textBox h2 {
         color: rgb(36, 36, 36);
         font-size: 4em;
@@ -200,12 +204,12 @@
         line-height: 1.4em;
         font-family: 'Inter', sans-serif;
     }
-    
+
     .content .textBox h2 span {
         color: rgb(255, 120, 67);
         font-style: italic;
     }
-    
+
     br {
         display: block;
         /* makes it have a width */
@@ -214,23 +218,23 @@
         margin-top: -25px;
         /* change this to whatever height you want it */
     }
-    
+
     .description {
         display: block;
         content: "";
         margin-top: 15px;
     }
-    
+
     .content .textBox p {
         font-size: 18px;
     }
-    
+
     #logo {
         margin-left: 50px;
         width: 700px;
         height: 400px;
     }
-    
+
     #getStarted {
         width: 280px;
         height: 60px;
@@ -251,7 +255,7 @@
         border-radius: 5px;
         box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
     }
-    
+
     #getStarted:after {
         position: absolute;
         content: "";
@@ -263,20 +267,20 @@
         background: #ffff;
         transition: all 0.5s ease;
     }
-    
+
     #getStarted:hover {
         color: rgb(255, 120, 67);
     }
-    
+
     #getStarted:hover:after {
         left: 0;
         width: 100%;
     }
-    
+
     #getStarted:active {
         top: 2px;
     }
-    
+
     .modal {
         display: none;
         /* Hidden by default */
@@ -298,7 +302,7 @@
         /* Black w/ opacity */
     }
     /* Modal Content/Box */
-    
+
     .modal-content {
         background-color: #ffff;
         margin: 15% auto;
@@ -312,7 +316,7 @@
         /* Could be more or less, depending on screen size */
     }
     /* The Close Button */
-    
+
     #modalTitle {
         text-align: center;
         font-size: 40px;
@@ -322,32 +326,32 @@
         margin-left: 20px;
         margin-top: 50px;
     }
-    
+
     .modal-content:after {
         transition: all 2s ease;
     }
-    
+
     .close {
         color: #aaa;
         float: right;
         font-size: 28px;
         font-weight: bold;
     }
-    
+
     .close:hover,
     .close:focus {
         color: #FF7843;
         text-decoration: none;
         cursor: pointer;
     }
-    
+
     @keyframes appear {
         0% {
             opacity: 0;
             transform: translateY(-10px);
         }
     }
-    
+
     #wrapper_admin {
         width: 100vw;
         height: 100vh;
@@ -356,7 +360,7 @@
         align-items: center;
         justify-content: center;
     }
-    
+
     #wrapper_manager {
         width: 100vw;
         height: 100vh;
@@ -365,7 +369,7 @@
         align-items: center;
         justify-content: center;
     }
-    
+
     .admin_button {
         position: relative;
         text-decoration: none;
@@ -377,7 +381,7 @@
         margin-top: -15em;
         margin-left: -48.7em;
     }
-    
+
     .admin_button span {
         position: relative;
         box-sizing: border-box;
@@ -387,7 +391,7 @@
         width: 300px;
         height: 300px;
     }
-    
+
     .admin_button span:before {
         content: '';
         width: 100%;
@@ -399,18 +403,18 @@
         box-sizing: border-box;
         transition: all .85s cubic-bezier(0.25, 1, 0.33, 1);
     }
-    
+
     .admin_button:hover span:before {
         transform: scale(0.8);
         box-shadow: 0 20px 55px rgba(0, 0, 0, 0.14), 0 15px 35px rgba(0, 0, 0, 0.14);
     }
-    
+
     .admin_button .dots-container {
         opacity: 0;
         animation: intro 1.6s;
         animation-fill-mode: forwards;
     }
-    
+
     .admin_button .dot {
         width: 8px;
         height: 8px;
@@ -420,7 +424,7 @@
         position: absolute;
         transition: all .85s cubic-bezier(0.25, 1, 0.33, 1);
     }
-    
+
     .admin_button .dot:nth-child(1) {
         top: 50px;
         left: 50px;
@@ -429,7 +433,7 @@
         animation-fill-mode: forwards;
         opacity: 0;
     }
-    
+
     .admin_button .dot:nth-child(2) {
         top: 50px;
         right: 50px;
@@ -438,7 +442,7 @@
         animation-fill-mode: forwards;
         opacity: 0;
     }
-    
+
     .admin_button .dot:nth-child(3) {
         bottom: 50px;
         left: 50px;
@@ -447,7 +451,7 @@
         animation-fill-mode: forwards;
         opacity: 0;
     }
-    
+
     .admin_button .dot:nth-child(4) {
         bottom: 50px;
         right: 50px;
@@ -456,27 +460,27 @@
         animation-fill-mode: forwards;
         opacity: 0;
     }
-    
+
     .admin_button:hover .dot:nth-child(1) {
         animation: swag1 0.3s;
         animation-fill-mode: forwards;
     }
-    
+
     .admin_button:hover .dot:nth-child(2) {
         animation: swag2 0.3s;
         animation-fill-mode: forwards;
     }
-    
+
     .admin_button:hover .dot:nth-child(3) {
         animation: swag3 0.3s;
         animation-fill-mode: forwards;
     }
-    
+
     .admin_button:hover .dot:nth-child(4) {
         animation: swag4 0.3s;
         animation-fill-mode: forwards;
     }
-    
+
     .manager_button {
         position: relative;
         text-decoration: none;
@@ -488,7 +492,7 @@
         margin-top: -75.4em;
         margin-left: -26em;
     }
-    
+
     .manager_button span {
         position: relative;
         box-sizing: border-box;
@@ -498,7 +502,7 @@
         width: 300px;
         height: 300px;
     }
-    
+
     .manager_button span:before {
         content: '';
         width: 100%;
@@ -510,18 +514,18 @@
         box-sizing: border-box;
         transition: all .85s cubic-bezier(0.25, 1, 0.33, 1);
     }
-    
+
     .manager_button:hover span:before {
         transform: scale(0.8);
         box-shadow: 0 20px 55px rgba(0, 0, 0, 0.14), 0 15px 35px rgba(0, 0, 0, 0.14);
     }
-    
+
     .manager_button .dots-container {
         opacity: 0;
         animation: intro 1.6s;
         animation-fill-mode: forwards;
     }
-    
+
     .manager_button .dot {
         width: 8px;
         height: 8px;
@@ -531,7 +535,7 @@
         position: absolute;
         transition: all .85s cubic-bezier(0.25, 1, 0.33, 1);
     }
-    
+
     .manager_button .dot:nth-child(1) {
         top: 50px;
         left: 50px;
@@ -540,7 +544,7 @@
         animation-fill-mode: forwards;
         opacity: 0;
     }
-    
+
     .manager_button .dot:nth-child(2) {
         top: 50px;
         right: 50px;
@@ -549,7 +553,7 @@
         animation-fill-mode: forwards;
         opacity: 0;
     }
-    
+
     .manager_button .dot:nth-child(3) {
         bottom: 50px;
         left: 50px;
@@ -558,7 +562,7 @@
         animation-fill-mode: forwards;
         opacity: 0;
     }
-    
+
     .manager_button .dot:nth-child(4) {
         bottom: 50px;
         right: 50px;
@@ -567,27 +571,27 @@
         animation-fill-mode: forwards;
         opacity: 0;
     }
-    
+
     .manager_button:hover .dot:nth-child(1) {
         animation: swag1 0.3s;
         animation-fill-mode: forwards;
     }
-    
+
     .manager_button:hover .dot:nth-child(2) {
         animation: swag2 0.3s;
         animation-fill-mode: forwards;
     }
-    
+
     .manager_button:hover .dot:nth-child(3) {
         animation: swag3 0.3s;
         animation-fill-mode: forwards;
     }
-    
+
     .manager_button:hover .dot:nth-child(4) {
         animation: swag4 0.3s;
         animation-fill-mode: forwards;
     }
-    
+
     @keyframes intro {
         0% {
             opacity: 0;
@@ -596,7 +600,7 @@
             opacity: 1;
         }
     }
-    
+
     @keyframes swag1 {
         0% {
             top: 50px;
@@ -614,7 +618,7 @@
             opacity: 1;
         }
     }
-    
+
     @keyframes swag1-out {
         0% {
             top: 20px;
@@ -632,7 +636,7 @@
             opacity: 0;
         }
     }
-    
+
     @keyframes swag2 {
         0% {
             top: 50px;
@@ -650,7 +654,7 @@
             opacity: 1;
         }
     }
-    
+
     @keyframes swag2-out {
         0% {
             top: 20px;
@@ -668,7 +672,7 @@
             opacity: 0;
         }
     }
-    
+
     @keyframes swag3 {
         0% {
             bottom: 50px;
@@ -686,7 +690,7 @@
             opacity: 1;
         }
     }
-    
+
     @keyframes swag3-out {
         0% {
             bottom: 20px;
@@ -704,7 +708,7 @@
             opacity: 0;
         }
     }
-    
+
     @keyframes swag4 {
         0% {
             bottom: 50px;
@@ -722,7 +726,7 @@
             opacity: 1;
         }
     }
-    
+
     @keyframes swag4-out {
         0% {
             bottom: 20px;
