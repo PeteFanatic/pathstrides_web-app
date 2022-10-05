@@ -41,4 +41,8 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public static function getManager($role){
+        return self::where('role',$role)->get()->toArray();
+}
 }

@@ -52,6 +52,7 @@ Route::get('/logout',[CustomAuthController::class,'logout']);
 Route::get('/adminlogin',[CustomAuthController::class,'logout']);
 
 Route::resource("/employee", EmployeeController::class)->middleware('isLoggedIn');
+Route::resource("/manager", ManagerController::class)->middleware('isLoggedIn');
 Route::resource("/admin", AdminController::class);
 Route::resource("/task", TaskController::class)->middleware('isLoggedIn');
 Route::resource("/announcement", AnnouncementController::class)->middleware('isLoggedIn');

@@ -18,9 +18,10 @@ return new class extends Migration
             $table->string('report_text');
             $table->binary('report_image');
             $table->timestamps();
+            $table->foreign('user_id')->references('user_id')->on('users');
         });
 
-        $table->foreign('user_id')->references('user_id')->on('users');
+        
         
     }
 

@@ -159,7 +159,7 @@ class AuthController extends Controller
             'password'=>'required|min:6|max:12',
         ]);
         $admin = Admin::where('admin_email','=',$request->email)->first();
-         $users = Users::where('user_email','=',$request->email)->first();
+         $users = User::where('user_email','=',$request->email)->first();
         // $manager = Manager::where('man_password','=',Hash::make($request->password))->first();
         if($admin){
             if(hash::check($request->password,$admin->admin_password)){
@@ -174,14 +174,22 @@ class AuthController extends Controller
                 return back()->with('fail','Password Incorrect.');
             }
         }else if($users){
-            if($request->password==$user->user_password){
+            if($request->password==$users->user_password){
             //     if($manager = Manager::where('man_password','=',$request->password)->first()){
                 // if(hash::check($request->password,$manager->man_password)){
                 // if(manager->where($request->password)->value('man_password')){
-                $request->session()->put('loginId',$user->user_id);
+                $request->session()->put('loginId',$users->user_id);
                 return redirect('dashboard');
                 // echo "Hello world!<br>";
             }
+            else if(hash::check($request->password,$admin->admin_password)){
+                //     if($manager = Manager::where('man_password','=',$request->password)->first()){
+                    // if(hash::check($request->password,$manager->man_password)){
+                    // if(manager->where($request->password)->value('man_password')){
+                    $request->session()->put('loginId',$admin->admin_id);
+                    return redirect('dashboard');
+                    // echo "Hello world!<br>";
+                }
             else{
                 return back()->with('fail','Password Incorrect.');
             }
@@ -215,7 +223,7 @@ class AuthController extends Controller
     // }
     public function logoutEmployee(Request $request)
     {
-        if(!Employee::checkToken($request)){
+        if(!User::checkToken($request)){
             return response()->json([
              'message' => 'Token is required',
              'success' => false,
@@ -285,16 +293,17 @@ class AuthController extends Controller
         ];
         $req->validate($rules);
         // find user email in users table
-        $employee = Employee::where('emp_email', $req->email)->first();
+        $user = Users::where('user_email', $req->email)->first();
         // if user email found and password is correct
         
          //first if condition kay: IF HASHED PASSWORD IS EQUAL TO REQUEST PASS
         // THEN DASHBOARD PAGE, RETURN 200. ELSE IF REQ PASS EQUAL TO NOT HASHED PASS THEN UPDATE PASS, RETURN 201
-        if($employee){
-            if ($employee = Employee::where('emp_password','=',$req->password)->first()) {
+        if($user){
+            if ($user = Users::where('user_password','=',$req->password)->first()) {
                 // if ($employee = Employee::where('emp_password')==$req->password) {
-                $token = $employee->createToken('Personal Access Token')->plainTextToken;
-                $response = ['employee' => $employee, 'token' => $token];
+                    if($user = Users::where('role','=',1)->first()){
+                $token = $user->createToken('Personal Access Token')->plainTextToken;
+                $response = ['users' => $employee, 'token' => $token];
                 $response = ['message' => 'Success'];
                 // return response()->json([
                 //             'success' => true,
@@ -304,6 +313,11 @@ class AuthController extends Controller
                 //         ]);
                 $auth_id = $emp_id;
                  return response()->json($response, 201);
+                }
+                else{
+                    $response = ['message' => 'Your account is restricted in the Mobile App. You only have desktop access of the app.'];
+                    return response()->json($response, 400);
+                }
             }
             else if ($employee && Hash::check($req->password, $employee->emp_password)){
                 $token = $employee->createToken('Personal Access Token')->plainTextToken;
