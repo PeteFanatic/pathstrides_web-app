@@ -56,3 +56,5 @@ Route::resource("/manager", ManagerController::class)->middleware('isLoggedIn');
 Route::resource("/admin", AdminController::class);
 Route::resource("/task", TaskController::class)->middleware('isLoggedIn');
 Route::resource("/announcement", AnnouncementController::class)->middleware('isLoggedIn');
+
+//ljsndlfasbhdbfhisabdkjwqbf
