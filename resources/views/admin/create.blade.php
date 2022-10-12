@@ -16,7 +16,7 @@
         <input type="text" name="user_lname" id="user_lname" class="form-control"></br>
         <label>Email:</label></br>
         <input type="text" name="user_email" id="user_email" class="form-control"></br>
-        <label>Contanct Number:</label></br>
+        <label>Contact Number:</label></br>
         <input type="text" name="contactnumber" id="contactnumber" class="form-control"></br>
         <label>Employee Username:</label></br>
         <input type="text" name="user_username" id="user_username" class="form-control"></br>
