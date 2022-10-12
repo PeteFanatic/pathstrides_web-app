@@ -9,23 +9,23 @@
         <label>Employee ID:</label></br>
         <input type="text" name="user_id" id="user_id" class="form-control"></br>
         <label>First Name:</label></br>
-        <input type="text" name="userfname" id="userfname" class="form-control"></br>
+        <input type="text" name="user_fname" id="user_fname" class="form-control"></br>
         <label>Middle Name:</label></br>
-        <input type="text" name="usermname" id="usermname" class="form-control"></br>
+        <input type="text" name="user_mname" id="user_mname" class="form-control"></br>
         <label>Last Name:</label></br>
-        <input type="text" name="userlname" id="userlname" class="form-control"></br>
+        <input type="text" name="user_lname" id="user_lname" class="form-control"></br>
         <label>Email:</label></br>
-        <input type="text" name="useremail" id="useremail" class="form-control"></br>
+        <input type="text" name="user_email" id="user_email" class="form-control"></br>
         <label>Contanct Number:</label></br>
-        <input type="text" name="contanctnumber" id="contanctnumber" class="form-control"></br>
+        <input type="text" name="contactnumber" id="contactnumber" class="form-control"></br>
         <label>Employee Username:</label></br>
-        <input type="text" name="username" id="username" class="form-control"></br>
+        <input type="text" name="user_username" id="user_username" class="form-control"></br>
         <label>Employee Password:</label></br>
-        <input type="text" name="password" id="password" class="form-control"></br>
+        <input type="text" name="user_password" id="user_password" class="form-control"></br>
        
        
-        <label for="department">Department :</label></br>
-        <select name="department" id="department" name="department"></br>
+        <label for="user_department">Department :</label></br>
+        <select name="user_department" id="user_department" name="user_department"></br>
         @php
                     $count = 1;
                 @endphp
