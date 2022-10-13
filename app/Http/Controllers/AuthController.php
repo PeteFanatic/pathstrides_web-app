@@ -117,30 +117,48 @@ class AuthController extends Controller
     //     }
     // }
     // gana logic dinhi sa login
-    public function loginUser(Request $request){
+    public function loginWeb(Request $request){
         
         $request->validate([
             'email'=>'required',
             'password'=>'required|min:6|max:12',
         ]);
-        $manager = Manager::where('man_email','=',$request->email)->first();
+        $admin = Admin::where('admin_email','=',$request->email)->first();
+         $users = User::where('user_email','=',$request->email)->first();
         // $manager = Manager::where('man_password','=',Hash::make($request->password))->first();
-        if($manager){
-            if($request->password==$manager->man_password){
+        if($admin){
+            if(hash::check($request->password,$admin->admin_password)){
             //     if($manager = Manager::where('man_password','=',$request->password)->first()){
                 // if(hash::check($request->password,$manager->man_password)){
                 // if(manager->where($request->password)->value('man_password')){
-                $request->session()->put('loginId',$manager->man_id);
-                return redirect('dashboard_manager');
+                $request->session()->put('loginId',$admin->admin_id);
+                return redirect('dashboard');
                 // echo "Hello world!<br>";
             }
+            else{
+                return back()->with('fail','Password Incorrect.');
+            }
+        }else if($users){
+            if($request->password==$users->user_password){
+            //     if($manager = Manager::where('man_password','=',$request->password)->first()){
+                // if(hash::check($request->password,$manager->man_password)){
+                // if(manager->where($request->password)->value('man_password')){
+                $request->session()->put('loginId',$users->user_id);
+                return redirect('dashboard');
+                // echo "Hello world!<br>";
+            }
+            
             else{
                 return back()->with('fail','Password Incorrect.');
             }
         }else{
             return back()->with('fail','Email not Registered.');
         }
+        // else{
+        //     return back()->with('fail','Email not Registered.');
+        // }
     }
+
     public function loginEmployee(Request $req){
         
       // validate inputs
@@ -150,17 +168,23 @@ class AuthController extends Controller
         ];
         $req->validate($rules);
         // find user email in users table
-        $employee = Employee::where('emp_email', $req->email)->first();
+        $user = User::where('user_email', $req->email)->first();
         // if user email found and password is correct
-        if($employee){
-            if ($req->password==$employee->emp_password) {
-            //     $token = $employee->createToken('Personal Access Token')->plainTextToken;
-            // $response = ['employee' => $employee, 'token' => $token];
+        if($user){
+            if ($req->password==$user->user_password) {
+                if($user->role == 2){
+                 $token = $user->createToken('Personal Access Token')->plainTextToken;
+             $response = ['user' => $user, 'token' => $token];
                 // if ($employee = Employee::where('emp_password')==$req->password) {
                 // $token = $employee->createToken('Personal Access Token')->plainTextToken;
                 // $response = ['employee' => $employee, 'token' => $token];
                 $response = ['message' => 'Success'];
                 return response()->json($response, 200);
+                }
+                else{
+                    $response = ['message' => 'Your account is only accessible in our website.'];
+                return response()->json($response, 400);
+                }
             }
             else{
                 $response = ['message' => 'Incorrect password'];

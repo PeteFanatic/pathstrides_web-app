@@ -46,12 +46,12 @@ Route::get('loginEmployee', [AuthController::class, 'loginEmployee'])->name('log
 Route::get('registration', [AuthController::class, 'registration'])->middleware('alreadyLoggedIn');
 Route::post('/register-admin',[AuthController::class,'registerUser'])->name('register-admin');
 
-Route::post('login-user',[AuthController::class,'loginUser'])->name('login-user');
+Route::post('login-user',[AuthController::class,'loginWeb'])->name('login-user');
 Route::get('/home',[CustomAuthController::class,'home'])->middleware('isLoggedIn');
 Route::get('/logout',[CustomAuthController::class,'logout']);
 Route::get('/adminlogin',[CustomAuthController::class,'logout']);
 
-Route::resource("/employee", EmployeeController::class)->middleware('isLoggedIn');
+Route::resource("/admin", AdminController::class)->middleware('isLoggedIn');
 Route::resource("/manager", ManagerController::class)->middleware('isLoggedIn');
 Route::resource("/task", TaskController::class)->middleware('isLoggedIn');
 Route::resource("/announcement", AnnouncementController::class)->middleware('isLoggedIn');
