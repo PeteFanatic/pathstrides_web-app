@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Task;
 use App\Models\Manager;
+use App\Models\User;
 use App\Models\Employee;
 use App\Controllers\AuthController;
 
@@ -28,8 +29,8 @@ class TaskController extends Controller
      */
     public function create()
     {
-        $employee=Employee::getEmployee(1);
-        $manager=Manager::getManager(1);
+        $employee=User::getManager(1);
+        $manager=User::getManager(1);
         return view('tasks.create')->with(compact('employee','manager'));
     }
 
@@ -67,8 +68,8 @@ class TaskController extends Controller
     public function edit($id)
     {
         $tasks = Task::find($id);
-        $employee=Employee::getEmployee(1);
-        $manager=Manager::getManager(1);
+        $employee=User::getManager(1);
+        $manager=User::getManager(1);
         return view('tasks.edit')->with(compact('employee','tasks','manager'));
     }
 

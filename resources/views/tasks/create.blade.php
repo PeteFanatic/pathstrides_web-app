@@ -21,36 +21,36 @@
         <input type="text" name="points" id="points" class="form-control"></br>
         <label>Location:</label></br>
         <input type="text" name="location" id="location" class="form-control"></br>
-        <label for="emp_id">Emp id:</label></br>
-        <select name="emp_id" id="emp_id" name="emp_id"></br>
+        <label for="user_id">Emp id:</label></br>
+        <select name="user_id" id="user_id" name="user_id"></br>
         @php
                     $count = 1;
                 @endphp
-                @foreach($employee as $item)
-                    @if(($count == 1) and (old('emp_id') <> $item['emp_id']))
-                        <option value="{{ $item['emp_id'] }}" selected>{{ $item['emp_id'] }}</option>  
-                    @elseif(old('emp_id') === $item['emp_id'])
-                        <option value="{{ $item['emp_id'] }}" selected>{{ $item['emp_id'] }}</option>     
+                @foreach($task as $item)
+                    @if(($count == 1) and (old('user_id') <> $item['user_id']))
+                        <option value="{{ $item['user_id'] }}" selected>{{ $item['user_id'] }}</option>  
+                    @elseif(old('user_id') === $item['user_id'])
+                        <option value="{{ $item['user_id'] }}" selected>{{ $item['user_id'] }}</option>     
                     @else
-                        <option value="{{ $item['emp_id'] }}">{{ $item['emp_id']}}</option>
+                        <option value="{{ $item['user_id'] }}">{{ $item['user_id']}}</option>
                     @endif
                     @php
                        $count++;
                     @endphp
                 @endforeach
         </select></br>
-        <label for="man_id">Manager id:</label></br>
-        <select name="man_id" id="man_id" name="man_id"></br>
+        <label for="user_id">Manager id:</label></br>
+        <select name="user_id" id="user_id" name="user_id"></br>
         @php
                     $count = 1;
                 @endphp
                 @foreach($manager as $item)
                     @if(($count == 1) and (old('man_id') <> $item['man_id']))
-                        <option value="{{ $item['man_id'] }}" selected>{{ $item['man_id'] }}</option>  
-                    @elseif(old('man_id') === $item['man_id'])
-                        <option value="{{ $item['man_id'] }}" selected>{{ $item['man_id'] }}</option>     
+                        <option value="{{ $item['user_id'] }}" selected>{{ $item['user_id'] }}</option>  
+                    @elseif(old('man_id') === $item['user_id'])
+                        <option value="{{ $item['user_id'] }}" selected>{{ $item['user_id'] }}</option>     
                     @else
-                        <option value="{{ $item['man_id'] }}">{{ $item['man_id']}}</option>
+                        <option value="{{ $item['user_id'] }}">{{ $item['user_id']}}</option>
                     @endif
                     @php
                        $count++;

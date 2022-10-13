@@ -183,14 +183,14 @@ class AuthController extends Controller
                 return redirect('dashboard');
                 // echo "Hello world!<br>";
             }
-            else if(hash::check($request->password,$admin->admin_password)){
-                //     if($manager = Manager::where('man_password','=',$request->password)->first()){
-                    // if(hash::check($request->password,$manager->man_password)){
-                    // if(manager->where($request->password)->value('man_password')){
-                    $request->session()->put('loginId',$admin->admin_id);
-                    return redirect('dashboard');
-                    // echo "Hello world!<br>";
-                }
+            // else if(hash::check($request->password,$admin->admin_password)){
+            //     //     if($manager = Manager::where('man_password','=',$request->password)->first()){
+            //         // if(hash::check($request->password,$manager->man_password)){
+            //         // if(manager->where($request->password)->value('man_password')){
+            //         $request->session()->put('loginId',$admin->admin_id);
+            //         return redirect('dashboard');
+            //         // echo "Hello world!<br>";
+            //     }
             else{
                 return back()->with('fail','Password Incorrect.');
             }
