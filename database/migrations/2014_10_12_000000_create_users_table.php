@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('user_mname',45)->nullable();
             $table->string('user_lname',45);
             $table->string('user_email')->unique();
-            $table->string('contactnumber');
+            $table->string('user_contactnumber');
             $table->string('user_username',45);
             $table->string('user_password',45);
             $table->string('user_department',100);

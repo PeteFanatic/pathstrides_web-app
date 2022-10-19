@@ -8,6 +8,7 @@ use App\Http\Controllers\TaskController;
  use App\Http\Controllers\CustomAuthController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\AnnouncementController;
+use App\Http\Controllers\DepartmentController;
 
 
 /*
@@ -51,8 +52,8 @@ Route::get('/home',[CustomAuthController::class,'home'])->middleware('isLoggedIn
 Route::get('/logout',[CustomAuthController::class,'logout']);
 Route::get('/adminlogin',[CustomAuthController::class,'logout']);
 
-Route::resource("/employee", EmployeeController::class);
-Route::resource("/manager", ManagerController::class);
+Route::resource("/employee", EmployeeController::class)->middleware('isLoggedIn');
 Route::resource("/admin", AdminController::class);
+Route::resource("/department", DepartmentController::class);
 Route::resource("/task", TaskController::class)->middleware('isLoggedIn');
 Route::resource("/announcement", AnnouncementController::class)->middleware('isLoggedIn');

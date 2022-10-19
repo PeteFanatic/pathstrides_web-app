@@ -13,15 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('task_report', function (Blueprint $table) {
-            $table->integer('user_id');
-            $table->string('report_text');
-            $table->binary('report_image');
+        Schema::create('redeem_shop', function (Blueprint $table) {
+            $table->id();
             $table->timestamps();
         });
-
-        $table->foreign('user_id')->references('user_id')->on('users');
-        
     }
 
     /**
@@ -31,6 +26,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('task_report');
+        Schema::dropIfExists('redeem_shop');
     }
 };

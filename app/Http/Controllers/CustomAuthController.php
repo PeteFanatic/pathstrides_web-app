@@ -59,10 +59,10 @@ class CustomAuthController extends Controller
             'email'=>'required|email',
             'password'=>'required|min:6|max:12',
         ]);
-        $user = User::where('user_email','=',$request->email)->first();
-        if($user){
-            if(hash::check($request->password,$user->user_password)){
-                $request->session()->put('loginId',$user->user_id);
+        $manager = User::where('man_email','=',$request->email)->first();
+        if($manager){
+            if(hash::check($request->password,$manager->man_password)){
+                $request->session()->put('loginId',$manager->man_id);
                 return redirect('home');
             }
             else{

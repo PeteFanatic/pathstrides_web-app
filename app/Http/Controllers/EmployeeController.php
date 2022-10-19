@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Employee;
 use App\Models\Manager;
-use App\Models\User;
 use App\Models\Department;
 use Illuminate\Support\Facades\Validator;
 
@@ -20,8 +19,9 @@ class EmployeeController extends Controller
     public function index()
     {
         if(Session::has('loginId')){
-            $data = User::where('user_id','=',Session::get('loginId'))->first();
-        $employees=User::where('role','=','2');
+            $data = Employee::where('man_id','=',Session::get('loginId'))->first();
+        
+        $employees = Employee::all();
         return view ('employees.index')->with('employees', $employees);
         }
     }
@@ -34,7 +34,7 @@ class EmployeeController extends Controller
     public function create()
     {
         $department=Department::getDepartment(1);
-        $manager=User::getManager(1);
+        $manager=Manager::getManager(1);
         return view('employees.create')->with(compact('department','manager'));
     }
 

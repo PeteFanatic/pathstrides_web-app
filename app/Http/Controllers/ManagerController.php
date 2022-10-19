@@ -5,8 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Manager;
 use App\Models\Department;
-use Session;
-use App\Models\User;
 use Illuminate\Support\Facades\Validator;
 class ManagerController extends Controller
 {
@@ -19,13 +17,8 @@ class ManagerController extends Controller
     {
 
 
-        //  $managers = Manager::all();
-        //  return view ('managers.index')->with('managers', $managers);
-        if(Session::has('loginId')){
-            $data = User::where('user_id','=',Session::get('loginId'))->first();
-        $managers=User::where('role','=','1');
-        return view ('managers.index')->with('managers', $managers);
-        }
+         $managers = Manager::all();
+         return view ('managers.index')->with('managers', $managers);
     }
 
     /**
