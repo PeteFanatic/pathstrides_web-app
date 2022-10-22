@@ -68,14 +68,14 @@
                             <nav class="navbar" id="nav-side">
                                 <ul class="navbar-nav">
                                     <li class="nav-item">
-                                        <a class="nav-link" href="#" id="a-nav-side">
+                                        <a class="nav-link" href="{{url('/announcement')}}" id="a-nav-side">
                                             <img src="{{ URL('images\icons\icons8-commercial-90.png') }}"
                                                 class="icon">
                                             Announcement
                                         </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="#" id="a-nav-side">
+                                        <a class="nav-link" href="{{url('/task')}}" id="a-nav-side">
                                             <img src="{{ URL('images\icons\icons8-playlist-90.png') }}"
                                                 class="icon">
                                             Tasks

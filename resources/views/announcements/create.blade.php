@@ -19,8 +19,14 @@
         <input type="text" name="ann_desc" id="ann_desc" class="form-control"></br>
         <label>Location:</label></br>
         <input type="text" name="location" id="location" class="form-control"></br>
-        <label for="man_id">Manager id:</label></br>
-        <select name="man_id" id="man_id" name="man_id"></br>
+        <label for="location">Status :</label></br>
+        <select name="status" id="status" name="status"></br>
+        <option value="1">Active</option></br>
+        <option value="2">Cancelled</option></br>
+        </select></br>
+        
+        <label for="location">Manager id:</label></br>
+        <select name="user_id" id="user_id" name="user_id"></br>
         <option value="1">1</option></br>
         </select></br>
         

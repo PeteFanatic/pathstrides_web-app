@@ -1,7 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use JWTAuth;
+use Tymon\JWTAuth\Exceptions\JWTException;
 use Illuminate\Http\Request;
 use App\Models\Task;
 use App\Models\Manager;
@@ -101,6 +102,7 @@ class TaskController extends Controller
     }
 
     public function getEmployeeTask(){
+        $user = auth()->user();
         if($auth_id == $emp_id){
             $list = new Task();
             $list = $list->getEmployeeTask();
