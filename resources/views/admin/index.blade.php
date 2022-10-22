@@ -31,10 +31,10 @@
                                 @foreach($employee as $item)
                                     <tr>
                                         <td>{{ $item->user_id }}</td>
-                                        <td>{{ $item->user_fname }} , {{ $item->user_lname }}</td>
-                                        <td>{{ $item->user_email }}</td>
-                                        <td>{{ $item->user_contanctnumber }}</td>
-                                        <td>{{ $item->user_department }}     
+                                        <td>{{ $item->userfname }} , {{ $item->userlname }}</td>
+                                        <td>{{ $item->useremail }}</td>
+                                        <td>{{ $item->contanctnumber }}</td>
+                                        <td>{{ $item->department }}
                                         <td>{{ $item->role }}</td>
                                         <td>{{ $item->status }}</td>
                                         <td>

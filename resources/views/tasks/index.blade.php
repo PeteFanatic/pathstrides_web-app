@@ -22,7 +22,6 @@
                                         <th>Points</th>
                                         <th>Location</th>
                                         <th>Employee Incharge</th>
-                                        <th>Manager Incharge</th>
                                         <th>Actions</th>
                                     </tr>
                                 </thead>

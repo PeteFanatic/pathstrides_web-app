@@ -8,6 +8,7 @@ use App\Http\Controllers\TaskController;
  use App\Http\Controllers\CustomAuthController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\AnnouncementController;
+use App\Http\Controllers\DepartmentController;
 
 
 /*
@@ -36,23 +37,24 @@ Route::get('dashboard', [AuthController::class, 'dashboard'])->name('dashboard')
 
 // Route::get('login', [CustomAuthController::class, 'index'])->name('login');
 
-Route::get('login', [AuthController::class, 'login'])->middleware('alreadyLoggedIn');
+Route::get('login', [AuthController::class, 'login']);
 Route::get('loginEmployee', [AuthController::class, 'loginEmployee'])->name('loginEmployee');
 // Route::post('postlogin', [AuthController::class, 'login'])->name('login');
 
 // guide para sa custom auth login nako sauna
 
-// Route::get('login', [CustomAuthController::class, 'login'])->middleware('alreadyLoggedIn');
+Route::get('login', [CustomAuthController::class, 'login']);
 Route::get('registration', [AuthController::class, 'registration'])->middleware('alreadyLoggedIn');
 Route::post('register-admin',[AuthController::class,'registerUser'])->name('register-admin');
+
 
 Route::post('login-user',[AuthController::class,'loginWeb'])->name('login-user');
 Route::get('/home',[CustomAuthController::class,'home'])->middleware('isLoggedIn');
 Route::get('/logout',[CustomAuthController::class,'logout']);
 Route::get('/adminlogin',[CustomAuthController::class,'logout']);
 
-Route::resource("/employee", EmployeeController::class);
-Route::resource("/manager", ManagerController::class);
+Route::resource("/employee", EmployeeController::class)->middleware('isLoggedIn');
 Route::resource("/admin", AdminController::class);
-Route::resource("/task", TaskController::class);
-Route::resource("/announcement", AnnouncementController::class);
+Route::resource("/department", DepartmentController::class);
+Route::resource("/task", TaskController::class)->middleware('isLoggedIn');
+Route::resource("/announcement", AnnouncementController::class)->middleware('isLoggedIn');

@@ -20,9 +20,9 @@ class Manager extends Model
     return $this->belongsTo(Manager::class, 'admin_id', 'man_id');
     }
 
-    // public static function getManager($role){
-    //         return self::where('role',$role)->get()->toArray();
-    // }
+    public static function getManager($managerID){
+            return self::where('man_coll',$managerID)->get()->toArray();
+    }
 
     
     public static function getAllManager(){
