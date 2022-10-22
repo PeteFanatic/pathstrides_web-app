@@ -30,7 +30,7 @@ class CustomAuthController extends Controller
 
     public function index()
     {
-        return view('login');
+        return view('loginWeb');
 
     }
     public function registration(){

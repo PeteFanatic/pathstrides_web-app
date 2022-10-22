@@ -10,7 +10,7 @@ class Department extends Model
     use HasFactory;
 
     public $incrementing = false;
-    public $timestamps = false;
+  
     protected $table = 'departments';
     protected $primaryKey = 'dep_id';
     
