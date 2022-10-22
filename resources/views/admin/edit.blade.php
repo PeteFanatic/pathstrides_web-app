@@ -11,17 +11,17 @@
         <input type="text" name="user_id" id="user_id" value="{{$employee->user_id}}" id="user_id" />
         </br>
         <label>Employee First Name:</label></br>
-        <input type="text" name="usermname" id="usermname" value="{{$employee->usermname}}" class="form-control"></br>
+        <input type="text" name="user_mname" id="user_mname" value="{{$employee->user_mname}}" class="form-control"></br>
         <label>Employee Middle Name:</label></br>
-        <input type="text" name="usermname" id="usermname" value="{{$employee->usermname}}" class="form-control"></br>
+        <input type="text" name="user_mname" id="user_mname" value="{{$employee->user_mname}}" class="form-control"></br>
         <label>Employee Last Name:</label></br>
-        <input type="text" name="userlname" id="userlname" value="{{$employee->userlname}}" class="form-control"></br>
+        <input type="text" name="user_lname" id="user_lname" value="{{$employee->user_lname}}" class="form-control"></br>
         <label>Employee Email</label></br>
-        <input type="text" name="useremail" id="useremail" value="{{$employee->useremail}}" class="form-control"></br>
-        <label>Contanct Number</label></br>
-        <input type="text" name="contanctnumber" id="contanctnumber" value="{{$employee->contanctnumber}}" class="form-control"></br>
-        <label for="department">Department :</label></br>
-        <select name="department" id="department" name="department"></br>
+        <input type="text" name="user_email" id="user_email" value="{{$employee->user_email}}" class="form-control"></br>
+        <label>Contact Number</label></br>
+        <input type="text" name="contactnumber" id="contactnumber" value="{{$employee->contactnumber}}" class="form-control"></br>
+        <label for="user_department">Department :</label></br>
+        <select name="user_department" id="user_department" name="user_department"></br>
         @php
                     $count = 1;
                 @endphp

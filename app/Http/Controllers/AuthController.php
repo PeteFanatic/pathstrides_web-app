@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use App\Models\Manager;
+use AdminController;
 use App\Models\Employee;
 use App\Models\Admin;
 use Illuminate\Http\Request;
@@ -182,6 +183,14 @@ class AuthController extends Controller
                 return redirect('dashboard');
                 // echo "Hello world!<br>";
             }
+            // else if(hash::check($request->password,$admin->admin_password)){
+            //     //     if($manager = Manager::where('man_password','=',$request->password)->first()){
+            //         // if(hash::check($request->password,$manager->man_password)){
+            //         // if(manager->where($request->password)->value('man_password')){
+            //         $request->session()->put('loginId',$admin->admin_id);
+            //         return redirect('dashboard');
+            //         // echo "Hello world!<br>";
+            //     }
             else{
                 return back()->with('fail','Password Incorrect.');
             }
@@ -285,16 +294,18 @@ class AuthController extends Controller
         ];
         $req->validate($rules);
         // find user email in users table
-        $employee = Employee::where('emp_email', $req->email)->first();
+        $user = User::where('user_email', $req->email)->first();
         // if user email found and password is correct
         
          //first if condition kay: IF HASHED PASSWORD IS EQUAL TO REQUEST PASS
         // THEN DASHBOARD PAGE, RETURN 200. ELSE IF REQ PASS EQUAL TO NOT HASHED PASS THEN UPDATE PASS, RETURN 201
-        if($employee){
-            if ($employee = Employee::where('emp_password','=',$req->password)->first()) {
+        if($user){
+            if ($user->user_password == $req->password) {
                 // if ($employee = Employee::where('emp_password')==$req->password) {
-                $token = $employee->createToken('Personal Access Token')->plainTextToken;
-                $response = ['employee' => $employee, 'token' => $token];
+                     if($user->role == '2'){
+                  $token = $user->createToken('Personal Access Token')->plainTextToken;
+                  $response = ['users' => $user, 'token' => $token];
+                  $user = auth()->user();
                 $response = ['message' => 'Success'];
                 // return response()->json([
                 //             'success' => true,
@@ -302,12 +313,18 @@ class AuthController extends Controller
                 //             'employee' => $employee,
                            
                 //         ]);
-                $auth_id = $emp_id;
+                // $auth_id = $emp_id;
                  return response()->json($response, 201);
+                 }
+                else{
+                    $response = ['message' => 'Your account is restricted in the Mobile App. You only have desktop access of the app.'];
+                    return response()->json($response, 400);
+                }
             }
-            else if ($employee && Hash::check($req->password, $employee->emp_password)){
-                $token = $employee->createToken('Personal Access Token')->plainTextToken;
-                $response = ['employee' => $employee, 'token' => $token];
+            else if ($user && Hash::check($req->password, $user->user_password)){
+                $user = auth()->user();
+                $token = $user->createToken('Personal Access Token')->plainTextToken;
+                $response = ['users' => $user, 'token' => $token];
                 $response = ['message' => 'Success'];
 
                 return response()->json($response, 200);
@@ -339,34 +356,43 @@ class AuthController extends Controller
         //         'employee' => $employee
         //     ],200);
     }
-    public function update_employeePass(Request $req)
+    public function updateEmployeePass(Request $req)
     {
         //valdiate
         $rules = [
-            'password' => 'required|string',
-            'new_password' => 'required|string|unique:users',
-            'confirm_password' => 'required|string|min:6|max:15'
+            'oldPass' => 'required|string',
+            'newPass' => 'required|string|min:6|max:15',
+            'confirmPass' => 'required|string|min:6|max:15'
         ];
         $validator = Validator::make($req->all(), $rules);
         if ($validator->fails()) {
             return response()->json($validator->errors(), 400);
         }
+        // $user = User::where('user_password', $req->oldPass)->first();
         //create new user in users table
-        if ($req->password==$employee->emp_password) {
-            if($req->new_password == $req->confirm_password){
-                $employee = Employee::update([
-                'password' => Hash::make($req->confirm_password)
-                ]);
-                $token = $employee->createToken('Personal Access Token')->plainTextToken;
-        $response = ['employee' => $employee, 'token' => $token];
-        return response()->json($response, 200);
+        $user = auth()->user();
+        if($user){
+            if ($req->oldPass==$user->user_password) {
+                if($req->newPass == $req->confirmPass){
+                    // $user = User::where(
+                    // 'user_password',$req->confirmPass
+                    // )->update(['user_password'=>$req_confirmPass]);
+
+                    // $user=User::find($req->oldPass)->update(['user_password'=>$req->confirmPass]);
+                    $user = User::where('user_password', $req->oldPass)->update(['user_password'=>$req->confirmPass]);
+                    // $user = Hash::make('user_password');
+                    // product::find($id)->update([ 'key' => $request['key'],'name' => $request['name']);
+                    
+            $response = ['message' => 'Success'];
+            return response()->json($response, 200);
+                }
+                else{
+                    return response()->json($response, 400);
+                }
             }
             else{
                 return response()->json($response, 400);
             }
-        }
-        else{
-            return response()->json($response, 400);
         }
     }
     
