@@ -68,6 +68,9 @@
                         <p class="sign-up">
                             New to PathStrides? <a href="registration" class="registration">Sign Up</a>
                         </p>
+                        <p class="map">
+                           Checkout our Map? <a href="map" class="map">Map</a>
+                        </p>
                     </div>
                 </form>
             </div>

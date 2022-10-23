@@ -26,6 +26,7 @@ use App\Http\Controllers\RedeemShopController;
 //     return view('welcome');
 // });
 
+Route::get('/map', [AuthController::class, 'map'])->name('map');
 
 // Route::get('employee/all',[EmployeeController::class,'showAll'])->name('employee.all');  
 // Route::post('employee/create',[EmployeeController::class,'store'])->name('employees.save');
