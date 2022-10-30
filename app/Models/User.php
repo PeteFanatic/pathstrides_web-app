@@ -17,11 +17,15 @@ class User extends Authenticatable
      *
      * @var array<int, string>
      */
-    // public $incrementing = false;
-    // public $timestamps = false;
+    // protected $fillable = [
+    //     'name',
+    //     'email',
+    //     'password',
+    // ];
+
     protected $table = 'users';
     protected $primaryKey = 'user_id';
-    protected $guarded = []; 
+    protected $guarded = [];
 
     /**
      * The attributes that should be hidden for serialization.
@@ -41,6 +45,8 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
-}
 
+    public static function getManager($role){
+        return self::where('role', $role)->get()->toArray();
+    }
 }
