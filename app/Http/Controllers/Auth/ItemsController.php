@@ -13,7 +13,7 @@ class ItemsController extends Controller
 
         foreach ($list as $item){
             $item['item_content']=strip_tags($item['item_content']);
-            $item['item_content']=$Content = preg_replace("");
+            $item['item_content']=$Content = preg_replace("", $item['item_content']);
         }
         return response()->json($list);
     }
