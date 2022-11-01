@@ -11,10 +11,10 @@
   
         <div class="card-body">
         <h5 class="card-title">Employee ID : {{ $employee-> user_id }}</h5>
-        <p class="card-text">Employee First Name : {{ $employee->userfname }}</p>
-        <p class="card-text">Employee Middle Name  : {{ $employee->usermname }}</p>
-        <p class="card-text">Employee Last Name  : {{ $employee->userlname }}</p>
-        <p class="card-text">Department  : {{ $employee->department }}</p>
+        <p class="card-text">Employee First Name : {{ $employee->user_fname }}</p>
+        <p class="card-text">Employee Middle Name  : {{ $employee->user_mname }}</p>
+        <p class="card-text">Employee Last Name  : {{ $employee->user_lname }}</p>
+        <p class="card-text">Department  : {{ $employee->user_department }}</p>
         
   </div>
       
