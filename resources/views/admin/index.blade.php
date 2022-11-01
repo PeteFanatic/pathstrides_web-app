@@ -34,7 +34,7 @@
                                         <td>{{ $item->user_fname }} , {{ $item->userlname }}</td>
                                         <td>{{ $item->user_email }}</td>
                                         <td>{{ $item->contactnumber }}</td>
-                                        <td>{{ $item->department }}
+                                        <td>{{ $item->user_department }}
                                         <td>{{ $item->role }}</td>
                                         <td>{{ $item->status }}</td>
                                         <td>
