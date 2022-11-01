@@ -27,13 +27,13 @@ class AuthController extends Controller
         return view("admin.registration");
     }
 
-    public function dashboard_manager(){
+    public function dashboard(){
         // return view('dashboard_manager');
         $manager = array();
         // if(Session::has('loginId')){
         //     $manager = Manager::where('id','=',Session::get('loginId'))->first();
         // }
-        return view("dashboard_manager");
+        return view("dashboard");
     }
     // public function register(Request $req)
     // {
@@ -68,20 +68,21 @@ class AuthController extends Controller
             'admin_password'=>'required|min:6|max:12',
         ]);
         $admin = new Admin();
-        $admin->admin_id = $admin->id();
+        // $admin->admin_id = $admin->id();
         $admin->admin_fname = $request->admin_fname;
         $admin->admin_lname = $request->admin_lname;
         $admin->admin_username = $request->admin_username;
         $admin->admin_email = $request->admin_email;
-        $admin->admin_password = $request->admin_password;
+        $admin->admin_password = Hash::make($request->admin_password);
+
         $res = $admin->save();
         if($res){
             // return back()->with('success','Registered Successfully');
             
             // Admin::create($request);
-            // $request->session()->put('loginId',$admin->admin_id);
-            // return redirect('manager');
-            return back()->with('success','Registered Successfully');
+            $request->session()->put('loginId',$admin->admin_id);
+            return redirect('dashboard');
+            // return back()->with('success','Registered Successfully');
         }else{
             return back()->with('fail','Try Again.');
         }
