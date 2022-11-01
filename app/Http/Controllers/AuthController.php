@@ -15,7 +15,7 @@ use Laravel\Sanctum\HasApiTokens;
 class AuthController extends Controller
 {
 
-    public function index()
+    public function login()
     {
         return view('login');
     }
