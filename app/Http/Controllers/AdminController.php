@@ -17,8 +17,11 @@ class AdminController extends Controller
     */
    public function index()
    {
+        $data = array();
+        // $data = ['isLoggedIn'=>Admin::where('admin_id','=', session('loginId'))->first()];
+
        $employee = User::all();
-       return view ('admin.index')->with('employee', $employee);
+       return view ('admin.index',$data)->with('employee', $employee);
    }
 
    /**
@@ -96,4 +99,11 @@ class AdminController extends Controller
        User::destroy($id);
        return redirect('admin')->with('flash_message', 'employee deleted!');
    }
+
+   public function getUser(){
+    $user = auth()->user();
+    $list = new User();
+    return response()->json($list);
+}
+
 }

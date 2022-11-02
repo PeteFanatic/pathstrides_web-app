@@ -19,7 +19,7 @@
         <label>Employee Email</label></br>
         <input type="text" name="user_email" id="user_email" value="{{$employee->user_email}}" class="form-control"></br>
         <label>Contact Number</label></br>
-        <input type="text" name="contactnumber" id="contactnumber" value="{{$employee->contactnumber}}" class="form-control"></br>
+        <input type="text" name="user_contactnumber" id="user_contactnumber" value="{{$employee->user_contactnumber}}" class="form-control"></br>
         <label for="user_department">Department :</label></br>
         <select name="user_department" id="user_department" name="user_department"></br>
         @php

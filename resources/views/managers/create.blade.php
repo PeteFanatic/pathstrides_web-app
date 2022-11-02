@@ -45,15 +45,11 @@
                 @endforeach
                 </br>
         <label>Password:</label></br>
-<<<<<<< HEAD
         <input type="text" name="man_password" id="man_password" class="form-control"  value="{{ old('man_password') }}"></br>
         @foreach($errors->get('man_password') as $errorMessage )
                     <span style='color:red'>{{ $errorMessage }}</span>
                 @endforeach
                 </br>
-=======
-        <input type="password" name="man_password" id="man_contanct_num" class="form-control"></br>
->>>>>>> ed3e7fb802436e78c7a31663252de8411aad049f
         <label for="admin_id">Admin id:</label></br>
         <select name="admin_id" id="admin_id" name="admin_id"></br>
         <option value="1">1</option></br>

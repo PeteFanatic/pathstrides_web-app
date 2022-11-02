@@ -43,8 +43,8 @@ Route::get('loginEmployee', [AuthController::class, 'loginEmployee'])->name('log
 
 // guide para sa custom auth login nako sauna
 
-Route::get('login', [CustomAuthController::class, 'login']);
-Route::get('registration', [AuthController::class, 'registration'])->middleware('alreadyLoggedIn');
+// Route::get('login', [CustomAuthController::class, 'login']);
+Route::get('registration', [AuthController::class, 'registration']);
 Route::post('register-admin',[AuthController::class,'registerUser'])->name('register-admin');
 
 
@@ -54,7 +54,7 @@ Route::get('/logout',[CustomAuthController::class,'logout']);
 Route::get('/adminlogin',[CustomAuthController::class,'logout']);
 
 Route::resource("/employee", EmployeeController::class)->middleware('isLoggedIn');
-Route::resource("/admin", AdminController::class);
-Route::resource("/department", DepartmentController::class);
+Route::resource("/admin", AdminController::class)->middleware('isLoggedIn');
+Route::resource("/department", DepartmentController::class)->middleware('isLoggedIn');
 Route::resource("/task", TaskController::class)->middleware('isLoggedIn');
 Route::resource("/announcement", AnnouncementController::class)->middleware('isLoggedIn');

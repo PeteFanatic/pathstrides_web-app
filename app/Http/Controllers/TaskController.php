@@ -6,7 +6,9 @@ use Tymon\JWTAuth\Exceptions\JWTException;
 use Illuminate\Http\Request;
 use App\Models\Task;
 use App\Models\Manager;
+use App\Http\Controllers\Session;
 use App\Models\User;
+use App\Models\Admin;
 use App\Models\Employee;
 use App\Controllers\AuthController;
 
@@ -20,6 +22,9 @@ class TaskController extends Controller
     public function index()
     {
         $tasks = task::all();
+
+            
+            
         return view ('tasks.index')->with('tasks', $tasks);
     }
 
@@ -103,10 +108,10 @@ class TaskController extends Controller
 
     public function getEmployeeTask(){
         $user = auth()->user();
-        if($auth_id == $emp_id){
+        // if($user->user_id == $task->user_id){
             $list = new Task();
             $list = $list->getEmployeeTask();
             return response()->json($list);
-            }
+            // }
     }
 }

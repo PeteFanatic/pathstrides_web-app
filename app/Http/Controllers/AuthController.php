@@ -160,7 +160,6 @@ class AuthController extends Controller
             'password'=>'required|min:6|max:12',
         ]);
         $admin = Admin::where('admin_email','=',$request->email)->first();
-         $users = Users::where('user_email','=',$request->email)->first();
         // $manager = Manager::where('man_password','=',Hash::make($request->password))->first();
         if($admin){
             if(hash::check($request->password,$admin->admin_password)){
@@ -174,7 +173,9 @@ class AuthController extends Controller
             else{
                 return back()->with('fail','Password Incorrect.');
             }
-        }else if($users){
+        }
+        $user = User::where('user_email','=',$request->email)->first();
+        if($user){
             if($request->password==$user->user_password){
             //     if($manager = Manager::where('man_password','=',$request->password)->first()){
                 // if(hash::check($request->password,$manager->man_password)){
@@ -306,6 +307,7 @@ class AuthController extends Controller
                   $token = $user->createToken('Personal Access Token')->plainTextToken;
                   $response = ['users' => $user, 'token' => $token];
                   $user = auth()->user();
+                  $user = Auth::user();
                 $response = ['message' => 'Success'];
                 // return response()->json([
                 //             'success' => true,
@@ -322,21 +324,29 @@ class AuthController extends Controller
                 }
             }
             else if ($user && Hash::check($req->password, $user->user_password)){
-                $user = auth()->user();
-                $token = $user->createToken('Personal Access Token')->plainTextToken;
-                $response = ['users' => $user, 'token' => $token];
-                $response = ['message' => 'Success'];
+                // $user = auth()->user();
+                // $user = Auth::user();
+                if($user->role == '2'){
+                    $token = $user->createToken('Personal Access Token')->plainTextToken;
+                    // $request->session()->put('loginId',$user->user_id);
+                    $response = ['users' => $user, 'token' => $token];
+                    $response = ['message' => 'Success'];
 
-                return response()->json($response, 200);
+                    return response()->json($response, 200);
+                }
+                else{
+                    $response = ['message' => 'Your account is restricted in the Mobile App. You only have desktop access of the app.'];
+                    return response()->json($response, 400);
+                }
             }
             else{
-                $response = ['message' => 'Incorrect password'];
+                $response = ['message' => 'Incorrect credentials'];
         return response()->json($response, 400);
             }
         
         }
         else{
-        $response = ['message' => 'Incorrect email'];
+        $response = ['message' => 'Incorrect credentials'];
         return response()->json($response, 400);
         }
         // $input = $request->only('email', 'password');
@@ -361,16 +371,18 @@ class AuthController extends Controller
         //valdiate
         $rules = [
             'oldPass' => 'required|string',
-            'newPass' => 'required|string|min:6|max:15',
-            'confirmPass' => 'required|string|min:6|max:15'
+            'newPass' => 'required|string|min:6',
+            'confirmPass' => 'required|string|min:6'
         ];
+
         $validator = Validator::make($req->all(), $rules);
         if ($validator->fails()) {
             return response()->json($validator->errors(), 400);
         }
-        // $user = User::where('user_password', $req->oldPass)->first();
+        // $tempUser = auth()->user();
+        
         //create new user in users table
-        $user = auth()->user();
+        $user = User::where('user_password','=',$req->oldPass)->first();
         if($user){
             if ($req->oldPass==$user->user_password) {
                 if($req->newPass == $req->confirmPass){
@@ -379,20 +391,28 @@ class AuthController extends Controller
                     // )->update(['user_password'=>$req_confirmPass]);
 
                     // $user=User::find($req->oldPass)->update(['user_password'=>$req->confirmPass]);
+                    
+                    //$user = User::where('user_password', $req->oldPass)->update(['user_password'=>$req->confirmPass]);
+                    $req->confirmPass=Hash::make($req->confirmPass);
                     $user = User::where('user_password', $req->oldPass)->update(['user_password'=>$req->confirmPass]);
-                    // $user = Hash::make('user_password');
                     // product::find($id)->update([ 'key' => $request['key'],'name' => $request['name']);
                     
-            $response = ['message' => 'Success'];
-            return response()->json($response, 200);
+                    $response = ['message' => 'Success'];
+                    return response()->json($response, 200);
                 }
                 else{
+                    $response = ['message' => 'Confirm Password does not match!'];
                     return response()->json($response, 400);
                 }
             }
             else{
+                $response = ['message' => 'Old Password does not match!'];
                 return response()->json($response, 400);
             }
+        }
+        else{
+            $response = ['message' => 'Old Password does not match!'];
+            return response()->json($response, 400);
         }
     }
     

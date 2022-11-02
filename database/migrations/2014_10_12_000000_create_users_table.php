@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('user_email')->unique();
             $table->string('user_contactnumber');
             $table->string('user_username',45);
-            $table->string('user_password',45);
+            $table->string('user_password',100);
             $table->string('user_department',100);
             $table->integer('role');
             $table->integer('status');

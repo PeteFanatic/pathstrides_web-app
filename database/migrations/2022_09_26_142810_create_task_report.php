@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('task_report', function (Blueprint $table) {
             $table->integer('user_id');
             $table->string('report_text');
-            $table->binary('report_image');
+            $table->string('report_image');//CHANGED FROM BLOB TO STRING -PETE
             $table->timestamps();
         });
 
