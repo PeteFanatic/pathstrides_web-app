@@ -60,3 +60,5 @@ Route::resource("/admin", AdminController::class)->middleware('isLoggedIn');
 Route::resource("/department", DepartmentController::class)->middleware('isLoggedIn');
 Route::resource("/task", TaskController::class)->middleware('isLoggedIn');
 Route::resource("/announcement", AnnouncementController::class)->middleware('isLoggedIn');
+
+Route::resource("/pointsshop", RedeemShopController::class)->middleware('isLoggedIn');
