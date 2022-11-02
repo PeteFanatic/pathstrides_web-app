@@ -24,3 +24,5 @@ Route::get('/employeeAnnounce','App\Http\Controllers\AnnouncementController@getA
 Route::middleware('auth:sanctum')->get('/manager', function (Request $request) {
     return $request->manager();
 });
+
+Route::get('/getitems', 'App\Http\Controllers\ItemsController@getItems');

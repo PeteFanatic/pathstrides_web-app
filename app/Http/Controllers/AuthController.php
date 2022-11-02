@@ -1,29 +1,20 @@
 <?php
 
 namespace App\Http\Controllers;
-
-use App\Models\User;
-use App\Models\Manager;
-use AdminController;
-use App\Models\Employee;
-use App\Models\Admin;
 use Illuminate\Http\Request;
+use Hash;
+use Session;
+use App\Models\User;
+use App\Models\Admin;
+use App\Models\Manager;
+use App\Models\Employee;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Auth;
-use Hash;
+use Illuminate\Database\Schema\Blueprint;
 use Laravel\Sanctum\HasApiTokens;
-use JWTAuth;
-use Tymon\JWTAuth\Exceptions\JWTException;
-use Mail;
-use App\Mail\PasswordReset;
-
 class AuthController extends Controller
 {
 
-    public function login_manager()
-    {
-        return view('managers.login');
-    }
     public function login()
     {
         return view('login');
@@ -33,22 +24,17 @@ class AuthController extends Controller
         return view('welcome');
     }
     public function registration(){
-        return view("registration");
+        return view("admin.registration");
     }
 
     public function dashboard(){
-        return view('dashboard');
+        // return view('dashboard_manager');
+        $manager = array();
+        // if(Session::has('loginId')){
+        //     $manager = Manager::where('id','=',Session::get('loginId'))->first();
+        // }
+        return view("dashboard");
     }
-    // public function dashboard_admin(){
-    //     // return view('dashboard_manager');
-    //     $manager = array();
-    //     // if(Session::has('loginId')){
-    //     //     $manager = Manager::where('id','=',Session::get('loginId'))->first();
-    //     // }
-    //     return view("dashboard_admin");
-    // }
-
-
     // public function register(Request $req)
     // {
     //     //valdiate
@@ -82,19 +68,21 @@ class AuthController extends Controller
             'admin_password'=>'required|min:6|max:12',
         ]);
         $admin = new Admin();
+        // $admin->admin_id = $admin->id();
         $admin->admin_fname = $request->admin_fname;
         $admin->admin_lname = $request->admin_lname;
-        $admin->admin_email = $request->admin_email;
         $admin->admin_username = $request->admin_username;
+        $admin->admin_email = $request->admin_email;
         $admin->admin_password = Hash::make($request->admin_password);
+
         $res = $admin->save();
         if($res){
             // return back()->with('success','Registered Successfully');
             
-            // Admin::create($res);
-            // return redirect('admin')->with('flash_message', 'Admin Addedd!'); 
+            // Admin::create($request);
             $request->session()->put('loginId',$admin->admin_id);
             return redirect('dashboard');
+            // return back()->with('success','Registered Successfully');
         }else{
             return back()->with('fail','Try Again.');
         }
@@ -130,29 +118,6 @@ class AuthController extends Controller
     //     }
     // }
     // gana logic dinhi sa login
-    public function loginManager(Request $request){
-        
-        $request->validate([
-            'email'=>'required',
-            'password'=>'required|min:6|max:12',
-        ]);
-        $manager = Manager::where('man_email','=',$request->email)->first();
-       
-        if($manager){
-            if($request->password==$manager->man_password){
-                // if($manager = Manager::where('man_password','=',$request->password)->first()){
-                // if(manager->where($request->password)->value('man_password')){
-                $request->session()->put('loginId',$manager->man_id);
-                return redirect('employee');
-                // echo "Hello world!<br>";
-            }
-            else{
-                return back()->with('fail','Password Incorrect.');
-            }
-        }else{
-            return back()->with('fail','Email not Registered.');
-        }
-    }
     public function loginWeb(Request $request){
         
         $request->validate([
@@ -180,18 +145,11 @@ class AuthController extends Controller
             //     if($manager = Manager::where('man_password','=',$request->password)->first()){
                 // if(hash::check($request->password,$manager->man_password)){
                 // if(manager->where($request->password)->value('man_password')){
-                $request->session()->put('loginId',$user->user_id);
+                $request->session()->put('loginId',$users->user_id);
                 return redirect('dashboard');
                 // echo "Hello world!<br>";
             }
-            // else if(hash::check($request->password,$admin->admin_password)){
-            //     //     if($manager = Manager::where('man_password','=',$request->password)->first()){
-            //         // if(hash::check($request->password,$manager->man_password)){
-            //         // if(manager->where($request->password)->value('man_password')){
-            //         $request->session()->put('loginId',$admin->admin_id);
-            //         return redirect('dashboard');
-            //         // echo "Hello world!<br>";
-            //     }
+            
             else{
                 return back()->with('fail','Password Incorrect.');
             }
@@ -203,89 +161,6 @@ class AuthController extends Controller
         // }
     }
 
-    // public function login(Request $request)
-    // {
-        
-    //     $input = $request->only('email', 'password');
-    //     $jwt_token = null;
-    //     if (!$jwt_token = JWTAuth::attempt($input)) {
-    //         return response()->json([
-    //             'success' => false,
-    //             'message' => 'Invalid Email or Password',
-    //         ], 401);
-    //     }
-    //     // get the user 
-    //     $employee = Auth::employee();
-       
-    //     return response()->json([
-    //         'success' => true,
-    //         'token' => $jwt_token,
-    //         'employee' => $employee
-    //     ]);
-    // }
-    public function logoutEmployee(Request $request)
-    {
-        if(!Employee::checkToken($request)){
-            return response()->json([
-             'message' => 'Token is required',
-             'success' => false,
-            ],422);
-        }
-        
-        try {
-            JWTAuth::invalidate(JWTAuth::parseToken($request->token));
-            return response()->json([
-                'success' => true,
-                'message' => 'Employee logged out successfully'
-            ]);
-        } catch (JWTException $exception) {
-            return response()->json([
-                'success' => false,
-                'message' => 'Sorry, the employee cannot be logged out'
-            ], 500);
-        }
-    }
-
-    public function getCurrentEmployee(Request $request){
-       if(!Employee::checkToken($request)){
-           return response()->json([
-            'message' => 'Token is required'
-           ],422);
-       }
-        
-        $employee = JWTAuth::parseToken()->authenticate();
-       // add isProfileUpdated....
-       $isProfileUpdated=false;
-        if($employee->isPicUpdated==1 && $employee->isEmailUpdated){
-            $isProfileUpdated=true;
-            
-        }
-        $employee->isProfileUpdated=$isProfileUpdated;
-
-        return $employee;
-}
-
-   
-// public function update(Request $request){
-//     $employee=$this->getCurrentEmployee($request);
-//     if(!$employee){
-//         return response()->json([
-//             'success' => false,
-//             'message' => 'Employee is not found'
-//         ]);
-//     }
-   
-//     unset($data['token']);
-
-//     $updatedEmployee = Employee::where('id', $employee->id)->update($data);
-//     $employee =  Employee::find($employee->id);
-
-//     return response()->json([
-//         'success' => true, 
-//         'message' => 'Information has been updated successfully!',
-//         'employee' =>$employee
-//     ]);
-// }
     public function loginEmployee(Request $req){
         
       // validate inputs
@@ -297,11 +172,11 @@ class AuthController extends Controller
         // find user email in users table
         $user = User::where('user_email', $req->email)->first();
         // if user email found and password is correct
-        
-         //first if condition kay: IF HASHED PASSWORD IS EQUAL TO REQUEST PASS
-        // THEN DASHBOARD PAGE, RETURN 200. ELSE IF REQ PASS EQUAL TO NOT HASHED PASS THEN UPDATE PASS, RETURN 201
         if($user){
-            if ($user->user_password == $req->password) {
+            if ($req->password==$user->user_password) {
+                if($user->role == 2){
+                 $token = $user->createToken('Personal Access Token')->plainTextToken;
+             $response = ['user' => $user, 'token' => $token];
                 // if ($employee = Employee::where('emp_password')==$req->password) {
                      if($user->role == '2'){
                   $token = $user->createToken('Personal Access Token')->plainTextToken;
@@ -309,18 +184,11 @@ class AuthController extends Controller
                   $user = auth()->user();
                   $user = Auth::user();
                 $response = ['message' => 'Success'];
-                // return response()->json([
-                //             'success' => true,
-                //             'token' => $jwt_token,
-                //             'employee' => $employee,
-                           
-                //         ]);
-                // $auth_id = $emp_id;
-                 return response()->json($response, 201);
-                 }
+                return response()->json($response, 200);
+                }
                 else{
-                    $response = ['message' => 'Your account is restricted in the Mobile App. You only have desktop access of the app.'];
-                    return response()->json($response, 400);
+                    $response = ['message' => 'Your account is only accessible in our website.'];
+                return response()->json($response, 400);
                 }
             }
             else if ($user && Hash::check($req->password, $user->user_password)){
@@ -348,23 +216,6 @@ class AuthController extends Controller
         else{
         $response = ['message' => 'Incorrect credentials'];
         return response()->json($response, 400);
-        }
-        // $input = $request->only('email', 'password');
-        //     $jwt_token = null;
-        //     if (!$jwt_token = JWTAuth::attempt($input)) {
-        //         return response()->json([
-        //             'success' => false,
-        //             'message' => 'Invalid Email or Password',
-        //         ], 401);
-        //     }
-        //     // get the user 
-        //     $employee = Auth::employee();
-           
-        //     return response()->json([
-        //         'success' => true,
-        //         'token' => $jwt_token,
-        //         'employee' => $employee
-        //     ],200);
     }
     public function updateEmployeePass(Request $req)
     {
@@ -415,11 +266,10 @@ class AuthController extends Controller
             return response()->json($response, 400);
         }
     }
-    
     public function logout(){
         if(Session::has('loginId')){
             Session::pull('loginId');
+            return redirect('login');
         }
-        return redirect('/');
     }
 }
