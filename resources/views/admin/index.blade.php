@@ -69,6 +69,8 @@
     <title>Pathstrides</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
   <body>
      <div class="container-fluid" id="body">
@@ -191,8 +193,8 @@
                                         <td>{{ $item->role }}</td>
                                         <td>{{ $item->status }}</td>
                                         <td>
-                                            <a href="{{ url('/admin/' . $item->user_id) }}" title="View"><button class="btn btn-info btn-sm"><i class="fa fa-eye"></i></button></a>
-                                            <a href="{{ url('/admin/' . $item->user_id . '/edit') }}" title="Edit"><button class="btn btn-primary btn-sm"><i class="material-icons"></i></button></a>
+                                            <a href="{{ url('/admin/' . $item->user_id) }}" title="View"><button class="btn btn-info btn-sm" id="action-button"><i class="fa fa-drivers-license" id="icon-from-google"></i></button></a>
+                                            <a href="{{ url('/admin/' . $item->user_id . '/edit') }}" title="Edit"><button class="btn btn-primary btn-sm" id="action-button"><i class="fa fa-pencil" id="icon-from-google"></i></button></a>
                                         </td>
                                     </tr>
                                 @endforeach
@@ -433,5 +435,18 @@
     .page-link:hover{
         color: #FF7843;
         font-weight: bold;
+    }
+
+    #icon-from-google{
+        color:#FF7843;
+    }
+
+    #action-button{
+        background: none;
+        border: 0;
+    }
+
+    #icon-from-google:hover{
+        color:red;
     }
 </style>
