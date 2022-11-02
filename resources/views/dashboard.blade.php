@@ -313,6 +313,13 @@
                                             User Profile
                                         </a>
                                     </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{{url('/pointshop')}}" id="a-nav-side">
+                                            <img src="{{ URL('images\icons\icons8-stall-100.png') }}"
+                                                class="icon">
+                                            Points Shop
+                                        </a>
+                                    </li>
                                 </ul>
                             </nav>
 

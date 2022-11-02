@@ -307,7 +307,7 @@
                                         </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="#" id="a-nav-side">
+                                        <a class="nav-link" href="{{url('/pointsshop')}}" id="a-nav-side">
                                             <img src="{{ URL('images\icons\icons8-male-user-96.png') }}"
                                                 class="icon">
                                             User Profile
