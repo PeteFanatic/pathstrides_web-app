@@ -8,7 +8,9 @@
                         <h2>List of Tasks</h2>
                     </div>
                     <div class="card-body">
+                        
                         <a href="{{ url('/task/create') }}" class="btn btn-success btn-sm" title="Add New task">
+                        
                             <i class="fa fa-plus" aria-hidden="true"></i> Add New
                         </a>
                         <br/>
@@ -32,7 +34,6 @@
                                         <td>{{ $item->task_title }} </td>
                                         <td>{{ $item->points }} </td>
                                         <td>{{ $item->location }}</td>
-                                        <td>{{ $item->emp_id }}</td>
                                         <td>{{ $item->man_id }}</td>
                             
                                         <td>
@@ -56,4 +57,5 @@
             </div>
         </div>
     </div>
+    
 @endsection

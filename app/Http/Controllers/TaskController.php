@@ -30,9 +30,9 @@ class TaskController extends Controller
      */
     public function create()
     {
-        $employee=User::getManager(1);
+        $user=User::getManager(1);
         $manager=User::getManager(1);
-        return view('tasks.create')->with(compact('employee','manager'));
+        return view('tasks.create')->with(compact('user','manager'));
     }
 
     /**
