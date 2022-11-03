@@ -164,4 +164,3 @@ class ManagerController extends Controller
         return redirect('manager')->with('flash_message', 'manager deleted!');
     }
 }
-
