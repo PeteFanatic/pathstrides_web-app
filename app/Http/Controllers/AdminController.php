@@ -96,4 +96,10 @@ class AdminController extends Controller
        User::destroy($id);
        return redirect('admin')->with('flash_message', 'employee deleted!');
    }
+
+   public function getUser(){
+    $user = auth()->user();
+    $list = new User();
+    return response()->json($list);
+}
 }

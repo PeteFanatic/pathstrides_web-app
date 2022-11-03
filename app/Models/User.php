@@ -45,5 +45,8 @@ class User extends Authenticatable
     public static function getManager($role){
         return self::where('role',$role)->get()->toArray();
 }
+public function getUser(){
+    return $this->get();
+}
 
 }
