@@ -30,4 +30,3 @@ class Manager extends Model
     }
         
 }
-
