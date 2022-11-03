@@ -28,6 +28,10 @@ class AuthController extends Controller
     {
         return view('login');
     }
+    public function map()
+    {
+        return view('map');
+    }
 
     public function landing(){
         return view('welcome');

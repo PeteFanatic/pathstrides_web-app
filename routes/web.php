@@ -9,7 +9,7 @@ use App\Http\Controllers\TaskController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\AnnouncementController;
 use App\Http\Controllers\DepartmentController;
-
+use App\Http\Controllers\RedeemShopController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,6 +26,7 @@ use App\Http\Controllers\DepartmentController;
 //     return view('welcome');
 // });
 
+Route::get('/map', [AuthController::class, 'map'])->name('map');
 
 // Route::get('employee/all',[EmployeeController::class,'showAll'])->name('employee.all');  
 // Route::post('employee/create',[EmployeeController::class,'store'])->name('employees.save');
@@ -55,6 +56,6 @@ Route::get('/adminlogin',[CustomAuthController::class,'logout']);
 
 Route::resource("/employee", EmployeeController::class);
 Route::resource("/manager", ManagerController::class);
-Route::resource("/admin", AdminController::class)->middleware('isLoggedIn');
+Route::resource("/admin", AdminController::class);
 Route::resource("/task", TaskController::class)->middleware('isLoggedIn');
 Route::resource("/announcement", AnnouncementController::class)->middleware('isLoggedIn');
