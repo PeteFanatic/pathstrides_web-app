@@ -6,7 +6,7 @@
                 <div class="card">
                     <div class="card-header">Pathstrides Point Shop</div>
                     <div class="card-body">
-                        <a href="{{ url('/employee/create') }}" class="btn btn-success btn-sm" title="Add New Contact">
+                        <a href="{{ url('/pointshop/create') }}" class="btn btn-success btn-sm" title="Add New Contact">
                             <i class="fa fa-plus" aria-hidden="true"></i> Add New
                         </a>
                         <br/>
@@ -41,3 +41,4 @@
         </div>
     </div>
 @endsection
+
