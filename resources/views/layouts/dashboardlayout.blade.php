@@ -4,12 +4,140 @@
   <title>Pathstrides</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
   <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
+    <div class= "bg glass">
+        <nav class="navbar navbar-expand-sm navbar-light" id="nav-top">
+
+            <a class="navbar-brand" href="#"><img src="{{ URL('images/pathstrides-white.png') }}" class="logo">
+                
+            <a class="navbar-brand" href="#" id="PathStrides-beside-logo" style="color: #FFFFFF">Pathstrides</a>
+            <ul class="nav navbar-nav navbar-right" id="top-side-nav">
+                <li><a href="#"><button class="btn btn-info btn-sm" id="home-button"><i class="fa fa-home" id="top-side-nav-icons-home"></i></button></a></a></li>
+                <li><a href="#"><button class="btn btn-info btn-sm" id="user-button"><i class="fa fa-user-circle" id="top-side-nav-icons-user"></i></button></a></a></li>
+            </ul>
+        </nav>
+
+        <hr>
+    </div>
+
+</body>
+</html>
+<style>
+     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;800&display=swap');
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Inter', sans-serif;
+    }
+
+    html {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
+    *,
+    *:before,
+    *:after {
+        -webkit-box-sizing: inherit;
+        -moz-box-sizing: inherit;
+        box-sizing: inherit;
+    }
+
+    body{
+        background-image: url("images/bg.jpg");
+        background-size: cover;
+    }
+
+    hr{
+        border-color: white;
+        opacity: 20%;
+    }
+
+    .bg{
+        height: 90vh;
+        width: 95vw;
+        margin: auto;
+        margin-top: 45px;
+    }
+
+    .glass{
+        /* glass effect */
+        background: linear-gradient(135deg, rgba(255, 255,255,0.1), rgba(255,255, 255,0));
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border-radius: 20px;
+        border: 1px solid rgba(255, 255,255,0.1);
+        box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    }
+
+    #mySidebar{
+        color: white;
+        background: none;
+    }
+
+    #nav-top{
+        height: 50px;
+        width: 100%;
+        margin: 0;
+        padding:0;
+        position: sticky;
+    }
+
+    .navbar-brand{
+        font-weight: 600;
+        float: left;
+        color: #FF7843;
+    }
+
+    .logo{
+        width: auto;  
+        height: 30px;
+        margin-left: 1em;
+        margin-top: 0.5em;
+        color: #FF7843;
+    }
+
+    #PathStrides-beside-logo{
+        font-weight: bold;
+        font-size: 25px;
+        margin-top: 0.5em;
+    }
+
+    #top-side-nav{
+        position: absolute;
+        right: 2em;
+    }
+
+    #top-side-nav-icons-home{
+        color:#FFFFFF;
+        font-size: 30px;
+        margin-top: 0.5em;
+    }
+
+    #top-side-nav-icons-user{
+        color:#FFFFFF;
+        font-size: 25px;
+        margin-top: 0.67em;
+    }
+
+    #home-button, #user-button{
+        background-color: Transparent;
+        background-repeat:no-repeat;
+        border: none;
+    }
+
+
+</style>
+
+<!-- <body>
     <div class="container-fluid" id="body">
 
         <div class="container-fluid">
@@ -129,70 +257,7 @@
                             </nav>
                         </div>
                     </div>
-                    <div class="col-xl-8">
-                        <div class="container-fluid" id="announcements-container">
-                            <h3>ANNOUNCEMENTS</h3>
-                                <div>
-                                    @yield('content')
-                                </div>
-                            <div class="container mt-3">                  
-                                <ul class="pagination">
-                                    <li class="page-item"><a class="page-link" href="#"><</a></li>
-                                    <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                    <li class="page-item"><a class="page-link" href="#">></a></li>
-                                </ul>
-                            </div>
-
-
-                        </div>
-                        
-
-                        <div class="container-fluid" id="tasks-container">
-                            <h3>TASKS</h3>
-                            <div id="accordion">
-
-                                <div class="card">
-                                    <div class="card-header">
-                                        <a class="collapsed card-link" data-toggle="collapse" href="#task1" id="card">
-                                            TASK 1
-                                        </a>
-                                    </div>
-                                    <div id="task1" class="collapse" data-parent="#accordion">
-                                        <div class="card-body">
-                                            Lorem ipsum..
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="card">
-                                    <div class="card-header">
-                                        <a class="collapsed card-link" data-toggle="collapse" href="#task2" id="card">
-                                            TASK 2
-                                        </a>
-                                    </div>
-                                    <div id="task2" class="collapse" data-parent="#accordion">
-                                        <div class="card-body">
-                                            Lorem ipsum..
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="card">
-                                    <div class="card-header">
-                                        <a class="collapsed card-link" data-toggle="collapse" href="#task3" id="card">
-                                            TASK 3
-                                        </a>
-                                    </div>
-                                    <div id="task3" class="collapse" data-parent="#accordion">
-                                        <div class="card-body">
-                                            Lorem ipsum..
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
+                    
 
                             <div class="container mt-3">                  
                                 <ul class="pagination">
@@ -397,6 +462,7 @@
 
     .ann-date-posted{
         float: right;
+        font-size: 16px;
     }
 
     .announcer-photo{
@@ -411,6 +477,11 @@
         margin-top: 0.5em;
     }
 
+    .announcement-text{
+        font-size: 14px;
+        padding-left: 0.8em;
+    }
+
     #see-more{
         color: #5F6368;
         font-weight: bold;
@@ -419,11 +490,13 @@
         height:auto;
         width: auto;
         background-color: white;
+        font-size: 14px;
     }
 
-    .see-more:hover{
-        color: #FF7843;
+    #see-more:hover{
+        color: #FFFFFF;
         text-decoration: none;
+        background: #FF7843;
     }
     
     .pagination{
