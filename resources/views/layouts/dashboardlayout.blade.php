@@ -94,7 +94,7 @@
         </div> -->
 
         <div class="row">
-            <div class="col-md-3" id="side-nav">
+            <div class="col-2" id="side-nav">
                 <div class="container-fluid" id="container-for-sidenav">
                     <nav class="navbar" id="nav-side">
                             <nav class="navbar" id="nav-side-inner">
@@ -163,19 +163,25 @@
                                     </li>
                                 </ul>
                         </nav>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
+</div>
+            </div>
+                    <div class="col">
+                        <h3 class="ann-tasks">Announcements</h3>
                         <div class="container-announcements">
-                            <div style="overflow-y: auto;">
-                                <p>helloworld</p>
+                            <div class="container-ann">
+                                <div style="overflow-y: auto;">
+                                    <p>helloworld</p>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col">
+                        <h3 class="ann-tasks">Tasks</h3>
                         <div class="container-tasks">
-                             <div style="overflow-y: auto;">
-                                <p>helloworld</p>
+                            <div class="container-tas">
+                                <div style="overflow-y: auto;">
+                                    <p>helloworld</p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -217,6 +223,10 @@
     hr{
         border-color: white;
         opacity: 20%;
+    }
+
+    h3{
+        color: white;
     }
 
     .bg{
@@ -311,6 +321,7 @@
     /* side nav bar */
     #side-nav{
         float: left;
+        margin: 0;
     }
 
     #nav-side{
@@ -375,7 +386,31 @@
         color: white;
     }
 
+    /* containers */
+    .container-announcements, .container-tasks{
+        background: linear-gradient(135deg, rgba(255, 255,255,0.1), rgba(255,255, 255,0));
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border-radius: 5px;
+        border: 1px solid rgba(255, 255,255,0.1);
+        box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.15);
+        padding: 1em;
+        display: inline-table;
+        /* background-color: white; */
+        width: 35vw;
+        height: 72.5vh;
+    }
 
+    .ann-tasks{
+        font-weight: bold;
+        font-size: 14px;
+    }
+
+    .container-ann, .container-tas{
+        background-color: white;
+        border-radius: 5px;
+        padding: 1em;
+    }
 </style>
 
 <!-- <body>
