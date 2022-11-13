@@ -59,27 +59,35 @@
 
 @extends('layouts.employeelayout')
 @section('content')
-    <div class="container" id="employee-container">
-        <div class="row">
-            <div class="col-md-9">
+<div class="row" id="employee-container">
+            <div class="col" id="employee-container">
                 <div class="card">
                     <div class="card-header">
-                        <h2>List of Employee</h2>
+
+
+                        <div class="row" id="card-header">
+                            <div class="col">
+                                <h2 class="title">Employees</h2>
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <a href="{{ url('/admin/create') }}" class="add" title="Add New Employee">
+                                <i class="fa fa-plus" aria-hidden="true"></i> Add New
+                            </a>
+                        </div>
                     </div>
                     <div class="card-body">
-                        <a href="{{ url('/admin/create') }}" class="btn btn-success btn-sm" title="Add New Employee">
-                            <i class="fa fa-plus" aria-hidden="true"></i> Add New
-                        </a>
-                        <br/>
+
                         <br/>
                         <div class="table-responsive">
                             <table class="table">
                                 <thead>
                                     <tr>
-                                        <th>Employee ID</th>
-                                        <th>Employee Name</th>
-                                        <th>Employee Email</th>
-                                        <th>Contanct Number</th>
+                                        <th>ID</th>
+                                        <th>Name</th>
+                                        <th>Email</th>
+                                        <th>Contact No.</th>
                                         <th>Department </th>
                                         <th>Role </th>
                                         <th>Status </th>
@@ -114,6 +122,5 @@
                 </div>
             </div>
         </div>
-    </div>
-    
 @endsection
+
