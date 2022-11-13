@@ -102,7 +102,7 @@
             </div>
                     <div class="col">
                         <!-- <h3 class="title">Employees</h3> -->
-                        <div class="container-employee-list">
+                        <div class="content-list">
                             <div class="container-ann">
                                 <div style="overflow-y: auto;">
                                     @yield('content')
@@ -140,7 +140,7 @@
     }
 
     body{
-        background-image: url("images/bg3.jpg");
+        background-image: url("images/bg7.jpg");
         background-size: cover;
         -webkit-backdrop-filter: brightness(20%);
     }
@@ -165,8 +165,8 @@
     .glass{
         
         background: linear-gradient(135deg, rgba(255, 255,255,0.1), rgba(255,255, 255,0));
-        backdrop-filter: blur(20px);
-        -webkit-backdrop-filter: blur(20px);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
         border-radius: 10px;
         border: 1px solid rgba(255, 255,255,0.1);
         box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
@@ -312,7 +312,7 @@
     }
 
     /* containers */
-    .container-employee-list{
+    .content-list{
         background: linear-gradient(135deg, rgba(255, 255,255,0.1), rgba(255,255, 255,0));
         backdrop-filter: blur(10px);
         -webkit-backdrop-filter: blur(10px);
@@ -321,9 +321,9 @@
         box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.15);
         padding: 1em;
         /* background-color: white; */
-        height: 72.5vh;
+        height: 75.85vh;
         width: 75vw;
-        fkloat: left;
+        float: left;
     }
 
     .title{
@@ -351,6 +351,7 @@
         background-color: Transparent;
         background-repeat:no-repeat;
         border: none;
+        padding: 0;
         
     }
 
@@ -375,7 +376,6 @@
         max-height: 67vh;
         padding: 0;
     }
-
 
     th{
         font-size: 14px;
