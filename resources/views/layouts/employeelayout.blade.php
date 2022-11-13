@@ -28,71 +28,6 @@
 
         <hr>
 
-        <!-- <div class="container" id="body-layout">
-            <div class="row">
-                <div class="col-sm-3">
-                    <div class="container-fluid">
-                            <nav class="navbar" id="nav-side">
-                                <ul class="navbar-nav">
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="#" id="a-nav-side">
-                                            <i class='fas fa-bullhorn' id="icon"></i>
-                                            Announcements
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="#" id="a-nav-side">
-                                            <i class='fas fa-bullhorn' id="icon"></i>
-                                            Tasks
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="#" id="a-nav-side">
-                                            <i class='fas fa-bullhorn' id="icon"></i>
-                                            Employees
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="#" id="a-nav-side">
-                                            <i class='fas fa-bullhorn' id="icon"></i>
-                                            Departments
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="#" id="a-nav-side">
-                                            <i class='fas fa-bullhorn' id="icon"></i>
-                                            Points Shop
-                                        </a>
-                                    </li>
-                                </ul>
-                            </nav>
-
-            
-                            <nav class="navbar" id="nav-side">
-                                <ul class="navbar-nav">
-                                    <li class="nav-item">
-                                        <a class="nav-link disabled" href="#" id="top-employees-title">
-                                            <i i class='fas fa-bullhorn' id="icon"></i>
-                                            Top Employees
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <p></p><a class="nav-link disabled" href="#" id="top-employees">#1 Burger Oclarence</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link disabled" href="#" id="top-employees">#2 Ricardo Milos</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link disabled" href="#" id="top-employees">#3 Adonis Gibar</a>
-                                    </li>
-                                </ul>
-                            </nav>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> -->
-
         <div class="row">
             <div class="col-2" id="side-nav">
                 <div class="container-fluid" id="container-for-sidenav">
@@ -166,11 +101,11 @@
 </div>
             </div>
                     <div class="col">
-                        <h3 class="ann-tasks">Announcements</h3>
-                        <div class="container-announcements">
+                        <h3 class="employee-title">Employees</h3>
+                        <div class="container-employee-list">
                             <div class="container-ann">
                                 <div style="overflow-y: auto;">
-                                    <p>helloworld</p>
+                                    @yield('content')
                                 </div>
                             </div>
                         </div>
@@ -377,7 +312,7 @@
     }
 
     /* containers */
-    .container-announcements, .container-tasks{
+    .container-employee-list{
         background: linear-gradient(135deg, rgba(255, 255,255,0.1), rgba(255,255, 255,0));
         backdrop-filter: blur(10px);
         -webkit-backdrop-filter: blur(10px);
@@ -387,11 +322,11 @@
         padding: 1em;
         display: inline-table;
         /* background-color: white; */
-        width: 35vw;
         height: 72.5vh;
+        /* width: 80vw; */
     }
 
-    .ann-tasks{
+    .employee-title{
         font-weight: bold;
         font-size: 14px;
     }
@@ -400,5 +335,11 @@
         background-color: white;
         border-radius: 5px;
         padding: 1em;
+    }
+
+    /* content */
+    #employee-container{
+        background-color: Transparent;
+        background-repeat:no-repeat;
     }
 </style>
