@@ -101,7 +101,7 @@
 </div>
             </div>
                     <div class="col">
-                        <h3 class="employee-title">Employees</h3>
+                        <!-- <h3 class="title">Employees</h3> -->
                         <div class="container-employee-list">
                             <div class="container-ann">
                                 <div style="overflow-y: auto;">
@@ -320,26 +320,67 @@
         border: 1px solid rgba(255, 255,255,0.1);
         box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.15);
         padding: 1em;
-        display: inline-table;
         /* background-color: white; */
         height: 72.5vh;
-        /* width: 80vw; */
+        width: 75vw;
+        fkloat: left;
     }
 
-    .employee-title{
+    .title{
         font-weight: bold;
-        font-size: 14px;
-    }
-
-    .container-ann, .container-tas{
-        background-color: white;
-        border-radius: 5px;
-        padding: 1em;
+        font-size: 16px;
+        clear: left;
     }
 
     /* content */
     #employee-container{
         background-color: Transparent;
         background-repeat:no-repeat;
+        border-radius: 5px;
     }
+
+    .card{
+        border: none;
+        background-color: Transparent;
+        background-repeat:no-repeat;
+        color: white;
+    }
+
+    .card-header{
+        display: flex;
+        background-color: Transparent;
+        background-repeat:no-repeat;
+        border: none;
+        
+    }
+
+    .add{
+        float: right;
+        font-size: 14px;
+        color: white;
+        padding: 7px;
+    }
+
+    .add:hover{
+        float: right;
+        border-radius: 5px;
+        font-size: 14px;
+        color: #FF7843;
+        text-decoration: none;
+        background:white;
+        font-weight: bold;
+    }
+
+    .card-body{
+        max-height: 67vh;
+        padding: 0;
+    }
+
+
+    th{
+        font-size: 14px;
+        margin: auto;
+        color: white;
+    }
+    
 </style>
