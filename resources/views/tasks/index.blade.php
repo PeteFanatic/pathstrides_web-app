@@ -1,4 +1,4 @@
-@extends('tasks.layout')
+@extends('layouts.employeelayout')
 @section('content')
     <div class="container">
         <div class="row">
@@ -51,8 +51,6 @@
                             </table>
                         </div>
                     </div>
-                    <a href="dashboard">Home</a>
-                            <a href="loginAdmin">Logout</a>
                 </div>
             </div>
         </div>
