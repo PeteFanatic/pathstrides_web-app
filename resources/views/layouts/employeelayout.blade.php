@@ -243,6 +243,10 @@
         border: none;
     }
 
+    #top-side-nav-icons-home:hover, #top-side-nav-icons-notif:hover, #top-side-nav-icons-user:hover{
+        color: #FF7843;
+    }
+
     /* side nav bar */
     #side-nav{
         float: left;
