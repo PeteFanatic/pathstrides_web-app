@@ -70,11 +70,26 @@
                                 <h2 class="title">Employees</h2>
                             </div>
                         </div>
+                        
+                        
 
                         <div class="col">
-                            <a href="{{ url('/admin/create') }}" class="add" title="Add New Employee">
-                                <i class="fa fa-plus" aria-hidden="true"></i> Add New
-                            </a>
+                            <div class="container">
+                                <a href="{{ url('/admin/create') }}" class="add" title="Add New Employee" data-toggle="modal" data-target="#myModal">
+                                    <i class="fa fa-plus" aria-hidden="true"></i> Add New
+                                </a>
+                                <div class="modal fade" id="myModal" role="dialog">
+                                    <div class="modal-dialog">
+                                        <!-- Modal content-->
+                                        <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                            <h4 class="modal-title">Add an Employee</h4>
+                                        </div>
+                                            
+                                        
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="card-body">
