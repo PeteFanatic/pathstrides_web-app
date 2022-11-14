@@ -30,6 +30,7 @@ class AdminController extends Controller
    {
     $department=Department::getDepartment(1);
     return view ('admin.create')->with('department', $department);
+
    }
 
    /**
@@ -43,6 +44,7 @@ class AdminController extends Controller
        $input = $request->all();
        User::create($input);
        return redirect('admin')->with('flash_message', 'employee Addedd!'); 
+    
    }
 
    /**

@@ -10,5 +10,5 @@ class Shop extends Model
     use HasFactory;
     protected $table = 'redeem_shop';
     protected $primaryKey = 'id';
-    protected $fillable = ['name', 'address', 'mobile','photo'];
+    protected $guarded = [];
 }

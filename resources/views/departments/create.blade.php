@@ -11,8 +11,7 @@
       
       <form action="{{ url('department') }}" method="post">
         {!! csrf_field() !!}
-        <label>Department ID:</label></br>
-        <input type="text" name="dep_id" id="dep_id" class="form-control"></br>
+      
         <label>Department Name:</label></br>
         <input type="text" name="dep_name" id="dep_name" class="form-control"></br>
         <label for="dep_coll">Department Coll :</label></br>

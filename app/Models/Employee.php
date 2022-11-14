@@ -10,7 +10,7 @@ class Employee extends Model
 {
     use HasFactory, HasApiTokens;
 
-    public $incrementing = false;
+    public $incrementing = true;
     public $timestamps = false;
     protected $table = 'employee';
     protected $primaryKey = 'emp_id';

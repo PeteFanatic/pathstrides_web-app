@@ -14,16 +14,19 @@ return new class extends Migration
     public function up()
     {
         Schema::create('task', function (Blueprint $table) {
-            $table->integer('task_id')->primary();
+            $table->integer('task_id')->unsigned();
             $table->string('task_title',45);
-            $table->string('task_desc',100);
-            $table->string('points',45);
-            $table->string('location',100);
-            $table->integer('status');
-            $table->integer('user_id');
+            $table->string('task_desc',255);
+            $table->integer('points',45);
+            $table->string('address',255);
+            $table->string('task_lat');
+            $table->string('task_long');
+            $table->unsignedBigInteger('user_id');
             $table->timestamps();
+            $table->string('deadline',45);
 
             $table->foreign('user_id')->references('user_id')->on('users');
+            $table->engine = 'InnoDB';
         });
     }
 

@@ -30,10 +30,10 @@
                                 <tbody>
                                 @foreach($employee as $item)
                                     <tr>
-                                        <td>{{ $item->user_id }}</td>
+                                        <td>{{ $loop->iteration }}</td>
                                         <td>{{ $item->user_fname }} , {{ $item->user_lname }}</td>
                                         <td>{{ $item->user_email }}</td>
-                                        <td>{{ $item->user_contanctnumber }}</td>
+                                        <td>{{ $item->contanctnumber }}</td>
                                         <td>{{ $item->user_department }}     
                                         <td>{{ $item->role }}</td>
                                         <td>{{ $item->status }}</td>

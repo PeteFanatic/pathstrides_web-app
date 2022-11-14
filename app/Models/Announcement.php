@@ -9,7 +9,7 @@ class Announcement extends Model
 {
     use HasFactory;
 
-    public $incrementing = false;
+    public $incrementing = true;
     public $timestamps = false;
     protected $table = 'announcement';
     protected $primaryKey = 'ann_id';

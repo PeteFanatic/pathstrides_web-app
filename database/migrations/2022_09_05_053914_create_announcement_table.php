@@ -14,15 +14,16 @@ return new class extends Migration
     public function up()
     {
         Schema::create('announcement', function (Blueprint $table) {
-            $table->integer('ann_id')->primary();
-            $table->string('ann_title',45);
-            $table->string('ann_desc',100);
-            $table->string('location',45);
-            $table->integer('status');
-            $table->integer('user_id');
+            $table->id('anns_id')->autoIncrement();
+            $table->string('anns_title',45);
+            $table->string('anns_desc',100);
+            $table->string('location',255);
+            $table->decimal('anns_lat',9,8);
+            $table->decimal('anns_long',9,8);
+            
             $table->timestamps();
 
-            $table->foreign('user_id')->references('user_id')->on('users');
+            
         });
     }
 

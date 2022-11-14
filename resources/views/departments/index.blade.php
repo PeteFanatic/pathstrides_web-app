@@ -25,7 +25,7 @@
                                 <tbody>
                                 @foreach($departments as $item)
                                     <tr>
-                                        <td>{{ $item->dep_id }}</td>
+                                        <td>{{ $loop->iteration }}</td>
                                         <td>{{ $item->dep_name }} </td>
                                         
                             

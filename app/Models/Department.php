@@ -9,7 +9,7 @@ class Department extends Model
 {
     use HasFactory;
 
-    public $incrementing = false;
+    public $incrementing = true;
     protected $table = 'departments';
     protected $primaryKey = 'dep_id';
     protected $guarded = [];  

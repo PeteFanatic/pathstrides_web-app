@@ -4,8 +4,6 @@
   <div class="card-header">Employee Details Page</div>
   <div class="card-body">
 
-  
-
 
   <a href="{{ url('/admin/') }}" class="btn btn-success btn-sm" title="Back">
                             <i class="fa fa-plus" aria-hidden="true"></i> Back

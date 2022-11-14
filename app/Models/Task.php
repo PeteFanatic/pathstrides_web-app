@@ -9,7 +9,7 @@ class Task extends Model
 {
     use HasFactory;
 
-   
+    public $incrementing = true;
     protected $table = 'task';
     protected $primaryKey = 'task_id';
     protected $guarded = [];

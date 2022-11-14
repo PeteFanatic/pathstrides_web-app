@@ -6,8 +6,6 @@
       
       <form action="{{ url('admin') }}" method="post">
         {!! csrf_field() !!}
-        <label>Employee ID:</label></br>
-        <input type="text" name="user_id" id="user_id" class="form-control"></br>
         <label>First Name:</label></br>
         <input type="text" name="user_fname" id="user_fname" class="form-control"></br>
         <label>Middle Name:</label></br>

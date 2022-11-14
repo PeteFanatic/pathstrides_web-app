@@ -89,7 +89,7 @@ class DepartmentController extends Controller
     */
    public function destroy($id)
    {
-       Department::destroy($id);
-       return redirect('departments')->with('flash_message', 'employee deleted!');
+    Department::destroy($id);
+    return redirect('department')->with('flash_message', 'employee deleted!');  
    }
 }
