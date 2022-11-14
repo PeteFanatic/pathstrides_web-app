@@ -20,9 +20,9 @@
                 
             <a class="navbar-brand" href="#" id="PathStrides-beside-logo" style="color: #FFFFFF">Pathstrides</a>
             <ul class="nav navbar-nav navbar-right" id="top-side-nav">
-                <li><a href="#"><button class="btn btn-info btn-sm" id="home-button"><i class="fa fa-home" id="top-side-nav-icons-home"></i></button></a></li>
+                <li><a href="{{ url('dashboard') }}"><button class="btn btn-info btn-sm" id="home-button"><i class="fa fa-home" id="top-side-nav-icons-home"></i></button></a></li>
                 <li><a href="#"><button class="btn btn-info btn-sm" id="notif-button"><i class="fas fa-bell" id="top-side-nav-icons-notif"></i></button></a></li>
-                <li><a href="#"><button class="btn btn-info btn-sm" id="user-button"><i class="fa fa-user-circle" id="top-side-nav-icons-user"></i></button></a></li>
+                <li><a href="{{ url('logout') }}"><button class="btn btn-info btn-sm" id="user-button"><i class="fa fa-user-circle" id="top-side-nav-icons-user"></i></button></a></li>
             </ul>
         </nav>
 
@@ -215,7 +215,7 @@
     }
 
     body{
-        background-image: url("images/bg3.jpg");
+        background-image: url("images/bg7.jpg");
         background-size: cover;
         -webkit-backdrop-filter: brightness(20%);
     }
