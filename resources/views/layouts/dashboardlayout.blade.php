@@ -100,7 +100,7 @@
                             <nav class="navbar" id="nav-side-inner">
                             <ul class="navbar-nav">
                                     <li class="nav-item">
-                                        <a class="nav-link" href="#" id="a-nav-side">
+                                        <a class="nav-link" href="{{ url('announcement') }}" id="a-nav-side">
                                             <button class="btn btn-info btn-sm" id="side-nav-btn">
                                                 <i class='fas'>&#xf0a1;</i>
                                                 Announcements
@@ -116,7 +116,7 @@
                                         </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="#" id="a-nav-side">
+                                        <a class="nav-link" href="{{ url('admin') }}" id="a-nav-side">
                                             <button class="btn btn-info btn-sm" id="side-nav-btn">
                                                 <i class='fas'>&#xf0c0;</i>
                                                 Employees
@@ -124,7 +124,7 @@
                                         </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="#" id="a-nav-side">
+                                        <a class="nav-link" href="{{ url('department') }}" id="a-nav-side">
                                             <button class="btn btn-info btn-sm" id="side-nav-btn">
                                                 <i class='fas'>&#xf19c;</i>
                                                 Departments
@@ -132,7 +132,7 @@
                                         </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="#" id="a-nav-side">
+                                        <a class="nav-link" href="{{ url('pointshop') }}" id="a-nav-side">
                                             <button class="btn btn-info btn-sm" id="side-nav-btn">
                                                 <i class='fas'>&#xf07a;</i>
                                                 Points Shop

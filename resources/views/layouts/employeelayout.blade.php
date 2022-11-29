@@ -34,8 +34,8 @@
                     <nav class="navbar" id="nav-side">
                             <nav class="navbar" id="nav-side-inner">
                             <ul class="navbar-nav">
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="#" id="a-nav-side">
+                            <li class="nav-item">
+                                        <a class="nav-link" href="{{ url('announcement') }}" id="a-nav-side">
                                             <button class="btn btn-info btn-sm" id="side-nav-btn">
                                                 <i class='fas'>&#xf0a1;</i>
                                                 Announcements
@@ -43,7 +43,7 @@
                                         </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="#" id="a-nav-side">
+                                        <a class="nav-link" href="{{ url('task') }}" id="a-nav-side">
                                             <button class="btn btn-info btn-sm" id="side-nav-btn">
                                                 <i class='fas'>&#xf0ae;</i>
                                                 Tasks
@@ -59,7 +59,7 @@
                                         </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="#" id="a-nav-side">
+                                        <a class="nav-link" href="{{ url('department') }}" id="a-nav-side">
                                             <button class="btn btn-info btn-sm" id="side-nav-btn">
                                                 <i class='fas'>&#xf19c;</i>
                                                 Departments
@@ -67,7 +67,7 @@
                                         </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="#" id="a-nav-side">
+                                        <a class="nav-link" href="{{ url('pointshop') }}" id="a-nav-side">
                                             <button class="btn btn-info btn-sm" id="side-nav-btn">
                                                 <i class='fas'>&#xf07a;</i>
                                                 Points Shop
@@ -104,7 +104,7 @@
                         <!-- <h3 class="title">Employees</h3> -->
                         <div class="content-list">
                             <div class="container-ann">
-                                <div style="overflow-y: auto;">
+                                <div style="overflow-y: auto; overflow-x:hidden;">
                                     @yield('content')
                                 </div>
                             </div>
@@ -381,10 +381,33 @@
         padding: 0;
     }
 
+    table{
+        max-width: 80vw;
+    }
+
     th{
         font-size: 14px;
         margin: auto;
         color: white;
     }
+
+    td{
+        color: white;
+        font-size: 12px;
+    }
     
+    #viewbtn, #editbtn{
+        background-color: transparent;
+        border-color: transparent;
+    }
+
+    #viewbtn:hover, #editbtn:hover{
+        background-color: white;
+        border-color: white;
+        color: #FF7843;
+    }
+
+    #vieweditbtnicon{
+
+    }
 </style>
