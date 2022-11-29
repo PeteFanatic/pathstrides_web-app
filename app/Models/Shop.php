@@ -11,4 +11,8 @@ class Shop extends Model
     protected $table = 'redeem_shop';
     protected $primaryKey = 'id';
     protected $fillable = ['name', 'address', 'mobile','photo'];
+
+    public function getPointShop(){
+        return $this->get();
+    }
 }

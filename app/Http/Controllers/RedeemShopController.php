@@ -90,4 +90,8 @@ class RedeemShopController extends Controller
     {
         //
     }
+
+    public function getPointShop(){
+        return $this->get();
+    }
 }
