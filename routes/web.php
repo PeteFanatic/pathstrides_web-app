@@ -60,3 +60,5 @@ Route::resource("/department", DepartmentController::class);
 Route::resource("/pointshop", RedeemShopController::class);
 Route::resource("/task", TaskController::class)->middleware('isLoggedIn');
 Route::resource("/announcement", AnnouncementController::class)->middleware('isLoggedIn');
+
+//rawrrrrrrrrrr
