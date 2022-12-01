@@ -14,6 +14,7 @@ use Hash;
 use Laravel\Sanctum\HasApiTokens;
 use JWTAuth;
 use Tymon\JWTAuth\Exceptions\JWTException;
+use App\Models\Announcement;
 use Mail;
 use App\Mail\PasswordReset;
 
@@ -41,7 +42,8 @@ class AuthController extends Controller
     }
 
     public function dashboard(){
-        return view('dashboard');
+        $announcements = Announcement::all();
+        return view ('dashboard')->with('announcements', $announcements);
     }
     // public function dashboard_admin(){
     //     // return view('dashboard_manager');
