@@ -90,4 +90,8 @@ class AnnouncementController extends Controller
         announcement::destroy($id);
         return redirect('announcement')->with('flash_message', 'announcement deleted!');
     }
+
+    public function getAnnouncement(){
+        return $this->get();
+    }
 }

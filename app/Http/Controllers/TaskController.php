@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Task;
 use App\Models\Manager;
+use App\Http\Controllers\Session;
 use App\Models\User;
+use App\Models\Admin;
 use App\Models\Employee;
 use App\Controllers\AuthController;
 
@@ -101,10 +103,11 @@ class TaskController extends Controller
     }
 
     public function getEmployeeTask(){
-        if($auth_id == $emp_id){
+        $user = auth()->user();
+        // if($user->user_id == $task->user_id){
             $list = new Task();
             $list = $list->getEmployeeTask();
             return response()->json($list);
-            }
+            // }
     }
 }
