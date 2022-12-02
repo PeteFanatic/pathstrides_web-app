@@ -170,7 +170,7 @@
                         <div class="container-announcements">
                             <div class="container-ann">
                                 <div style="overflow-y: auto;">
-                                @include('announcements.announcement_table')
+                                @include('announcements.announcement_list')
                                 </div>
                             </div>
                         </div>
@@ -410,11 +410,11 @@
         font-size: 14px;
     }
 
-    .container-ann, .container-tas{
+    /* .container-ann, .container-tas{
         background-color: white;
         border-radius: 5px;
         padding: 1em;
-    }
+    } */
 </style>
 
 <!-- <body>
