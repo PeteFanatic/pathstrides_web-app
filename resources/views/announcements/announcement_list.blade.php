@@ -19,6 +19,8 @@
 
     .ann-link{
         text-decoration: none;
+        color: black;
+        padding: 0;
     }
 
     .ann-link:hover{
@@ -47,6 +49,14 @@
 
     .ann-task-desc{
         margin-bottom: 0;
+        font-size: 11px;
     }
+
+    .ann-task-list-title{
+        font-size: 14px;
+        font-weight: bold;
+    }
+
+
 
 </style>
