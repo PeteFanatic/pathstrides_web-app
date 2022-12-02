@@ -10,6 +10,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\AnnouncementController;
 use App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\RedeemShopController;
+use App\Http\Controllers\TaskReportController;
 
 /*
 |--------------------------------------------------------------------------
@@ -56,6 +57,7 @@ Route::get('/adminlogin',[CustomAuthController::class,'logout']);
 Route::resource("/employee", EmployeeController::class);
 Route::resource("/manager", ManagerController::class);
 Route::resource("/admin", AdminController::class);
+Route::resource("/taskreport", TaskReportController::class);
 Route::resource("/department", DepartmentController::class);
 Route::resource("/pointshop", RedeemShopController::class);
 Route::resource("/task", TaskController::class)->middleware('isLoggedIn');
