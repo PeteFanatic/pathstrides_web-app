@@ -10,10 +10,10 @@
                         </a>
   
         <div class="card-body">
-        <h5 class="card-title">Announcement ID : {{ $announcements-> ann_id }}</h5>
-        <p class="card-text">Announcment Title : {{ $announcements->ann_title }}</p>
+        <h5 class="card-title">Announcement ID : {{ $announcements-> anns_id }}</h5>
+        <p class="card-text">Announcment Title : {{ $announcements->anns_title }}</p>
         <p class="card-text">Announcment Location : {{ $announcements->location }}</p>
-        <p class="card-text">Announcment Description : {{ $announcements->ann_desc }}</p>
+        <p class="card-text">Announcment Description : {{ $announcements->anns_desc }}</p>
         <p class="card-text">Manager Incharge : {{ $announcements->man_id }}</p>
         
   </div>
