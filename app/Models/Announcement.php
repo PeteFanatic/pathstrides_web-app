@@ -12,7 +12,7 @@ class Announcement extends Model
     public $incrementing = true;
     public $timestamps = false;
     protected $table = 'announcement';
-    protected $primaryKey = 'ann_id';
+    protected $primaryKey = 'anns_id';
     protected $guarded = [];  
 
     public function getAnnouncement(){
