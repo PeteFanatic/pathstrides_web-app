@@ -15,7 +15,7 @@
                                 @foreach($announcements as $item)
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
-                                        <td>{{ $item->ann_title }} </td>
+                                        <td>{{ $item->anns_title }} </td>
                                         <td>{{ $item->location }} </td>
                                         <td>{{ $item->anns_lat }} , {{ $item->anns_long }} </td>
                                         <td>{{ $item->man_id }}</td>
