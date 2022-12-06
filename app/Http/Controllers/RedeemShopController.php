@@ -87,4 +87,11 @@ class RedeemShopController extends Controller
     {
         //
     }
+
+    public function getRedeemShop(){
+        //$user = auth()->user();
+        $list = new Shop();
+        $list = $list->getRedeemShop();
+        return response()->json($list);
+    }
 }

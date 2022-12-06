@@ -11,4 +11,8 @@ class Shop extends Model
     protected $table = 'redeem_shop';
     protected $primaryKey = 'id';
     protected $guarded = [];
+
+    public function getRedeemShop(){
+        return $this->get();
+    }
 }

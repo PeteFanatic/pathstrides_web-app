@@ -92,6 +92,10 @@ class AnnouncementController extends Controller
     }
 
     public function getAnnouncement(){
-        return $this->get();
+        // if($user->user_id == $task->user_id){
+            $list = new Announcement();
+            $list = $list->getAnnouncement();
+            return response()->json($list);
+            // }
     }
 }
