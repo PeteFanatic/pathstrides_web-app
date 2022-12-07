@@ -330,13 +330,16 @@
         float: left;
     }
 
-    .title{
+    
+
+    /* content */
+
+    .titles{
         font-weight: bold;
         font-size: 16px;
         clear: left;
     }
-
-    /* content */
+    
     #employee-container{
         background-color: Transparent;
         background-repeat:no-repeat;
@@ -395,19 +398,18 @@
         color: white;
         font-size: 12px;
     }
+
     
-    #viewbtn, #editbtn{
+    #actbtn{
         background-color: transparent;
         border-color: transparent;
+        color: white;
     }
 
-    #viewbtn:hover, #editbtn:hover{
+    #actbtn:hover{
         background-color: white;
         border-color: white;
         color: #FF7843;
     }
-
-    #vieweditbtnicon{
-
-    }
+    
 </style>

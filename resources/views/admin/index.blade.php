@@ -67,12 +67,12 @@
 
                         <div class="row" id="card-header">
                             <div class="col">
-                                <h2 class="title">Employees</h2>
+                                <h2 class="titles">Employees</h2>
                             </div>
                         </div>
 
                         <div class="col">
-                            <a href="{{ url('/admin/create') }}" class="add" title="Add New Employee">
+                            <a href="{{ url('/admin/create') }}" class="add" title="Add New Employee" data-toggle="modal" data-target="#myModal">
                                 <i class="fa fa-plus" aria-hidden="true"></i> Add New
                             </a>
                         </div>
@@ -105,8 +105,8 @@
                                         <td>{{ $item->role }}</td>
                                         <td>{{ $item->status }}</td>
                                         <td>
-                                            <a href="{{ url('/admin/' . $item->user_id) }}" title="View employee"><button class="btn btn-info btn-sm" id="viewbtn"><i class="fa fa-eye" aria-hidden="true" id="vieweditbtnicon"></i></button></a>
-                                            <a href="{{ url('/admin/' . $item->user_id . '/edit') }}" title="Edit employee" id="editbtn"><button class="btn btn-primary btn-sm"  id="editbtn"><i class="fa fa-pencil-square-o" aria-hidden="true" id="vieweditbtnicon"></i></button></a>
+                                            <a href="{{ url('/admin/' . $item->user_id) }}" title="View employee"><button class="btn btn-info btn-sm" id="actbtn"><i class="fa fa-eye" aria-hidden="true" id="vieweditbtnicon"></i></button></a>
+                                            <a href="{{ url('/admin/' . $item->user_id . '/edit') }}" title="Edit employee" id="actbtn"><button class="btn btn-primary btn-sm"  id="actbtn"><i class="fa fa-pencil-square-o" aria-hidden="true" id="vieweditbtnicon"></i></button></a>
                                         </td>
                                     </tr>
                                 @endforeach
@@ -117,5 +117,6 @@
                 </div>
             </div>
         </div>
+        
 @endsection
 
