@@ -338,6 +338,7 @@
         font-weight: bold;
         font-size: 16px;
         clear: left;
+        color: white;
     }
     
     #employee-container{
@@ -410,6 +411,20 @@
         background-color: white;
         border-color: white;
         color: #FF7843;
+    }
+
+    #tables-responsives{
+        width: 75vw;
+        max-width: 75vw;
+    }
+
+    #tables{
+        width: 75vw;
+        max-width: 75vw;
+    }
+
+    .column-padding{
+        padding: none;
     }
     
 </style>
