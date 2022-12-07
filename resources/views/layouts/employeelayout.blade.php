@@ -139,6 +139,21 @@
         box-sizing: inherit;
     }
 
+    ::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: rgba(255, 255,255,0.1);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color:#FF7843;;
+    width:
+}
+
     body{
         background-image: url("images/bg7.jpg");
         background-size: cover;
@@ -368,6 +383,7 @@
         font-size: 14px;
         color: white;
         padding: 7px;
+        margin-right: 2em;
     }
 
     .add:hover{
