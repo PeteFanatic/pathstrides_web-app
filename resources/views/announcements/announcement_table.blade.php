@@ -1,13 +1,14 @@
 
-                        <div class="table-responsive">
-                            <table class="table">
+                        <div class="table-responsive" id="table-responsive">
+                        <div style="overflow-y: auto; overflow-x:hidden;">
+                            <table class="table" id="tables">
                                 <thead>
                                     <tr>
-                                        <th>Announcement ID</th>
-                                        <th>Announcement Title</th>
+                                        <th>ID</th>
+                                        <th>Title</th>
                                         <th>Location</th>
                                         <th>Coordinates</th>
-                                        <th>Manager Incharge</th>
+                                        <th>Manager</th>
                                         <th>Actions</th>
                                     </tr>
                                 </thead>
@@ -21,12 +22,12 @@
                                         <td>{{ $item->man_id }}</td>
                             
                                         <td>
-                                            <a href="{{ url('/announcement/' . $item->anns_id) }}" title="View announcement"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> View</button></a>
-                                            <a href="{{ url('/announcement/' . $item->anns_id . '/edit') }}" title="Edit announcement"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>
-                                            <form method="POST" action="{{ url('/announcement' . '/' . $item->anns_id) }}" accept-charset="UTF-8" style="display:inline">
+                                            <a href="{{ url('/announcement/' . $item->anns_id) }}" title="View announcement"><button class="btn btn-info btn-sm" id="actbtn"><i class="fa fa-eye" aria-hidden="true" id="vieweditbtnicon"></i></button></a>
+                                            <a href="{{ url('/announcement/' . $item->anns_id . '/edit') }}" title="Edit announcement"><button class="btn btn-primary btn-sm"  id="actbtn"><i class="fa fa-pencil-square-o" aria-hidden="true" id="vieweditbtnicon"></i></button></a>
+                                            <form method="POST" action="{{ url('/task' . '/' . $item->task_id) }}" accept-charset="UTF-8" style="display:inline">
                                                 {{ method_field('DELETE') }}
                                                 {{ csrf_field() }}
-                                                <button type="submit" class="btn btn-danger btn-sm" title="Delete announcement" onclick="return confirm(&quot;Confirm delete?&quot;)"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</button>
+                                                <button type="submit" class="btn btn-sm" id="actbtn" title="Delete task" onclick="return confirm(&quot;Confirm delete?&quot;)"><i class="fa fa-minus-square" aria-hidden="true" id="vieweditbtnicon"></i></button>
                                             </form>
                                         </td>
                                     </tr>

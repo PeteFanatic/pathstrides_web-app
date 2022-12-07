@@ -1,3 +1,4 @@
+<div class="anncon">
 @foreach($announcements as $item)
    <!-- <tr>
         <td>{{ $loop->iteration }}</td>
@@ -6,7 +7,6 @@
         <td>{{ $item->anns_lat }} , {{ $item->anns_long }} </td>
         <td>{{ $item->man_id }}</td>
     </tr> -->
-
     <a class="ann-link" href="{{ url('/announcement/' . $item->anns_id) }}">
     <div class="ann-task-list-con">
         <h4 class="ann-task-list-title">{{ $item->anns_title }}</h4>
@@ -14,8 +14,18 @@
     </div>
     </a>
 @endforeach
+</div>
+
+
 
 <style>
+
+    .anncon{
+        overflow-y: auto;
+        height: 67vh;
+        max-height: 67vh;
+        padding: none;
+    }
 
     .ann-link{
         text-decoration: none;

@@ -139,6 +139,21 @@
         box-sizing: inherit;
     }
 
+    ::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: rgba(255, 255,255,0.1);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color:#FF7843;;
+    width:
+}
+
     body{
         background-image: url("images/bg7.jpg");
         background-size: cover;
@@ -330,13 +345,17 @@
         float: left;
     }
 
-    .title{
+    
+
+    /* content */
+
+    .titles{
         font-weight: bold;
         font-size: 16px;
         clear: left;
+        color: white;
     }
-
-    /* content */
+    
     #employee-container{
         background-color: Transparent;
         background-repeat:no-repeat;
@@ -364,6 +383,7 @@
         font-size: 14px;
         color: white;
         padding: 7px;
+        margin-right: 2em;
     }
 
     .add:hover{
@@ -395,19 +415,32 @@
         color: white;
         font-size: 12px;
     }
+
     
-    #viewbtn, #editbtn{
+    #actbtn{
         background-color: transparent;
         border-color: transparent;
+        color: white;
     }
 
-    #viewbtn:hover, #editbtn:hover{
+    #actbtn:hover{
         background-color: white;
         border-color: white;
         color: #FF7843;
     }
 
-    #vieweditbtnicon{
-
+    #tables-responsives{
+        width: 75vw;
+        max-width: 75vw;
     }
+
+    #tables{
+        width: 75vw;
+        max-width: 75vw;
+    }
+
+    .column-padding{
+        padding: none;
+    }
+    
 </style>
