@@ -25,12 +25,7 @@ return new class extends Migration
             $table->string('user_department',100);
             $table->integer('role');
             $table->integer('status');
-            $table->unsignedBigInteger('admin_id');
-            $table->unsignedBigInteger('dep_id');
             $table->timestamps();
-
-            $table->foreign('admin_id')->references('admin_id')->on('admin');
-            $table->foreign('dep_id')->references('dep_id')->on('departments');
             $table->engine = 'InnoDB';
         });
     }
