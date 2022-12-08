@@ -93,6 +93,7 @@ let map, infoWindow;
 function initMap(myLoc) {
   var marker = new google.maps.Marker({
             position: myLoc
+            draggable: true 
         });
       var opt = {
             center: myLoc,
