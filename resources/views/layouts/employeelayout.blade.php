@@ -401,7 +401,13 @@
         padding: 0;
     }
 
+    /* .table-responsive{
+        width: 80 vw;
+        max-width: 80vw; 
+    } */
+
     table{
+        width: 80 vw;
         max-width: 80vw;
     }
 
