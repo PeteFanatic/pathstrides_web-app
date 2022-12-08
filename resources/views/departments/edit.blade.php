@@ -8,9 +8,9 @@
         {!! csrf_field() !!}
         @method("PATCH")
         <label>department ID</label></br>
-        <input type="text" name="ann_id" id="ann_id" value="{{$departments->ann_id}}" id="ann_id" /></br>
-        <label>department Title:</label></br>
-        <input type="text" name="ann_title" id="ann_title" value="{{$departments->ann_title}}" class="form-control"></br>
+        <input type="text" name="dep_id" id="dep_id" value="{{$departments->ann_id}}" id="ann_id" /></br>
+        <label>department Name:</label></br>
+        <input type="text" name="dep_name" id="dep_title" value="{{$departments->ann_title}}" class="form-control"></br>
         <label>department Description:</label></br>
         <input type="text" name="ann_desc" id="ann_desc" value="{{$departments->ann_desc}}" class="form-control"></br>
         
