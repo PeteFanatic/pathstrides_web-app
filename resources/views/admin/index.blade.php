@@ -47,7 +47,7 @@
                                         <td>{{ $item->role }}</td>
                                         <td>{{ $item->status }}</td>
                                         <td>
-                                            <a href="{{ url('/admin/' . $item->user_id) }}" title="View employee"><button class="btn btn-info btn-sm" id="actbtn"><i class="fa fa-eye" aria-hidden="true" id="vieweditbtnicon"></i></button></a>
+                                            <a data-toggle="modal" data-target="#employee-view-modal" title="View employee"><button class="btn btn-info btn-sm" id="actbtn"><i class="fa fa-eye" aria-hidden="true" id="vieweditbtnicon" data-toggle="modal" data-target="#viewmodal"></i></button></a>
                                             <a href="{{ url('/admin/' . $item->user_id . '/edit') }}" title="Edit employee" id="actbtn"><button class="btn btn-primary btn-sm"  id="actbtn"><i class="fa fa-pencil-square-o" aria-hidden="true" id="vieweditbtnicon"></i></button></a>
                                         </td>
                                     </tr>
@@ -59,6 +59,5 @@
                 </div>
             </div>
         </div>
-        
 @endsection
 
