@@ -301,13 +301,13 @@
         background-repeat:no-repeat;
         border-width: 2px;
         border-color: Transparent;
-        font-size: 13px;
+        font-size: 12.5px;
         font-weight: bold;
         /* padding: 0; */
     }
 
     #side-nav-btn:hover{
-        border-radius: 10px;
+        border-radius: 5px;
         border-width: 2px;
         border-color: white;
         color: #FF7843;
