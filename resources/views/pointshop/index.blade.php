@@ -24,8 +24,8 @@
                     <table class="table">
                         <thead>
                             <tr>
-                                <th>ID#</th>
-                                <th>Name</th>
+                                <th>Item ID</th>
+                                <th>Item Name</th>
                                 <th>Photo</th> 
                             </tr>
                         </thead>
@@ -33,10 +33,8 @@
                             @foreach($product as $item)
                                 <tr>
                                     <td>{{ $loop->iteration }}</td>
-                                    <td>{{ $item->name }}</td>
-                                    <td>
-                                        <img src="{{ asset($item->photo) }}" width= '50' height='50' class="img img-responsive" />
-                                    </td>
+                                    <td>{{ $item->points_name }}</td>
+                                    <td>{{ $item->points }}</td>
                                 </tr>
                              @endforeach
                         </tbody>
