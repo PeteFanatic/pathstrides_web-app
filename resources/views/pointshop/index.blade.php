@@ -26,7 +26,7 @@
                             <tr>
                                 <th>Item ID</th>
                                 <th>Item Name</th>
-                                <th>Photo</th> 
+                                <th>Price</th> 
                             </tr>
                         </thead>
                         <tbody>
