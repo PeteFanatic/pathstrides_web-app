@@ -91,7 +91,20 @@ class AnnouncementController extends Controller
         return redirect('announcement')->with('flash_message', 'announcement deleted!');
     }
 
+    // public function getAnnouncement(){
+    //     //$user = auth()->user();
+    //     $list = new announcement();
+    //     $list = $list->getAnnouncement();
+    //     return response()->json($list);
+    // }
+    // public function getAnnouncement(){
+    //     return $this->get();
+    // }
     public function getAnnouncement(){
-        return $this->get();
+        // if($user->user_id == $task->user_id){
+            $list = new Announcement();
+            $list = $list->getAnnouncement();
+            return response()->json($list);
+            // }
     }
 }

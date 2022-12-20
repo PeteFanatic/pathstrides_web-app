@@ -103,7 +103,7 @@ class TaskController extends Controller
     }
 
     public function getEmployeeTask(){
-        $user = auth()->user();
+        //$user = auth()->user();
         // if($user->user_id == $task->user_id){
             $list = new Task();
             $list = $list->getEmployeeTask();

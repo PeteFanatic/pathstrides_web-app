@@ -39,6 +39,7 @@ Route::get('dashboard', [AuthController::class, 'dashboard'])->name('dashboard')
 // Route::get('login', [CustomAuthController::class, 'index'])->name('login');
 
 Route::get('login', [AuthController::class, 'login'])->middleware('alreadyLoggedIn');
+Route::get('updatepass', [AuthController::class, 'updatepass'])->middleware('alreadyLoggedIn');
 Route::get('loginEmployee', [AuthController::class, 'loginEmployee'])->name('loginEmployee');
 // Route::post('postlogin', [AuthController::class, 'login'])->name('login');
 
@@ -50,7 +51,7 @@ Route::post('register-admin',[AuthController::class,'registerUser'])->name('regi
 
 Route::post('login-user',[AuthController::class,'loginWeb'])->name('login-user');
 Route::get('/home',[CustomAuthController::class,'home'])->middleware('isLoggedIn');
-Route::get('/logout',[CustomAuthController::class,'logout']);
+Route::get('/logout',[AuthController::class,'logout']);
 Route::get('/adminlogin',[CustomAuthController::class,'logout']);
 
 Route::resource("/employee", EmployeeController::class);

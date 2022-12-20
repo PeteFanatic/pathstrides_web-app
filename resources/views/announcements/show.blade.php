@@ -14,7 +14,7 @@
         <p class="card-text">Announcment Title : {{ $announcements->ann_title }}</p>
         <p class="card-text">Announcment Location : {{ $announcements->location }}</p>
         <p class="card-text">Announcment Description : {{ $announcements->ann_desc }}</p>
-        <p class="card-text">Manager Incharge : {{ $announcements->man_id }}</p>
+        <p class="card-text">Manager Incharge : {{ $announcements->user_id }}</p>
         
   </div>
   <a href="dashboard">Home</a>

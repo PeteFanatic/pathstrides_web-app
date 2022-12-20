@@ -14,8 +14,8 @@
         <p class="card-text">Task Title : {{ $tasks->task_title }}</p>
         <p class="card-text">Task Location : {{ $tasks->location }}</p>
         <p class="card-text">Task Description : {{ $tasks->task_desc }}</p>
-        <p class="card-text">Employee Incharge : {{ $tasks->emp_id }}</p>
-        <p class="card-text">Employee Incharge : {{ $tasks->man_id }}</p>
+        <p class="card-text">Employee Incharge : {{ $tasks->user_id }}</p>
+        <p class="card-text">Employee Incharge : {{ $tasks->user_id }}</p>
         
   </div>
       

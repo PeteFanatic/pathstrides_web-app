@@ -3,10 +3,23 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Shop;
-class RedeemShopController extends Controller
+use App\Models\User;
+use App\Models\Manager;
+use AdminController;
+use App\Models\Employee;
+use App\Models\Admin;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Auth;
+use Hash;
+use Laravel\Sanctum\HasApiTokens;
+use JWTAuth;
+use Session;
+use Tymon\JWTAuth\Exceptions\JWTException;
+use Mail;
+use App\Mail\PasswordReset;
+class TaskReport extends Controller
 {
-    /**
+  /**
      * Display a listing of the resource.
      *
      * /**
@@ -16,8 +29,8 @@ class RedeemShopController extends Controller
      */
     public function index()
     {
-        $product = Shop::all();
-        return view ('pointshop.index')->with('product', $product);
+        $report = Report::all();
+        return view ('taskreport.index')->with('description', $description);
     }
 
     /**
@@ -25,10 +38,6 @@ class RedeemShopController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-        return view('pointshop.create');
-    }
 
     /**
      * Store a newly created resource in storage.
@@ -90,10 +99,5 @@ class RedeemShopController extends Controller
     {
         //
     }
-    public function getRedeemShop(){
-        //$user = auth()->user();
-        $list = new Shop();
-        $list = $list->getRedeemShop();
-        return response()->json($list);
-    }
+    
 }

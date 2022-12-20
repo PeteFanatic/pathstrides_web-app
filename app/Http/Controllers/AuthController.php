@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Auth;
 use Hash;
 use Laravel\Sanctum\HasApiTokens;
 use JWTAuth;
+use Session;
 use Tymon\JWTAuth\Exceptions\JWTException;
 use Mail;
 use App\Mail\PasswordReset;
@@ -39,6 +40,7 @@ class AuthController extends Controller
     public function registration(){
         return view("registration");
     }
+
 
     public function dashboard(){
         return view('dashboard');
@@ -157,6 +159,10 @@ class AuthController extends Controller
             return back()->with('fail','Email not Registered.');
         }
     }
+
+    public function updatepass(Request $request){
+
+    }
     public function loginWeb(Request $request){
         
         $request->validate([
@@ -180,12 +186,18 @@ class AuthController extends Controller
         }
         $user = User::where('user_email','=',$request->email)->first();
         if($user){
-            if($request->password==$user->user_password){
+            if($user->user_password==$request->password){
             //     if($manager = Manager::where('man_password','=',$request->password)->first()){
                 // if(hash::check($request->password,$manager->man_password)){
                 // if(manager->where($request->password)->value('man_password')){
+                    if($user->role == 1){
                 $request->session()->put('loginId',$user->user_id);
-                return redirect('dashboard');
+                return redirect('updatepass');
+                        
+                    }
+                    else{
+                        return back()->with('fail','You can only login this credentials on our Mobile App.');
+                    }
                 // echo "Hello world!<br>";
             }
             // else if(hash::check($request->password,$admin->admin_password)){
@@ -199,7 +211,14 @@ class AuthController extends Controller
             else{
                 return back()->with('fail','Password Incorrect.');
             }
-        }else{
+        }
+        else if ($user && Hash::check($request->password, $user->user_password)){
+            $request->session()->put('loginId',$user->user_id);
+            return redirect('dashboard');
+                    
+                    
+                }
+        else{
             return back()->with('fail','Email not Registered.');
         }
         // else{
@@ -295,7 +314,7 @@ class AuthController extends Controller
       // validate inputs
         $rules = [
             'email' => 'required',
-            'password' => 'required|string'
+            'password' => 'required'
         ];
         $req->validate($rules);
         // find user email in users table
@@ -310,8 +329,7 @@ class AuthController extends Controller
                      if($user->role == '2'){
                   $token = $user->createToken('Personal Access Token')->plainTextToken;
                   $response = ['users' => $user, 'token' => $token];
-                  $user = auth()->user();
-                  $user = Auth::user();
+                  $request->session()->regenerate();
                 $response = ['message' => 'Success'];
                 // return response()->json([
                 //             'success' => true,
@@ -320,7 +338,12 @@ class AuthController extends Controller
                            
                 //         ]);
                 // $auth_id = $emp_id;
-                 return response()->json($response, 201);
+                 return response()->json([
+                    'response' => 201,
+                    'message' => 'Logged in user',
+                    'token' => $request->session()->token(),
+                    'user' => $user,
+                 ]);
                  }
                 else{
                     $response = ['message' => 'Your account is restricted in the Mobile App. You only have desktop access of the app.'];

@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('admin', function (Blueprint $table) {
-            $table->integer('admin_id')->autoIncrement();
+            $table->id('admin_id')->autoIncrement();
             $table->string('admin_fname',45);
             $table->string('admin_lname',45);
             $table->string('admin_email')->unique();
@@ -22,7 +22,7 @@ return new class extends Migration
             $table->string('admin_password')->unique();
         });
     }
-    protected $primaryKey = 'admin_id';
+    //protected $primaryKey = 'admin_id';
     /**
      * Reverse the migrations.
      *

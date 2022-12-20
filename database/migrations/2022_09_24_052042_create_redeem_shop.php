@@ -14,9 +14,10 @@ return new class extends Migration
     public function up()
     {
         Schema::create('redeem_shop', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
-            $table->string('photo', 300);
+            $table->id('points_id');
+            $table->string('points_name');
+            $table->integer('points');
+            //$table->foreign('user_id')->references('user_id')->on('users');
             $table->timestamps();
         });
     }

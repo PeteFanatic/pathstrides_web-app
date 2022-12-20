@@ -14,11 +14,16 @@ return new class extends Migration
     public function up()
     {
         Schema::create('task_report', function (Blueprint $table) {
-            $table->integer('user_id');
-            $table->string('report_text');
+            $table->id('user_id')->autoIncrement();
+            $table->string('report_text',100);
             $table->binary('report_image');
+            $table->double('task_lat');
+            $table->double('task_long');
             $table->timestamps();
+            $table->string('deadline',45);
+
             $table->foreign('user_id')->references('user_id')->on('users');
+            $table->engine = 'InnoDB';
         });
 
         
