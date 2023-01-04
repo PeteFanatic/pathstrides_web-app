@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('location',255);
             $table->decimal('anns_lat',9,8);
             $table->decimal('anns_long',9,8);
-            $table->integer('anns_status',5);
+            
             $table->timestamps();
 
             

@@ -49,7 +49,7 @@ class AnnouncementController extends Controller
     public function show($id)
     {
         $announcement = Announcement::find($id);
-        return view('announcements.show')->with('announcements', $announcement);
+        return view('announcements.show')->with('announcements', $announcements);
     }
 
     /**

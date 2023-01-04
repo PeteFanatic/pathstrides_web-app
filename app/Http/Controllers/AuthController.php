@@ -17,6 +17,7 @@ use Session;
 use Tymon\JWTAuth\Exceptions\JWTException;
 use Mail;
 use App\Mail\PasswordReset;
+use App\Models\Announcement;
 
 class AuthController extends Controller
 {
@@ -40,7 +41,8 @@ class AuthController extends Controller
 
 
     public function dashboard(){
-        return view('dashboard');
+        $announcements = Announcement::all();
+        return view ('dashboard')->with('announcements', $announcements);
     }
     public function registerUser(Request $request){
         $request->validate([
