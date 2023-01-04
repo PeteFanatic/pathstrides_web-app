@@ -50,6 +50,3 @@ class User extends Authenticatable
         return self::where('emp_coll',$employeeID)->get()->toArray();
     }
 }
-public function getUser(){
-    return $this->hasOne(User::class, 'user_id', 'id');
-}
