@@ -89,4 +89,51 @@ class TaskReportController extends Controller
         TaskReport::destroy($id);
         return redirect('taskreport')->with('flash_message', 'taskreport deleted!');
     }
+
+    public function uploadImage(Request $request){
+        $dir="test/";
+        $image = $request->file('image');
+     
+       if ($request->has('image')) {
+               $imageName = \Carbon\Carbon::now()->toDateString() . "-" . uniqid() . "." . "png";
+               if (!Storage::disk('public')->exists($dir)) {
+                   Storage::disk('public')->makeDirectory($dir);
+               }
+               Storage::disk('public')->put($dir.$imageName, file_get_contents($image));
+       }else{
+            return response()->json(['message' => trans('/storage/test/'.'def.png')], 200);
+       } 
+
+       $userDetails = [
+       
+           'image' => $imageName,
+        
+       ];
+
+      // User::where(['id' => 27])->update($userDetails);
+
+       return response()->json(['message' => trans('/storage/test/'.$imageName)], 200);
+        // $image = $_FILES['image']['name'];
+        // $name = $_POST['name'];
+
+        // $imagePath = 'upload/'.$image;
+        // $tmp_name = $_FILES['image']['tmp_name'];
+
+        // move_uploaded_file($tmp_name,$imagePath);
+
+        // $taskreport->query("INSERT INTO pathstrides.task_report(name,image)VALUES('".$name."','".$image."')");
+
+        // if($request){
+        //     echo json_encode([
+        //         'message' => 'Data input successfully'
+        //     ]);
+        // }else{
+        //     echo json_encode([
+        //         'message' => 'Data Failed to input'
+        //     ]);
+        
+        // }
+        // return response()->json($response, 200);
+
+    }
 }

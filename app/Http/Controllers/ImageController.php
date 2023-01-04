@@ -39,3 +39,28 @@ class ImageController extends Controller
        return response()->json(['message' => trans('/storage/test/'.$imageName)], 200);
    }
 }
+
+// public function uploadImage(Request $request){
+//     $image = $_FILES['image']['name'];
+//     $name = $_POST['name'];
+
+//     $imagePath = 'upload/'.$image;
+//     $tmp_name = $_FILES['image']['tmp_name'];
+
+//     move_uploaded_file($tmp_name,$imagePath);
+
+//     $taskreport->query("INSERT INTO pathstrides.task_report(name,image)VALUES('".$name."','".$image."')");
+
+//     if($request){
+//         echo json_encode([
+//             'message' => 'Data input successfully'
+//         ]);
+//     }else{
+//         echo json_encode([
+//             'message' => 'Data Failed to input'
+//         ]);
+    
+//     }
+//     return response()->json($response, 200);
+
+// }

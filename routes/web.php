@@ -33,24 +33,25 @@ Route::get('/map', [AuthController::class, 'map'])->name('map');
 // Route::post('employee/create',[EmployeeController::class,'store'])->name('employees.save');
 // Route::get('employee/create',[EmployeeController::class,'create'])->name('employees.save');
 Route::get('/', [AuthController::class, 'landing'])->name('welcome'); //homepage
-Route::get('dashboard', [AuthController::class, 'dashboard'])->name('dashboard');
+Route::get('dashboard', [AuthController::class, 'dashboard']);
 // Route::get('login', [CustomAuthController::class, 'index'])->name('login');
 
 
 // Route::get('login', [CustomAuthController::class, 'index'])->name('login');
 
-Route::get('login', [AuthController::class, 'login'])->middleware('alreadyLoggedIn');
-Route::get('loginEmployee', [AuthController::class, 'loginEmployee'])->name('loginEmployee');
+Route::get('login', [AuthController::class, 'login'])->name('login-user');
+// Route::get('loginEmployee', [AuthController::class, 'loginEmployee'])->name('loginEmployee');
+// Route::get('updateEmployeePass', [AuthController::class, 'updateEmployeePass'])->name('updateEmployeePass');
 // Route::post('postlogin', [AuthController::class, 'login'])->name('login');
 
 // guide para sa custom auth login nako sauna
 
 // Route::get('login', [CustomAuthController::class, 'login'])->middleware('alreadyLoggedIn');
-Route::get('registration', [AuthController::class, 'registration'])->middleware('alreadyLoggedIn');
+Route::get('registration', [AuthController::class, 'registration']);
 Route::post('register-admin',[AuthController::class,'registerUser'])->name('register-admin');
 
 Route::post('login-user',[AuthController::class,'loginWeb'])->name('login-user');
-Route::get('/home',[CustomAuthController::class,'home'])->middleware('isLoggedIn');
+Route::get('/home',[CustomAuthController::class,'home']);
 Route::get('/logout',[CustomAuthController::class,'logout']);
 Route::get('/adminlogin',[CustomAuthController::class,'logout']);
 
@@ -60,7 +61,10 @@ Route::resource("/admin", AdminController::class);
 Route::resource("/taskreport", TaskReportController::class);
 Route::resource("/department", DepartmentController::class);
 Route::resource("/pointshop", RedeemShopController::class);
-Route::resource("/task", TaskController::class)->middleware('isLoggedIn');
-Route::resource("/announcement", AnnouncementController::class)->middleware('isLoggedIn');
+Route::resource("/task", TaskController::class);
+Route::resource("/announcement", AnnouncementController::class);
 
 //rawrrrrrrrrrr
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

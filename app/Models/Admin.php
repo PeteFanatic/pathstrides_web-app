@@ -18,5 +18,7 @@ class Admin extends Model
 
         return $this->hasMany(Admin::class, 'man_id', 'admin_id');
         }
-    
+        // public function getAdmin(){
+        //     return $this->hasOne(admin::class, 'admin_id', 'id');
+        // }
 }

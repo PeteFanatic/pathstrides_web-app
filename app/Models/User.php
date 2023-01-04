@@ -50,7 +50,7 @@ class User extends Authenticatable
         return self::where('role',$role)->get()->toArray();
 }
 public function getUser(){
-    return $this->get();
+    return $this->hasOne(User::class, 'user_id', 'id');
 }
 
 }
