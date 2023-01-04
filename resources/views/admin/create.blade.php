@@ -44,14 +44,19 @@
         
         <label for="role">Role :</label></br>
         <select name="role" id="role" name="role"></br>
-        <option value="1">Manager</option></br>
-        <option value="2">Employee</option></br>
+        <option value="Manager">Manager</option></br>
+        <option value="Employee">Employee</option></br>
         </select></br>
 
         <label for="status">Status :</label></br>
         <select name="status" id="status" name="status"></br>
-        <option value="1">Present</option></br>
-        <option value="2">Terminated</option></br>
+        <option value="Present">Present</option></br>
+        <option value="Terminated">Terminated</option></br>
+        </select></br>
+
+        <label for="emp_coll">Employee Coll :</label></br>
+        <select name="emp_coll" id="emp_coll" name="emp_coll"></br>
+        <option value="1">1</option></br>
         </select></br>
         
        

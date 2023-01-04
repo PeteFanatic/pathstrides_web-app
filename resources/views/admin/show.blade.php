@@ -14,6 +14,7 @@
         <p class="card-text">Employee First Name : {{ $employee->user_fname }}</p>
         <p class="card-text">Employee Middle Name  : {{ $employee->user_mname }}</p>
         <p class="card-text">Employee Last Name  : {{ $employee->user_lname }}</p>
+        <p class="card-text">Employee Contanct Number  : {{ $employee->contanctnumber }}</p>
         <p class="card-text">Department  : {{ $employee->user_department }}</p>
         
   </div>

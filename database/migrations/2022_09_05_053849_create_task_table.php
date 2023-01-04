@@ -19,8 +19,8 @@ return new class extends Migration
             $table->string('task_desc',255);
             $table->integer('points',45);
             $table->string('address',255);
-            $table->string('task_lat');
-            $table->string('task_long');
+            $table->string('lat');
+            $table->string('lng');
             $table->unsignedBigInteger('user_id');
             $table->timestamps();
             $table->string('deadline',45);

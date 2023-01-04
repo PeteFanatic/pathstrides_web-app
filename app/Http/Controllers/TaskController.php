@@ -29,9 +29,9 @@ class TaskController extends Controller
      */
     public function create()
     {
-        $user=User::getManager(1);
-        $manager=User::getManager(1);
-        return view('tasks.create')->with(compact('user','manager'));
+        
+        $employee=User::getemployee(1);
+        return view('tasks.create')->with('employee',$employee);
     }
 
     /**
@@ -67,10 +67,10 @@ class TaskController extends Controller
      */
     public function edit($id)
     {
-        $tasks = Task::find($id);
-        $employee=User::getManager(1);
-        $manager=User::getManager(1);
-        return view('tasks.edit')->with(compact('employee','tasks','manager'));
+        
+        $employee=User::getemployee(1);
+        
+        return view('tasks.edit')->with('employee',$employee);
     }
 
     /**
@@ -100,10 +100,10 @@ class TaskController extends Controller
         return redirect('task')->with('flash_message', 'task deleted!');
     }
 
-    public function getEmployeeTask(){
+    public function getemployeeTask(){
         if($auth_id == $emp_id){
             $list = new Task();
-            $list = $list->getEmployeeTask();
+            $list = $list->getemployeeTask();
             return response()->json($list);
             }
     }

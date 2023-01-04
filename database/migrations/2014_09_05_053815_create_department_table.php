@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('departments', function (Blueprint $table) {
             $table->id('dep_id');
-            $table->integer('dep_coll');
+            $table->integer('dep_coll')->default('1');;
             $table->string('dep_name',45);
             $table->timestamps();
         });
