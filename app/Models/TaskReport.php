@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Admin extends Model
+class TaskReport extends Model
 {
     use HasFactory;
 
@@ -13,12 +13,4 @@ class Admin extends Model
     public $timestamps = false;
     protected $table = 'admin';
     protected $primaryKey = 'admin_id';
-
-    public function getManager(){
-
-        return $this->hasMany(Admin::class, 'man_id', 'admin_id');
-        }
-        // public function getAdmin(){
-        //     return $this->hasOne(admin::class, 'admin_id', 'id');
-        // }
 }

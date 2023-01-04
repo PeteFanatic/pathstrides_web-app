@@ -13,14 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('redeem_shop', function (Blueprint $table) {
-            $table->id('points_id');
-            $table->string('points_name');
-            $table->integer('points');
-            $table->unsignedBigInteger('user_id')->nullable();
-            $table->timestamps();
-
-            $table->foreign('user_id')->references('user_id')->on('users');
+        Schema::create('password_resets', function (Blueprint $table) {
+            $table->string('email')->index();
+            $table->string('token');
+            $table->timestamp('created_at')->nullable();
         });
     }
 
@@ -31,6 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('redeem_shop');
+        Schema::dropIfExists('password_resets');
     }
 };
