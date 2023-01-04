@@ -30,7 +30,7 @@ class User extends Authenticatable
         'password',
         'remember_token',
     ];
-    protected $fillable  = ['user_fname','user_mname','user_lname','user_email','contactnumber','user_username','user_password','user_department','role','status']; 
+    protected $fillable  = ['user_fname','user_mname','user_lname','user_email','contactnumber','user_username','user_password','user_department','role','status','emp_coll']; 
 
 
     /**
@@ -46,11 +46,10 @@ class User extends Authenticatable
     public $incrementing = true;
     
 
-    public static function getManager($role){
-        return self::where('role',$role)->get()->toArray();
+    public static function getemployee($employeeID){
+        return self::where('emp_coll',$employeeID)->get()->toArray();
+    }
 }
 public function getUser(){
     return $this->hasOne(User::class, 'user_id', 'id');
-}
-
 }
