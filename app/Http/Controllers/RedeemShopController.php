@@ -95,7 +95,7 @@ class RedeemShopController extends Controller
         return response()->json($list);
     }
 
-    public function getUser(){
+    public function getUserPoints(){
         //$user = auth()->user();
         $list = new User();
         $list = $list->getUser();

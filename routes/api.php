@@ -27,6 +27,7 @@ Route::get('/employeeTask','App\Http\Controllers\TaskController@getEmployeeTask'
 Route::get('/employeeUser','App\Http\Controllers\AdminController@getUser');
 Route::get('/employeeAnnounce','App\Http\Controllers\AnnouncementController@getAnnouncement');
 Route::get('/employeePointShop','App\Http\Controllers\RedeemShopController@getRedeemShop');
+Route::get('/employeePointShop','App\Http\Controllers\RedeemShopController@getUserPoints');
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
