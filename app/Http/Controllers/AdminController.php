@@ -100,7 +100,7 @@ class AdminController extends Controller
    }
 
    public function getUser(){
-    $user = auth()->user();
+    // $user = auth()->user();
     $list = new User();
     return response()->json($list);
 }
