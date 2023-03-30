@@ -28,6 +28,7 @@
                                     <tr>
                                         <th>ID</th>
                                         <th>Name</th>
+                                        <th>Points</th>
                                         <th>Email</th>
                                         <th>Contact No.</th>
                                         <th>Department </th>
@@ -40,12 +41,14 @@
                                 @foreach($employee as $item)
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
-                                        <td>{{ $item->user_fname }} , {{ $item->user_lname }}</td>
+                                        <td>{{ $item->user_lname }} , {{ $item->user_fname }}</td>
+                                        <td>{{ $item->user_points }}</td>
                                         <td>{{ $item->user_email }}</td>
-                                        <td>{{ $item->user_contanctnumber }}</td>
+                                        <td>{{ $item->contactnumber }}</td>
                                         <td>{{ $item->user_department }}     
                                         <td>{{ $item->role }}</td>
                                         <td>{{ $item->status }}</td>
+                                        
                                         <td>
                                             <a href="{{ url('/admin/' . $item->user_id) }}" title="View employee"><button class="btn btn-info btn-sm" id="actbtn"><i class="fa fa-eye" aria-hidden="true" id="vieweditbtnicon"></i></button></a>
                                             <a href="{{ url('/admin/' . $item->user_id . '/edit') }}" title="Edit employee" id="actbtn"><button class="btn btn-primary btn-sm"  id="actbtn"><i class="fa fa-pencil-square-o" aria-hidden="true" id="vieweditbtnicon"></i></button></a>

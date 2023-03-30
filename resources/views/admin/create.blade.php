@@ -20,6 +20,7 @@
         <input type="text" name="user_username" id="user_username" class="form-control"></br>
         <label>Employee Password:</label></br>
         <input type="text" name="user_password" id="user_password" class="form-control"></br>
+        <label>Points:</label></br>
         <input type="text" name="user_points" id="user_points" class="form-control"></br>
        
        
