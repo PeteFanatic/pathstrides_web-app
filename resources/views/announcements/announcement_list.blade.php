@@ -23,7 +23,7 @@
     .anncon{
         overflow-y: auto;
         height: 67vh;
-        max-height: 67vh;
+        max-height: 30vh;
         padding: none;
     }
 
