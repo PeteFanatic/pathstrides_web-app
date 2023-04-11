@@ -1,4 +1,4 @@
-@extends('managers.layout')
+@extends('layouts.layout')
 @section('content')
 <div class="card">
   <div class="card-header">Manager Details Page</div>

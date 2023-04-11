@@ -19,4 +19,8 @@ class Employee extends Model
     public static function getEmployee($employeeID){
         return self::where('emp_coll',$employeeID)->get()->toArray();
     }
+
+    public function employee(){
+        return $this->belongsTo(Employee::class);
+    }
 }

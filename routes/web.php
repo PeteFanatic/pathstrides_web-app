@@ -50,7 +50,7 @@ Route::get('login', [AuthController::class, 'login'])->name('login-user');
 Route::get('registration', [AuthController::class, 'registration']);
 Route::post('register-admin',[AuthController::class,'registerUser'])->name('register-admin');
 
-Route::post('login-user',[AuthController::class,'loginWeb'])->name('login-user');
+Route::post('login-user',[AuthController::class,'loginWeb'])->name('-');
 Route::get('/home',[CustomAuthController::class,'home']);
 Route::get('/logout',[CustomAuthController::class,'logout']);
 Route::get('/adminlogin',[CustomAuthController::class,'logout']);
