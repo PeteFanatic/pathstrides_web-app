@@ -18,7 +18,7 @@ class Task extends Model
         return $this->get();
     }
 
-    public function getTask(){
-        return $this->hasMany(Task::class, 'user_id', 'task_id');
+    public function getUser(){
+        return $this->hasMany(User::class, 'user_id', 'task_id');
     }
 }

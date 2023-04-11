@@ -29,6 +29,7 @@
                         <a href="#">
                             <button class="btn btn-info btn-sm" id="notif-button">
                                 <i class="fas fa-bell" id="top-side-nav-icons-notif"></i>
+                               
                             </button>
                         </a>
                     </li>
@@ -132,13 +133,29 @@
                              </div>
                         </div>
                     </div>
-                </div>
-                <div class="contents-list">
+                    <div class="contents-list">
                 <div class="col">
-                    <h3 class="ann-tasks">Tasks</h3>
+                    <h3 class="ann-tasks">Analytics</h3>
                     <div class="container-tasks">
                         <p>helloworld</p>    
                     </div>
+                </div>
+                </div>
+                </div>
+                <div class="contents-list">
+                <div class="col">
+                    <h3 class="graph-title">Task</h3>
+                    <div class="container-graph">
+                        <p>helloworld</p>    
+                    </div>
+                </div>
+                <div class="contents-list">
+                <div class="col">
+                    <h3 class="graph-title">Analytics</h3>
+                    <div class="container-graph">
+                        <p>helloworld</p>    
+                    </div>
+                </div>
                 </div>
                 </div>
             </div>          
@@ -374,12 +391,50 @@
         width: 35vw;
         max-height: 35vh;
         height: 35vh;
-        margin: none;
+        margin: 7px;
+    }
+
+    .container-announcements, .container-tasks{
+        background: linear-gradient(135deg, rgba(255, 255,255,0.1), rgba(255,255, 255,0));
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border-radius: 5px;
+        border: 1px solid rgba(255, 255,255,0.1);
+        box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.15);
+        padding: 1em;
+        display: inline-table;
+        /* background-color: white; */
+        width: 35vw;
+        max-height: 35vh;
+        height: 35vh;
+        margin: 7px;
+    }
+
+    .container-announcements, .container-graph{
+        background: linear-gradient(135deg, rgba(255, 255,255,0.1), rgba(255,255, 255,0));
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border-radius: 5px;
+        border: 1px solid rgba(255, 255,255,0.1);
+        box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.15);
+        padding: 1em;
+        display: inline-table;
+        /* background-color: white; */
+        width: 35vw;
+        max-height: 35vh;
+        height: 35vh;
+        margin: 7px;
     }
 
     .ann-tasks{
         font-weight: bold;
         font-size: 14px;
+        margin: 7px;
+    }
+    .graph-title{
+        font-weight: bold;
+        font-size: 14px;
+        margin: 7px;
     }
 
     /* .container-ann, .container-tas{
