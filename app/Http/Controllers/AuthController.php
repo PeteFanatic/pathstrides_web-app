@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use App\Models\User;
 use App\Models\Manager;
 use AdminController;
@@ -29,6 +28,10 @@ class AuthController extends Controller
     public function map()
     {
         return view('map');
+    }
+    public function updatepass()
+    {
+        return view('updatepass');
     }
 
     public function landing(){
@@ -72,27 +75,57 @@ class AuthController extends Controller
     // gana logic dinhi sa login
     public function loginManager(Request $request){
         
-        $request->validate([
-            'email'=>'required',
-            'password'=>'required|min:6|max:12',
-        ]);
-        $manager = Manager::where('man_email','=',$request->email)->first();
+        // $request->validate([
+        //     'email'=>'required',
+        //     'password'=>'required|min:6|max:12',
+        // ]);
+        // $manager = Manager::where('man_email','=',$request->email)->first();
        
-        if($manager){
-            if($request->password==$manager->man_password){
-                $request->session()->put('loginId',$manager->man_id);
-                return redirect('employee');
-            }
-            else{
-                return back()->with('fail','Password Incorrect.');
-            }
-        }else{
-            return back()->with('fail','Email not Registered.');
+        // if($manager){
+        //     if($request->password==$manager->man_password){
+        //         $request->session()->put('loginId',$manager->man_id);
+        //         return redirect('employee');
+        //     }
+        //     else{
+        //         return back()->with('fail','Password Incorrect.');
+        //     }
+        // }else{
+        //     return back()->with('fail','Email not Registered.');
+        // }
+        $credentials = $request->only('email', 'password');
+
+        if (Auth::attempt($credentials)) {
+            $user = Auth::user();
+            $token = $user->createToken('MyApp')->accessToken;
+            return response()->json(['token' => $token], 200);
         }
+    
+        return response()->json(['error' => 'Unauthorized'], 401);
     }
+    public function updateUser(Request $request){
+      // Validate the form data
+      $request->validate([
+        'current_password' => 'required',
+        'new_password' => 'required|min:8',
+        'confirm_password' => 'required|same:new_password',
+    ]);
 
-    public function updatepass(Request $request){
+    // Get the authenticated user
+    $user = User::where('user_password', $request->current_password)->first();
+    // Verify the user's current password
+        if (!Hash::check($request->input('current_password'), $user->user_password)) {
+            $user->user_password = Hash::make($request->input('new_password'));
+            $user->save();
+        }
+        else{
+            return redirect()->back()->withErrors(['current_password' => 'The current password is incorrect.']);
+        }
 
+    // Update the user's password
+    
+
+    // Redirect the user to the profile page with a success message
+    return redirect('dashboard')->with('success', 'Your password has been updated.');
     }
     public function loginWeb(Request $request){
         

@@ -39,7 +39,7 @@ Route::get('dashboard', [AuthController::class, 'dashboard']);
 
 // Route::get('login', [CustomAuthController::class, 'index'])->name('login');
 
-Route::get('login', [AuthController::class, 'login'])->name('login-user');
+Route::get('login', [AuthController::class, 'login']);
 // Route::get('loginEmployee', [AuthController::class, 'loginEmployee'])->name('loginEmployee');
 // Route::get('updateEmployeePass', [AuthController::class, 'updateEmployeePass'])->name('updateEmployeePass');
 // Route::post('postlogin', [AuthController::class, 'login'])->name('login');
@@ -48,8 +48,9 @@ Route::get('login', [AuthController::class, 'login'])->name('login-user');
 
 // Route::get('login', [CustomAuthController::class, 'login'])->middleware('alreadyLoggedIn');
 Route::get('registration', [AuthController::class, 'registration']);
+Route::get('updatepass', [AuthController::class, 'updatepass']);
 Route::post('register-admin',[AuthController::class,'registerUser'])->name('register-admin');
-
+Route::post('update-user',[AuthController::class,'updateUser'])->name('update-user');
 Route::post('login-user',[AuthController::class,'loginWeb'])->name('login-user');
 Route::get('/home',[CustomAuthController::class,'home']);
 Route::get('/logout',[CustomAuthController::class,'logout']);

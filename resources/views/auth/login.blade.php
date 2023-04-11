@@ -21,8 +21,8 @@
         </body>
     </html> -->
 
-    @extends('layout')
-@section('content')
+    <!-- @extends('layout')
+@section('content') -->
 <!doctype html>
 <html lang="en">
   <head>
