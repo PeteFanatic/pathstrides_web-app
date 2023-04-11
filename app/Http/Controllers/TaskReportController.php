@@ -98,11 +98,13 @@ class TaskReportController extends Controller
                $imageName = \Carbon\Carbon::now()->toDateString() . "-" . uniqid() . "." . "png";
                if (!Storage::disk('public')->exists($dir)) {
                    Storage::disk('public')->makeDirectory($dir);
+                   
                }
                Storage::disk('public')->put($dir.$imageName, file_get_contents($image));
        }else{
             return response()->json(['message' => trans('/storage/test/'.'def.png')], 200);
        } 
+
 
        $userDetails = [
        
@@ -110,12 +112,11 @@ class TaskReportController extends Controller
         
        ];
 
-      // User::where(['id' => 27])->update($userDetails);
 
        return response()->json(['message' => trans('/storage/test/'.$imageName)], 200);
         // $image = $_FILES['image']['name'];
         // $name = $_POST['name'];
-
+    
         // $imagePath = 'upload/'.$image;
         // $tmp_name = $_FILES['image']['tmp_name'];
 
@@ -134,6 +135,7 @@ class TaskReportController extends Controller
         
         // }
         // return response()->json($response, 200);
+
 
     }
 }

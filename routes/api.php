@@ -19,7 +19,8 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::middleware('auth:sanctum')->group(function(){
     
 });
-Route::post('/auth/updateEmployeePass',[AuthController::class,'updateEmployeePass']);// Route::post('/auth/login',[AuthController::class,'login']);
+Route::post('/auth/updateEmployeePass',[AuthController::class,'updateEmployeePass']);
+// Route::post('/auth/login',[AuthController::class,'login']);
 Route::post('/auth/loginEmployee',[AuthController::class,'loginEmployee']);
 Route::post('/taskReport',[TaskReportController::class,'uploadImage']);
 //Route::post('/auth/register',[AuthController::class,'register']);

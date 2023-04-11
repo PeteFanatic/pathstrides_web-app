@@ -45,6 +45,13 @@ class User extends Authenticatable
     protected $primaryKey = 'user_id';
     public $incrementing = true;
     
+    public function login($password)
+    {
+        if (Hash::check($password, $this->password)) {
+            return true;
+        }
+        return false;
+    }
 
     public static function getemployee($employeeID){
         return self::where('emp_coll',$employeeID)->get()->toArray();

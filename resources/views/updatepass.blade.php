@@ -28,19 +28,18 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Pathstrides</title>
+    <title>Update Password</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
     <link href>
   </head>
   <body>
   <body>
-    <main class="login-form">
+    <main class="update-form">
     <div class="container">
         <div class="row">
             <div class="formContainer">
-                <h1>Welcome to PathStrides</h1>
-                <img src="{{ URL('images/manager-landing-page.png') }}">
-                <form action="{{route('login-user')}}"method="post">
+                <h1>Update Password</h1>
+                <form action="{{route('update-user')}}"method="post">
                 @if(Session::has('success'))
                 <div class="alert alert-success">{{Session::get('success')}}</div>
                 @endif
@@ -50,16 +49,24 @@
                     @csrf
                     <div class="form-group">
                         <!-- <label for="email">Email Address</label> -->
-                        <input type="text"class="form-control" placeholder="Enter Email"
-                        name="email" value="{{old('email')}}">
-                        <span class="text-danger">@error('email'){{$message}} @enderror</span>
+                        
+                        <input type="password"class="form-control" placeholder="Current Password"
+                        name="current_password">
+                        <span class="text-danger">@error('current_password'){{$message}} @enderror</span>
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <!-- <label for="email">Email Address</label> -->
+                        <input type="password"class="form-control" placeholder="New Password"
+                        name="new_password">
+                        <span class="text-danger">@error('new_password'){{$message}} @enderror</span>
                     </div>
                     <br>
                     <div class="form-group">
                         <!-- <label for="password">Password</label> -->
-                        <input type="password"class="form-control" placeholder="Enter Password"
-                        name="password" value="{{old('password')}}">
-                        <span class="text-danger">@error('password'){{$message}} @enderror</span>
+                        <input type="password"class="form-control" placeholder="Confirm Password"
+                        name="confirm_password">
+                        <span class="text-danger">@error('confirm_password'){{$message}} @enderror</span>
                     </div>
                     <br>
                     <div class="form-group">
@@ -67,9 +74,6 @@
                         <br>
                         <p class="sign-up">
                             New to PathStrides? <a href="registration" class="registration">Sign Up</a>
-                        </p>
-                        <p class="map">
-                           Checkout our Map? <a href="map" class="map">Map</a>
                         </p>
                     </div>
                 </form>

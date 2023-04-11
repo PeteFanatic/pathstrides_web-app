@@ -73,24 +73,7 @@ class CustomAuthController extends Controller
         }
     }
 
-    // public function login(Request $request)
-    // {
-    //     $request->validate(
-    //         [
-    //             'username' => 'required',
-    //             'password' => 'required',
-    //         ]
-    //         );
-
-    //     $manager = $request->only('username', 'password');
-    //     if(Auth::attempt($manager))
-    //     {
-    //         return redirect()->intended('manager')
-    //                  ->with('message', 'Signed In!');
-    //     }
-
-    //     return redirect('/login')->with('message', 'Username or password incorrect');
-    // }
+ 
     public function logout(){
         if(Session::has('loginId')){
             Session::pull('loginId');
