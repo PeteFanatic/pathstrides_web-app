@@ -1,4 +1,4 @@
-@extends('admin.layout')
+@extends('layouts.layout')
 @section('content')
 <div class="card">
   <div class="card-header">Edit Page</div>
@@ -42,14 +42,14 @@
          
         <label for="role">Role :</label></br>
         <select name="role" id="role" name="role"></br>
-        <option value="1">Manager</option></br>
-        <option value="2">Employee</option></br>
+        <option value="Manager">Manager</option></br>
+        <option value="Employee">Employee</option></br>
         </select></br>
 
         <label for="status">Status :</label></br>
         <select name="status" id="status" name="status"></br>
-        <option value="1">Present</option></br>
-        <option value="2">Terminated</option></br>
+        <option value="Present">Present</option></br>
+        <option value="Terminated">Terminated</option></br>
         </select></br>
         <input type="submit" value="Update" class="btn btn-success"></br>
     </form>

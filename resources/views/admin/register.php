@@ -1,4 +1,4 @@
-@extends('employees.layout')
+@extends('layouts.layout')
 @section('content')
 <div class="card">
   <div class="card-header">Redister as admin</div>

@@ -17,4 +17,8 @@ class Task extends Model
     public function getEmployeeTask(){
         return $this->get();
     }
+
+    public function getTask(){
+        return $this->hasMany(Task::class, 'user_id', 'task_id');
+    }
 }

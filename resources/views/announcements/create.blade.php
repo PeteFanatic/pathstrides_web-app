@@ -1,4 +1,4 @@
-@extends('announcements.layout')
+@extends('layouts.layout')
 @section('content')
 <div class="card">
   <div class="card-header">Announcements Page</div>

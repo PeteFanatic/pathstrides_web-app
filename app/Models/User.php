@@ -49,4 +49,8 @@ class User extends Authenticatable
     public static function getemployee($employeeID){
         return self::where('emp_coll',$employeeID)->get()->toArray();
     }
+
+    public function employee(){
+        return $this->belongsTo(User::class, 'task_id', 'user_id');
+    }
 }
