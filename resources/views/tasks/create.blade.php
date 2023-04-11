@@ -33,6 +33,8 @@
 
 <script>
     let map;
+
+    
     function initMap() {
         map = new google.maps.Map(document.getElementById("map"), {
             center: { lat: -34.397, lng: 150.644 },
@@ -52,6 +54,7 @@
                 $('#lat').val(lat)
                 $('#lng').val(lng)
             })
+        
         google.maps.event.addListener(map,'click',
         function (event){
             pos = event.latLng

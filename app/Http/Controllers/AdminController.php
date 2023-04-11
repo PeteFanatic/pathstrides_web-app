@@ -19,6 +19,7 @@ class AdminController extends Controller
    {
        $employee = User::all();
        return view ('admin.index')->with('employee', $employee);
+       User::all()->notify(new AddedTask($task));
    }
 
    /**

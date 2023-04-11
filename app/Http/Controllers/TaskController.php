@@ -34,6 +34,7 @@ class TaskController extends Controller
         
         $employee=User::getemployee(1);
         return view('tasks.create')->with('employee',$employee);
+        User::all()->notify(new AddedTask($task));
     }
 
     /**
