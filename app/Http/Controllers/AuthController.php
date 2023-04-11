@@ -149,7 +149,7 @@ class AuthController extends Controller
         }
         $user = User::where('user_email','=',$request->email)->first();
         if($user){
-            if($user->role == 1){
+            if($user->role == "Manager"){
                 if($user->user_password==$request->password){
 
                     
