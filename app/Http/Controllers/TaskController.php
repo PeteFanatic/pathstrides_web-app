@@ -103,12 +103,12 @@ class TaskController extends Controller
         return redirect('task')->with('flash_message', 'task deleted!');
     }
 
-    public function getemployeeTask(){
-        if($auth_id == $emp_id){
+    public function getEmployeeTask(){
+        // if($auth_id == $emp_id){
             $list = new Task();
-            $list = $list->getemployeeTask();
+            $list = $list->getEmployeeTask();
             return response()->json($list);
             // }
-    }
+    // }
 }
 }
