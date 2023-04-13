@@ -11,33 +11,45 @@ use App\Models\User;
 use App\Models\Admin;
 use App\Models\Employee;
 use App\Controllers\AuthController;
+use Illuminate\Support\Facades\Storage;
+use App\Models\TaskReport;
 
 class ImageController extends Controller
 {
-    public function upload(Request $request){
-        $dir="test/";
+    public function uploadImage(Request $request)
+    {
+        // Retrieve the image file from the request
         $image = $request->file('image');
-     
-       if ($request->has('image')) {
-               $imageName = \Carbon\Carbon::now()->toDateString() . "-" . uniqid() . "." . "png";
-               if (!Storage::disk('public')->exists($dir)) {
-                   Storage::disk('public')->makeDirectory($dir);
-               }
-               Storage::disk('public')->put($dir.$imageName, file_get_contents($image));
-       }else{
-            return response()->json(['message' => trans('/storage/test/'.'def.png')], 200);
-       } 
-
-       $userDetails = [
-       
-           'image' => $imageName,
         
-       ];
+     
+        // // Save the image file to the server
+        $path = Storage::putFile('images', $image);
+       
+        $report = new TaskReport;
+         $report->report_image_url =($path);
+         // set other properties of the report model as necessary
+        $report->save();
+        // // Return a response with the path to the saved image file
+         return response()->json(['path' => $path]);
+         
 
-      // User::where(['id' => 27])->update($userDetails);
+    }
 
-       return response()->json(['message' => trans('/storage/test/'.$imageName)], 200);
-   }
+    public function show($id)
+    {
+        $query=TaskReport::where('task_report_id', $id)->first();
+       
+        $imagePath =  $query->report_image_url;
+       
+        if (!Storage::exists($imagePath)) {
+            return response()->json(['message' => 'Image not found'], 404);
+        }
+        
+        $file = Storage::get($imagePath);
+        $type = Storage::mimeType($imagePath);
+        
+        return response($file)->header('Content-Type', $type);
+    }
 }
 
 // public function uploadImage(Request $request){

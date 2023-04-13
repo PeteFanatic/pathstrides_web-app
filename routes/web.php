@@ -66,6 +66,10 @@ Route::resource("/task", TaskController::class);
 Route::resource("/announcement", AnnouncementController::class);
 
 //rawrrrrrrrrrr
-Auth::routes();
+
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+Route::get('/upload', [EmployeeController::class, 'uploadImage']);
+Auth::routes();

@@ -115,7 +115,10 @@ class AuthController extends Controller
     // Get the authenticated user
     $user = User::where('user_password', $request->current_password)->first();
     // Verify the user's current password
-        if (!Hash::check($request->input('current_password'), $user->user_password)) {
+        if($user==null){
+            return redirect()->back()->withErrors(['current_password' => 'The current password is incorrect.']);
+        }
+        else if (Hash::check($request->input('current_password'), $user->user_password)) {
             $user->user_password = Hash::make($request->input('new_password'));
             $user->save();
         }
@@ -149,7 +152,7 @@ class AuthController extends Controller
         }
         $user = User::where('user_email','=',$request->email)->first();
         if($user){
-            if($user->role == 1){
+            if($user->role == "Manager"){
                 if($user->user_password==$request->password){
 
                     

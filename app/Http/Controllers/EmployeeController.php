@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
 use App\Models\Employee;
 use App\Models\Manager;
@@ -105,5 +105,18 @@ class EmployeeController extends Controller
     {
         Employee::destroy($id);
         return redirect('employee')->with('flash_message', 'employee deleted!');
+    }
+
+    public function uploadImage(Request $request)
+    {
+        // Retrieve the image file from the request
+        $image = $request->file('image');
+        
+     
+        // // Save the image file to the server
+        $path = Storage::putFile('images', $image);
+
+        // // Return a response with the path to the saved image file
+         return response()->json(['path' => $path]);
     }
 }

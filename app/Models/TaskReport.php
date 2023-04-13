@@ -11,6 +11,6 @@ class TaskReport extends Model
 
     public $incrementing = true;
     public $timestamps = false;
-    protected $table = 'admin';
-    protected $primaryKey = 'admin_id';
+    protected $table = 'task_report';
+    protected $primaryKey = 'task_report_id';
 }
