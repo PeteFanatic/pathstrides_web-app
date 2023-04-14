@@ -20,7 +20,7 @@
         <label>Points:</label></br>
         <input type="text" name="points" id="points" class="form-control"></br>
         <label>Address:</label></br>
-        <input type="text" name="address" id="address" class="form-control"></br>
+        <input type="text" name="address" id="address" class="form-control" required></br>
         <div id="map" style="height:400px; width: 800px;" class="my-3"></div>
 
         <div class="col-5">

@@ -13,6 +13,7 @@ use App\Controllers\AuthController;
 
 class TaskController extends Controller
 {
+    public $flash_message;
     /**
      * Display a listing of the resource.
      *
@@ -21,7 +22,7 @@ class TaskController extends Controller
     public function index()
     {
         $tasks = task::all();
-        return view ('tasks.index')->with('tasks', $tasks);
+        return view ('tasks.index')->with('tasks', $tasks)->with('flash_message', $this->flash_message);
     }
 
     /**
@@ -31,7 +32,6 @@ class TaskController extends Controller
      */
     public function create()
     {
-        
         $employee=User::getemployee(1);
         return view('tasks.create')->with('employee',$employee);
         User::all()->notify(new AddedTask($task));
@@ -47,7 +47,10 @@ class TaskController extends Controller
     {
         $input = $request->all();
         Task::create($input);
-        return redirect('task')->with('flash_message', 'task Addedd!'); 
+        $this->flash_message = 'Task Added!';
+        //dd($this->flash_message);
+        $request->session()->flash('flash_message', 'Task added!');//This for Announcement
+        return redirect('task');//->with('flash_message', 'Announcement added!'); 
     }
 
     /**
@@ -100,7 +103,7 @@ class TaskController extends Controller
     public function destroy($id)
     {
         Task::destroy($id);
-        return redirect('task')->with('flash_message', 'task deleted!');
+        return redirect('task')->with('flash_message', 'Task deleted!');
     }
 
     public function getemployeeTask(){

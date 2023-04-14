@@ -18,7 +18,7 @@
                         </div>
                     </div>
                     <div class="card-body">
-
+                        <p id ="test" hidden>{{ $flash_message }}</p>
                         <br/>
                         <div class="table-responsive">
                             <table class="table">
@@ -33,6 +33,11 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                @if(session('flash_message'))
+                                    <div class="alert alert-success">
+                                        {{ session('flash_message') }}
+                                    </div>
+                                @endif
                                 @foreach($tasks as $item)
                                     <tr>
                                         <td>{{ $item->task_id }}</td>
